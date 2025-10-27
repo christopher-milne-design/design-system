@@ -1,21 +1,19 @@
 # Design Tokens
 
-This project uses **Token Studio for Figma** with bidirectional sync to maintain design tokens across Figma and code.
+This project syncs design tokens from the centralized **[cca-design-tokens](https://github.com/christopher-milne-design/cca-design-tokens)** repository, which is connected to **Token Studio for Figma**.
+
+## Architecture
+
+```
+Figma (Token Studio) ↔ cca-design-tokens repo ↔ This project
+```
 
 ## File Structure
 
-### Token Studio Format (Primary Source)
-- **`tokens.json`** (root) - Token Studio format with `$themes` and `$metadata`
-  - Contains all tokens in the `global` token set
-  - This is the single source of truth synced with Figma
-
-### Legacy Files (Optional)
-- `tokens/colors.json` - Individual color tokens
-- `tokens/spacing.json` - Spacing scale tokens
-- `tokens/typography.json` - Typography tokens
-- `tokens/radius.json` - Border radius tokens
-
-**Note**: The root `tokens.json` file takes precedence. Individual files in `tokens/` are kept for reference but not required.
+- `tokens/colors.json` - Color palette synced from cca-design-tokens
+- `tokens/spacing.json` - Spacing scale synced from cca-design-tokens
+- `tokens/typography.json` - Typography tokens synced from cca-design-tokens
+- `tokens/radius.json` - Border radius tokens synced from cca-design-tokens
 
 ## Usage
 
@@ -106,65 +104,53 @@ The tokens are available as Tailwind CSS classes and CSS variables:
 - `lineHeights` - Line height ratios (unitless numbers)
 - `borderRadius` - Border radius values
 
-## Token Studio + Figma Sync Setup
+## Syncing Tokens
 
-### 1. Install Token Studio Plugin in Figma
-1. Open Figma
-2. Go to **Plugins** → **Browse plugins in Community**
-3. Search for "**Tokens Studio for Figma**" and install it
-
-### 2. Configure GitHub Sync in Token Studio
-1. Open Token Studio plugin in Figma
-2. Go to **Settings** → **Sync**
-3. Choose **GitHub** as sync provider
-4. Authenticate with your GitHub account
-5. Configure sync settings:
-   - **Repository**: `<your-username>/nextjs-landing-page`
-   - **Branch**: `main` (or your preferred branch)
-   - **File Path**: `tokens.json`
-   - **Base Branch**: `main`
-
-### 3. Push Your Tokens to GitHub
+### Automated Sync (Recommended)
+Pull latest tokens from cca-design-tokens and rebuild:
 ```bash
-# Add tokens.json to git
-git add tokens.json .github/workflows/token-studio-sync.yml
+npm run sync:auto
+```
+This will:
+1. Clone/update `cca-design-tokens` in `/tmp`
+2. Sync tokens to `tokens/` directory
+3. Rebuild `lib/tokens.js` and `lib/tokens.css`
 
-# Commit with a clear message
-git commit -m "feat: add Token Studio format for Figma sync"
+### Manual Sync
+If you need more control:
+```bash
+# Sync tokens only (without rebuilding)
+npm run sync:manual
 
-# Push to GitHub
-git push origin main
+# Then rebuild
+npm run tokens
 ```
 
-### 4. Initial Pull in Figma
-1. In Token Studio plugin, click **Pull from GitHub**
-2. Your tokens will load into Figma
-3. Apply tokens to your design system
+### Development with Auto-Sync
+Start dev server with fresh tokens:
+```bash
+npm run dev:sync
+```
 
-### 5. Bidirectional Workflow
+## Workflow
 
-#### From Figma → Code
-1. Edit tokens in Token Studio plugin in Figma
-2. Click **Push to GitHub**
-3. GitHub Actions automatically regenerates `lib/tokens.js` and `lib/tokens.css`
-4. Pull changes locally: `git pull origin main`
-5. Your code now has the updated tokens
+### From Figma → This Project
+1. Edit tokens in **Token Studio for Figma**
+2. Push to **cca-design-tokens** repo from Figma
+3. In this project: `npm run sync:auto`
+4. Your components now use updated tokens
 
-#### From Code → Figma
-1. Edit `tokens.json` locally
-2. Run `npm run tokens` to verify it builds
-3. Commit and push: `git add tokens.json && git commit -m "update tokens" && git push`
-4. In Figma Token Studio, click **Pull from GitHub**
-5. Your Figma design now has the updated tokens
+### From This Project → Figma
+1. Edit tokens in **cca-design-tokens** repo directly
+2. Commit and push changes
+3. In Figma Token Studio, pull from GitHub
+4. In this project: `npm run sync:auto`
 
-### 6. Automated Sync
-The GitHub Actions workflow (`.github/workflows/token-studio-sync.yml`) automatically:
-- Detects changes to `tokens.json`
-- Rebuilds `lib/tokens.js` and `lib/tokens.css`
-- Commits and pushes generated files
+## Token Studio Configuration
 
-### Tips
-- Always pull before editing to avoid conflicts
-- Use descriptive commit messages when pushing tokens
-- Test token changes locally with `npm run tokens` before pushing
-- Keep the `global` token set as your primary set for simplicity
+The Token Studio plugin in Figma should be configured to sync with:
+- **Repository**: `christopher-milne-design/cca-design-tokens`
+- **Branch**: `main`
+- **File Path**: (as configured in cca-design-tokens)
+
+All changes flow through the central `cca-design-tokens` repository.

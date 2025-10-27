@@ -1,0 +1,244 @@
+# WARP.md
+
+This file provides guidance to WARP (warp.dev) when working with code in this repository.
+
+## Development Commands
+
+### Core Commands
+```bash
+npm run dev       # Start development server at localhost:3000
+npm run build     # Build for production
+npm start         # Start production server
+npm run lint      # Run ESLint
+```
+
+### Adding ShadCN Components
+```bash
+npx shadcn@latest add [component-name]
+```
+
+### Design Token Commands
+```bash
+npm run tokens          # Build tokens from JSON sources
+npm run tokens:watch    # Watch and rebuild tokens on changes
+npm run sync:auto       # Sync tokens from GitHub repo and rebuild
+```
+
+## Architecture Overview
+
+### Tech Stack
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript with strict mode enabled
+- **Styling**: Tailwind CSS v4 with ShadCN UI components (New York style)
+- **CMS**: Contentful for dynamic content management
+- **Features**: React Compiler enabled for optimized rendering
+
+### Project Structure
+This is a single-page landing application with a modular component architecture:
+
+```
+app/
+├── layout.tsx           # Root layout with Geist fonts
+├── page.tsx             # Main page composing Hero, Features, and CTA sections
+└── globals.css          # Tailwind and ShadCN theme variables
+
+components/
+├── ui/                  # ShadCN components (Button, Card, etc.)
+├── Hero.tsx             # Hero section with CTAs
+├── Features.tsx         # Feature grid (6 feature cards)
+└── CTA.tsx              # Call-to-action section
+
+lib/
+├── contentful.ts        # Contentful client, types, and fetch utilities
+├── tokens.js            # Auto-generated design tokens (do not edit directly)
+├── tailwind-tokens-plugin.js  # Plugin to expose tokens to Tailwind
+└── utils.ts             # cn() utility for class merging
+
+tokens/
+├── colors.json          # Primitive color tokens
+├── semantic.json        # Semantic color tokens
+├── spacing.json         # Spacing scale tokens
+├── typography.json      # Typography tokens
+└── radius.json          # Border radius tokens
+```
+
+### Key Architectural Patterns
+
+#### Path Aliases
+The project uses `@/*` alias for imports (e.g., `@/components/Hero`), configured in both `tsconfig.json` and `components.json`.
+
+#### ShadCN UI Integration
+- **Style**: New York variant
+- **Base color**: Neutral
+- **CSS Variables**: Enabled for theming
+- **Icon Library**: Lucide React
+- Components live in `components/ui/` and use the `cn()` utility for conditional styling
+
+#### Contentful Integration
+The `lib/contentful.ts` module provides:
+- A singleton Contentful client initialized with env vars
+- `getLandingPageContent()` - fetches content type "landingPage"
+- `getEntries(contentType)` - generic content fetcher
+- TypeScript interface `LandingPageContent` for type safety
+
+**Note**: The current implementation has Contentful functions defined but they are not yet consumed by the components, which use hardcoded content.
+
+### Environment Variables
+Required in `.env.local`:
+```
+CONTENTFUL_SPACE_ID=your_space_id
+CONTENTFUL_ACCESS_TOKEN=your_delivery_api_token
+CONTENTFUL_PREVIEW_ACCESS_TOKEN=your_preview_api_token  # optional
+```
+
+### Contentful Content Model
+The "landingPage" content type expects these fields:
+- `title` (Short text)
+- `subtitle` (Long text)
+- `heroButtonText` (Short text)
+- `featuresHeading` (Short text)
+- `ctaHeading` (Short text)
+- `ctaDescription` (Long text)
+
+### Component Architecture
+Components follow a consistent pattern:
+- Server Components by default (no "use client" directives)
+- Section-based layout with responsive containers
+- Tailwind utility classes for styling
+- ShadCN UI components for interactive elements
+
+### Deployment
+Configured for Vercel deployment via `vercel.json` with environment variable references using `@` prefix for Vercel secrets.
+
+## Development Guidelines
+
+### When Modifying Components
+- Use the `cn()` utility from `@/lib/utils` for conditional classes
+- Follow existing responsive breakpoints: `md:` (768px), `lg:` (1024px)
+- Maintain the established spacing pattern: `px-4`, `py-20` for sections
+- Use ShadCN components from `@/components/ui/` for UI elements
+
+### When Adding Contentful Integration
+- Add TypeScript interfaces in `lib/contentful.ts`
+- Use async/await with try-catch for Contentful queries
+- Call Contentful functions in Server Components (they are async)
+- Handle null/undefined cases when content is unavailable
+
+### When Adding New Pages
+- Create route folders in `app/` directory (App Router pattern)
+- Include `page.tsx` for the route component
+- Optionally add `layout.tsx` for route-specific layouts
+- Update metadata in layout files for SEO
+
+### TypeScript Configuration
+- Strict mode is enabled
+- Path alias `@/*` maps to project root
+- Target ES2017 for modern browser support
+- JSX transform uses react-jsx (new JSX transform)
+
+## Design Tokens System
+
+### Token Architecture
+The project uses a two-tier token system:
+
+1. **Primitive Tokens**: Base design values (colors, spacing, typography, etc.) stored in `tokens/*.json`
+2. **Semantic Tokens**: Purpose-based tokens that reference primitives, defined in `tokens/semantic.json`
+
+### Token Studio Integration
+Tokens are stored in Token Studio format (Figma Tokens plugin) and transformed via Style Dictionary:
+
+**Token Studio Format** (`tokens/*.json`):
+```json
+{
+  "color": {
+    "bleu": {
+      "500": {
+        "value": "#1a70ef",
+        "type": "color"
+      }
+    }
+  }
+}
+```
+
+**Semantic Token Format** (`tokens/semantic.json`):
+```json
+{
+  "semantic": {
+    "brand": {
+      "primary": {
+        "value": "{color.bleu.500}",
+        "type": "color",
+        "description": "Primary brand color"
+      }
+    }
+  }
+}
+```
+
+### Build Process
+1. Token JSON files are stored in `tokens/` directory
+2. Style Dictionary transforms them into `lib/tokens.js`
+3. The Tailwind plugin (`lib/tailwind-tokens-plugin.js`) generates CSS variables
+4. CSS variables are exposed in `app/globals.css` via `@theme` block
+
+### Using Tokens in Components
+
+**Primitive Tokens:**
+- `bg-bleu-500` - Direct primitive color
+- `text-neutral-400` - Direct primitive text color
+- `p-md` - Spacing token
+
+**Semantic Tokens:**
+- `bg-brand-primary` - Primary brand color
+- `hover:bg-brand-primary-hover` - Hover state
+- `text-text-primary` - Primary text color
+- `text-text-muted` - Muted text
+- `bg-surface-card` - Card backgrounds
+- `bg-feedback-success` - Success state
+- `border-border-default` - Default borders
+
+### Syncing with Token Studio (Figma)
+
+**Push to GitHub:**
+1. Edit tokens in Token Studio (Figma plugin)
+2. Configure Token Studio to sync with GitHub
+3. Push changes from Token Studio to your repo
+
+**Pull from GitHub:**
+```bash
+npm run sync:auto  # Clones/pulls token repo and rebuilds
+```
+
+**Workflow:**
+1. Design team updates tokens in Figma via Token Studio
+2. Token Studio pushes to GitHub repository
+3. Developers run `npm run sync:auto` to pull latest tokens
+4. Tokens are automatically transformed and rebuilt
+5. Dev server picks up changes via HMR
+
+### Token File Structure
+- `tokens/colors.json` - All primitive color palettes
+- `tokens/semantic.json` - Semantic color mappings
+- `tokens/spacing.json` - Spacing scale
+- `tokens/typography.json` - Font sizes, weights, line heights
+- `tokens/radius.json` - Border radius values
+
+### Modifying Tokens
+
+**Option 1: Via Token Studio (Recommended)**
+- Edit in Figma using Token Studio plugin
+- Push changes to GitHub
+- Run `npm run sync:auto`
+
+**Option 2: Direct Edit (Local Only)**
+- Edit JSON files in `tokens/` directory
+- Run `npm run tokens` to rebuild
+- Changes are local until committed
+
+### Style Dictionary Configuration
+The transformation is configured in `style-dictionary.config.mjs`:
+- Resolves Token Studio `{token.reference}` syntax
+- Converts to CSS variable format `var(--token-name)`
+- Generates both `tokens.js` and `tokens.css`
+- Handles semantic token references to primitives

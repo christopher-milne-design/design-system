@@ -8,6 +8,7 @@ const tailwindFormatter = ({ dictionary }) => {
   const fontWeight = {};
   const lineHeight = {};
   const borderRadius = {};
+  const semantic = { colors: {} };
 
   dictionary.allTokens.forEach(token => {
     const path = token.path;
@@ -15,6 +16,18 @@ const tailwindFormatter = ({ dictionary }) => {
     if (path[0] === 'color') {
       if (!colors[path[1]]) colors[path[1]] = {};
       colors[path[1]][path[2]] = token.value;
+    } else if (path[0] === 'semantic') {
+      // Handle semantic tokens
+      const category = path[1]; // brand, text, surface, feedback, border
+      const tokenName = path.slice(2).join('-'); // primary, primary-hover, etc.
+      if (!semantic.colors[category]) semantic.colors[category] = {};
+      
+      // Keep original reference if it exists, otherwise use resolved value
+      const originalValue = token.original?.value || token.value;
+      const value = typeof originalValue === 'string' && originalValue.includes('{')
+        ? originalValue.replace(/\{color\.([^.]+)\.([^}]+)\}/g, 'var(--color-$1-$2)')
+        : token.value;
+      semantic.colors[category][tokenName] = value;
     } else if (path[0] === 'spacing') {
       spacing[path[1]] = token.value;
     } else if (path[0] === 'fontSize') {
@@ -34,12 +47,13 @@ const tailwindFormatter = ({ dictionary }) => {
     fontSize,
     fontWeight,
     lineHeight,
-    borderRadius
+    borderRadius,
+    semantic
   };
 
   // Remove empty objects
   Object.keys(theme).forEach(key => {
-    if (Object.keys(theme[key]).length === 0) {
+    if (typeof theme[key] === 'object' && Object.keys(theme[key]).length === 0) {
       delete theme[key];
     }
   });
@@ -128,30 +142,8 @@ StyleDictionary.registerFormat({
   format: tailwindCSSFormatter
 });
 
-// Custom preprocessor to extract tokens from Token Studio format
-const tokenStudioPreprocessor = (dictionary) => {
-  const processed = { ...dictionary };
-  
-  // If tokens.json has Token Studio format ($themes, $metadata, token sets)
-  if (dictionary.properties && dictionary.properties.$themes) {
-    const tokenSets = Object.keys(dictionary.properties).filter(
-      key => !key.startsWith('$')
-    );
-    
-    // Extract tokens from the first token set (e.g., 'global')
-    const firstSet = tokenSets[0];
-    if (firstSet && dictionary.properties[firstSet]) {
-      processed.properties = dictionary.properties[firstSet];
-    }
-  }
-  
-  return processed;
-};
-
 export default {
-  // Support both Token Studio format (tokens.json) and individual files
-  source: ['tokens.json', 'tokens/**/*.json'],
-  preprocessors: ['tokens-studio'],
+  source: ['tokens/**/*.json'],
   platforms: {
     tailwind: {
       transformGroup: 'css',
