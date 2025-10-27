@@ -8,12 +8,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6" style={{ letterSpacing: '-0.02em' }}>
-              Design System
+              Canada Council for the Arts Design System
             </h1>
             <p className="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
               A comprehensive design system built with <strong>Token Studio</strong>, <strong>Style Dictionary</strong>, 
-              <strong>Tailwind CSS</strong>, and <strong>Next.js</strong>. Featuring semantic tokens, 
-              a calculated typography system, and full Figma integration.
+              <strong>Tailwind CSS</strong>, <strong>ShadCN UI</strong> and <strong>Next.js</strong>. Featuring semantic tokens, 
+              a calculated typography system, and full Figma token integration.
             </p>
             <div className="flex gap-4 justify-center">
               <Link 
@@ -48,9 +48,6 @@ export default function Home() {
           {/* Feature 1: Design Tokens */}
           <Link href="/style-guide#semantic" className="group">
             <div className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
-              <div className="w-12 h-12 bg-brand-primary rounded-lg mb-4 flex items-center justify-center text-neutral-50 text-2xl">
-                
-              </div>
               <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
                 Semantic Tokens
               </h3>
@@ -64,9 +61,6 @@ export default function Home() {
           {/* Feature 2: Typography */}
           <Link href="/style-guide#typography" className="group">
             <div className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
-              <div className="w-12 h-12 bg-brand-primary rounded-lg mb-4 flex items-center justify-center text-neutral-50 text-2xl">
-                
-              </div>
               <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
                 Typography System
               </h3>
@@ -80,9 +74,6 @@ export default function Home() {
           {/* Feature 3: Components */}
           <Link href="/components" className="group">
             <div className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
-              <div className="w-12 h-12 bg-brand-primary rounded-lg mb-4 flex items-center justify-center text-neutral-50 text-2xl">
-                
-              </div>
               <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
                 Component Library
               </h3>
@@ -95,9 +86,6 @@ export default function Home() {
 
           {/* Feature 4: Token Studio */}
           <div className="bg-neutral-100 p-8 rounded-lg">
-            <div className="w-12 h-12 bg-celadon-500 rounded-lg mb-4 flex items-center justify-center text-neutral-50 text-2xl">
-              
-            </div>
             <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
               Figma Integration
             </h3>
@@ -109,9 +97,6 @@ export default function Home() {
 
           {/* Feature 5: Responsive */}
           <div className="bg-neutral-100 p-8 rounded-lg">
-            <div className="w-12 h-12 bg-celadon-500 rounded-lg mb-4 flex items-center justify-center text-neutral-50 text-2xl">
-              
-            </div>
             <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
               Responsive Scales
             </h3>
@@ -124,9 +109,6 @@ export default function Home() {
           {/* Feature 6: Documentation */}
           <Link href="/style-guide" className="group">
             <div className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
-              <div className="w-12 h-12 bg-celadon-500 rounded-lg mb-4 flex items-center justify-center text-neutral-50 text-2xl">
-                
-              </div>
               <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
                 Interactive Docs
               </h3>

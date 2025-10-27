@@ -8,8 +8,10 @@ export default function Navigation() {
 
   const links = [
     { href: "/", label: "Home" },
+    { href: "/examples", label: "Examples" },
     { href: "/style-guide", label: "Style Guide" },
     { href: "/components", label: "Components" },
+    { href: "/documentation", label: "Documentation" },
   ];
 
   return (
@@ -19,7 +21,7 @@ export default function Navigation() {
           {/* Logo/Brand */}
           <Link href="/" className="flex items-center">
             <span className="text-2xl font-bold text-neutral-400" style={{ letterSpacing: '-0.02em' }}>
-              Design System
+              Council Design System
             </span>
           </Link>
 
