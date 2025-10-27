@@ -11,13 +11,13 @@ export async function GET() {
     }
 
     const query = `
-      query {
+      query Issues {
         issues(
+          first: 50
           filter: {
-            state: { type: { eq: "completed" } }
+            completedAt: { null: false }
           }
           orderBy: completedAt
-          first: 50
         ) {
           nodes {
             id
@@ -59,8 +59,13 @@ export async function GET() {
     const data = await response.json();
     
     if (data.errors) {
-      console.error('Linear GraphQL errors:', data.errors);
-      throw new Error('Linear API returned errors');
+      console.error('Linear GraphQL errors:', JSON.stringify(data.errors, null, 2));
+      throw new Error(`Linear API returned errors: ${JSON.stringify(data.errors)}`);
+    }
+
+    if (!data.data || !data.data.issues) {
+      console.error('Unexpected Linear API response:', JSON.stringify(data, null, 2));
+      throw new Error('Linear API returned unexpected response format');
     }
 
     // Transform Linear response to match our interface
