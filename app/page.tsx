@@ -127,23 +127,99 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-12 text-center" style={{ letterSpacing: '-0.02em' }}>
             Built With
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-2xl font-bold text-text-primary mb-2" style={{ letterSpacing: '-0.02em' }}>Next.js 16</p>
-              <p className="text-sm text-text-secondary">React Framework</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-text-primary mb-2" style={{ letterSpacing: '-0.02em' }}>Tailwind v4</p>
-              <p className="text-sm text-text-secondary">CSS Framework</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-text-primary mb-2" style={{ letterSpacing: '-0.02em' }}>Token Studio</p>
-              <p className="text-sm text-text-secondary">Design Tokens</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-text-primary mb-2" style={{ letterSpacing: '-0.02em' }}>ShadCN UI</p>
-              <p className="text-sm text-text-secondary">Components</p>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+            {/* Next.js */}
+            <a 
+              href="https://nextjs.org" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-4 group"
+            >
+              <div className="h-16 flex items-center justify-center">
+                <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 180 180" fill="none">
+                  <mask id="mask0_408_139" style={{maskType: 'alpha'}} maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+                    <circle cx="90" cy="90" r="90" fill="black"/>
+                  </mask>
+                  <g mask="url(#mask0_408_139)">
+                    <circle cx="90" cy="90" r="90" fill="black"/>
+                    <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="url(#paint0_linear_408_139)"/>
+                    <rect x="115" y="54" width="12" height="72" fill="url(#paint1_linear_408_139)"/>
+                  </g>
+                  <defs>
+                    <linearGradient id="paint0_linear_408_139" x1="109" y1="116.5" x2="144.5" y2="160.5" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="white"/>
+                      <stop offset="1" stopColor="white" stopOpacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_408_139" x1="121" y1="54" x2="120.799" y2="106.875" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="white"/>
+                      <stop offset="1" stopColor="white" stopOpacity="0"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-bold text-text-primary mb-1 group-hover:text-brand-primary transition-colors" style={{ letterSpacing: '-0.02em' }}>Next.js 16</p>
+                <p className="text-sm text-text-secondary">React Framework</p>
+              </div>
+            </a>
+
+            {/* Tailwind CSS */}
+            <a 
+              href="https://tailwindcss.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-4 group"
+            >
+              <div className="h-16 flex items-center justify-center">
+                <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 248 248">
+                  <path fill="#06B6D4" d="M124,0C70.8,0,46.4,26.4,40,79.2c9.6-26.4,20.8-36.4,33.6-30c7.3,1.8,12.5,7,18.3,12.8 C103.7,73.8,118.1,88,148,88c53.2,0,77.6-26.4,84-79.2c-9.6,26.4-20.8,36.4-33.6,30c-7.3-1.8-12.5-7-18.3-12.8 C168.3,14.2,153.9,0,124,0z M76,88c-53.2,0-77.6,26.4-84,79.2c9.6-26.4,20.8-36.4,33.6-30c7.3,1.8,12.5,7,18.3,12.8 C55.7,161.8,70.1,176,100,176c53.2,0,77.6-26.4,84-79.2c-9.6,26.4-20.8,36.4-33.6,30c-7.3-1.8-12.5-7-18.3-12.8 C120.3,102.2,105.9,88,76,88z"/>
+                </svg>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-bold text-text-primary mb-1 group-hover:text-brand-primary transition-colors" style={{ letterSpacing: '-0.02em' }}>Tailwind CSS v4</p>
+                <p className="text-sm text-text-secondary">CSS Framework</p>
+              </div>
+            </a>
+
+            {/* Token Studio */}
+            <a 
+              href="https://tokens.studio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-4 group"
+            >
+              <div className="h-16 flex items-center justify-center">
+                <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 200 200" fill="none">
+                  <rect width="200" height="200" rx="40" fill="#8B5CF6"/>
+                  <path d="M60 100L100 60L140 100L100 140L60 100Z" fill="white"/>
+                  <circle cx="100" cy="100" r="15" fill="#8B5CF6"/>
+                </svg>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-bold text-text-primary mb-1 group-hover:text-brand-primary transition-colors" style={{ letterSpacing: '-0.02em' }}>Token Studio</p>
+                <p className="text-sm text-text-secondary">Design Tokens</p>
+              </div>
+            </a>
+
+            {/* ShadCN UI */}
+            <a 
+              href="https://ui.shadcn.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-4 group"
+            >
+              <div className="h-16 flex items-center justify-center">
+                <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 256 256" fill="none">
+                  <rect width="256" height="256" rx="60" fill="black"/>
+                  <path d="M128 34L94 98L128 162L162 98L128 34Z" fill="white"/>
+                  <path d="M128 162L94 226H162L128 162Z" fill="white" opacity="0.7"/>
+                </svg>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-bold text-text-primary mb-1 group-hover:text-brand-primary transition-colors" style={{ letterSpacing: '-0.02em' }}>ShadCN UI</p>
+                <p className="text-sm text-text-secondary">Components</p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
