@@ -3,6 +3,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+interface Label {
+  name: string;
+  colour: string;
+}
+
 interface Issue {
   id: string;
   title: string;
@@ -15,6 +20,7 @@ interface Issue {
   updatedAt: string;
   url: string;
   description?: string;
+  labels?: Label[];
 }
 
 export default function Changelog() {
@@ -23,16 +29,12 @@ export default function Changelog() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Fetch completed issues from Linear
-    // This would be replaced with actual API call
-    // For now, showing the structure
     const fetchChangelog = async () => {
       try {
-        // TODO: Implement Linear API fetch
-        // const response = await fetch('/api/linear/changelog');
-        // const data = await response.json();
-        // setIssues(data);
-        
+        const response = await fetch('/api/linear/changelog');
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
+        setIssues(data);
         setLoading(false);
       } catch (err) {
         setError('Failed to fetch changelog');
@@ -68,52 +70,87 @@ export default function Changelog() {
           Track the progress and updates to the Canada Council for the Arts Design System.
         </p>
 
-        <div className="bg-neutral-100 p-12 rounded-lg border-2 border-neutral-200 text-center mb-12">
-          <h2 className="text-3xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
-            Coming Soon
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed mb-6">
-            This page will automatically sync with Linear to show completed issues, new features, 
-            bug fixes, and improvements to the design system.
-          </p>
-          <a
-            href="https://linear.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-brand-primary hover:bg-brand-primary-hover text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-colors"
-          >
-            View Project in Linear
-          </a>
-        </div>
-
-        <div className="space-y-8">
-          <div className="bg-surface-card p-6 rounded-lg border border-border-default">
-            <h3 className="text-xl font-bold text-text-primary mb-2" style={{ letterSpacing: '-0.02em' }}>
-              How It Works
-            </h3>
-            <p className="text-text-secondary leading-relaxed mb-4">
-              The changelog will pull from Linear's API to display:
-            </p>
-            <ul className="space-y-2 text-text-secondary">
-              <li className="flex items-start gap-2">
-                <span className="text-brand-primary mt-1">•</span>
-                <span>Completed issues grouped by week/month</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-brand-primary mt-1">•</span>
-                <span>Feature releases and improvements</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-brand-primary mt-1">•</span>
-                <span>Bug fixes and patches</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-brand-primary mt-1">•</span>
-                <span>Direct links to issues in Linear</span>
-              </li>
-            </ul>
+        {error && (
+          <div className="bg-rouge-50 border-l-4 border-rouge-600 p-6 rounded mb-12">
+            <p className="text-rouge-900 font-semibold">{error}</p>
           </div>
-        </div>
+        )}
+
+        {issues.length === 0 && !error ? (
+          <div className="bg-neutral-100 p-12 rounded-lg border-2 border-neutral-200 text-center mb-12">
+            <h2 className="text-3xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
+              No Updates Yet
+            </h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed mb-6">
+              Check back soon for updates and improvements to the design system.
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-6 mb-12">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold text-text-primary" style={{ letterSpacing: '-0.02em' }}>
+                Recent Updates
+              </h2>
+              <a
+                href="https://linear.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-primary hover:text-brand-primary-hover font-semibold transition-colors"
+              >
+                View in Linear →
+              </a>
+            </div>
+
+            {issues.map((issue) => (
+              <div key={issue.id} className="bg-surface-card p-6 rounded-lg border border-border-default hover:border-brand-primary transition-colors">
+                <div className="flex items-start justify-between gap-4 mb-3">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-brand-primary font-mono text-sm font-semibold">
+                        {issue.identifier}
+                      </span>
+                      {issue.labels && issue.labels.map((label) => (
+                        <span
+                          key={label.name}
+                          className="text-xs px-2 py-1 rounded-full font-medium"
+                          style={{ 
+                            backgroundColor: `${label.colour}20`, 
+                            color: label.colour 
+                          }}
+                        >
+                          {label.name}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={issue.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl font-bold text-text-primary hover:text-brand-primary transition-colors"
+                      style={{ letterSpacing: '-0.02em' }}
+                    >
+                      {issue.title}
+                    </a>
+                  </div>
+                  {issue.completedAt && (
+                    <span className="text-sm text-text-secondary whitespace-nowrap">
+                      {new Date(issue.completedAt).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric'
+                      })}
+                    </span>
+                  )}
+                </div>
+                {issue.description && (
+                  <p className="text-text-secondary leading-relaxed">
+                    {issue.description}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </main>
   );
