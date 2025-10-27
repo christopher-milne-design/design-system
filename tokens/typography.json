@@ -1,4 +1,16 @@
 {
+  "fontFamily": {
+    "heading": { 
+      "value": "'Helvetica Neue', 'Helvetica', Arial, sans-serif", 
+      "type": "fontFamily",
+      "description": "Font family for all headings (h1-h6)"
+    },
+    "body": { 
+      "value": "var(--font-echo), system-ui, sans-serif", 
+      "type": "fontFamily",
+      "description": "Font family for body text and paragraphs"
+    }
+  },
   "fontSize": {
     "xs": { "value": "0.75rem", "type": "dimension" },
     "sm": { "value": "0.875rem", "type": "dimension" },

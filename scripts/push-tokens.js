@@ -36,6 +36,10 @@ const radius = fs.existsSync(path.join(TOKENS_DIR, 'radius.json'))
   ? JSON.parse(fs.readFileSync(path.join(TOKENS_DIR, 'radius.json'), 'utf8'))
   : {};
 
+const semantic = fs.existsSync(path.join(TOKENS_DIR, 'semantic.json'))
+  ? JSON.parse(fs.readFileSync(path.join(TOKENS_DIR, 'semantic.json'), 'utf8'))
+  : {};
+
 // Convert to Token Studio format with proper types
 function convertToTokenStudio(tokens) {
   const converted = {};
@@ -68,6 +72,17 @@ function convertToTokenStudio(tokens) {
   }
 
   // Process typography
+  if (tokens.fontFamily) {
+    converted.fontFamily = {};
+    Object.entries(tokens.fontFamily).forEach(([name, token]) => {
+      converted.fontFamily[name] = {
+        value: token.value,
+        type: 'fontFamilies',
+        ...(token.description && { description: token.description })
+      };
+    });
+  }
+
   if (tokens.fontSize) {
     converted.fontSize = {};
     Object.entries(tokens.fontSize).forEach(([name, token]) => {
@@ -113,6 +128,35 @@ function convertToTokenStudio(tokens) {
     });
   }
 
+  // Process semantic tokens (nested structure)
+  if (tokens.semantic) {
+    converted.semantic = {};
+    Object.entries(tokens.semantic).forEach(([category, categoryTokens]) => {
+      converted.semantic[category] = {};
+      Object.entries(categoryTokens).forEach(([name, token]) => {
+        if (typeof token === 'object' && token.value) {
+          converted.semantic[category][name] = {
+            value: token.value,
+            type: token.type || 'color',
+            ...(token.description && { description: token.description })
+          };
+        } else if (typeof token === 'object') {
+          // Handle nested semantic tokens (e.g., brand.primary)
+          converted.semantic[category][name] = {};
+          Object.entries(token).forEach(([subName, subToken]) => {
+            if (subToken.value) {
+              converted.semantic[category][name][subName] = {
+                value: subToken.value,
+                type: subToken.type || 'color',
+                ...(subToken.description && { description: subToken.description })
+              };
+            }
+          });
+        }
+      });
+    });
+  }
+
   return converted;
 }
 
@@ -121,7 +165,8 @@ const allTokens = {
   ...colors,
   ...spacing,
   ...typography,
-  ...radius
+  ...radius,
+  ...semantic
 };
 
 const convertedTokens = convertToTokenStudio(allTokens);
@@ -160,10 +205,12 @@ console.log('✅ Tokens converted to Token Studio format\n');
 console.log('📊 Summary:');
 console.log(`   Colors: ${Object.keys(convertedTokens.color || {}).length} palettes`);
 console.log(`   Spacing: ${Object.keys(convertedTokens.spacing || {}).length} tokens`);
+console.log(`   Font Families: ${Object.keys(convertedTokens.fontFamily || {}).length} tokens`);
 console.log(`   Font Sizes: ${Object.keys(convertedTokens.fontSize || {}).length} tokens`);
 console.log(`   Font Weights: ${Object.keys(convertedTokens.fontWeight || {}).length} tokens`);
 console.log(`   Line Heights: ${Object.keys(convertedTokens.lineHeight || {}).length} tokens`);
 console.log(`   Border Radius: ${Object.keys(convertedTokens.borderRadius || {}).length} tokens`);
+console.log(`   Semantic: ${Object.keys(convertedTokens.semantic || {}).length} categories`);
 console.log('');
 console.log(`📁 File saved to: ${OUTPUT_PATH}`);
 console.log('');

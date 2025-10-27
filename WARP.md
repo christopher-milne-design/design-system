@@ -30,6 +30,7 @@ npm run sync:auto       # Sync tokens from GitHub repo and rebuild
 - **Framework**: Next.js 16 with App Router
 - **Language**: TypeScript with strict mode enabled
 - **Styling**: Tailwind CSS v4 with ShadCN UI components (New York style)
+- **Typography**: Helvetica Neue for headings, Echo for body text
 - **CMS**: Contentful for dynamic content management
 - **Features**: React Compiler enabled for optimized rendering
 
@@ -38,9 +39,13 @@ This is a single-page landing application with a modular component architecture:
 
 ```
 app/
-├── layout.tsx           # Root layout with Geist fonts
+├── layout.tsx           # Root layout with Echo font configuration
 ├── page.tsx             # Main page composing Hero, Features, and CTA sections
-└── globals.css          # Tailwind and ShadCN theme variables
+└── globals.css          # Tailwind, ShadCN theme, and font family rules
+
+public/
+└── fonts/
+    └── echo/            # Echo font files (woff, woff2)
 
 components/
 ├── ui/                  # ShadCN components (Button, Card, etc.)
@@ -58,7 +63,8 @@ tokens/
 ├── colors.json          # Primitive color tokens
 ├── semantic.json        # Semantic color tokens
 ├── spacing.json         # Spacing scale tokens
-├── typography.json      # Typography tokens
+├── typography.json      # Typography tokens (includes font families)
+├── typography-system.json # Complete typography scale system
 └── radius.json          # Border radius tokens
 ```
 
@@ -135,6 +141,31 @@ Configured for Vercel deployment via `vercel.json` with environment variable ref
 - Path alias `@/*` maps to project root
 - Target ES2017 for modern browser support
 - JSX transform uses react-jsx (new JSX transform)
+
+### Typography & Fonts
+
+**Font Stack:**
+- **Headings (h1-h6)**: Helvetica Neue (system font)
+- **Body Text**: Echo (custom font, loaded locally)
+
+**Font Files:**
+- Echo fonts are stored in `public/fonts/echo/` as `.woff` and `.woff2` files
+- Font weights: Regular (400), Medium (500), Semibold (600), Bold (700)
+- Includes italic variants for all weights
+
+**Configuration:**
+1. `app/layout.tsx` - Loads Echo font using Next.js `localFont`
+2. `app/globals.css` - Applies fonts via CSS:
+   - `body` uses Echo font family
+   - `h1-h6` use Helvetica Neue
+3. `tokens/typography.json` - Defines `fontFamily.heading` and `fontFamily.body` tokens
+
+**Typography System:**
+- Full responsive scale in `tokens/typography-system.json`
+- 1.33x scale ratio for desktop, adjusted for mobile
+- Heading line height: 1.2x (tight)
+- Body line height: 1.5x (readable)
+- Letter spacing: -2% for headings, 0% for body, +5% for CAPS labels
 
 ## Design Tokens System
 

@@ -12,19 +12,26 @@ export default async function Hero() {
   const buttonUrl = content?.buttonUrl;
 
   return (
-    <section className="relative flex min-h-[90vh] items-center justify-center bg-[#1A70EF] px-4 py-20">
+    <section className="relative flex min-h-[90vh] items-center justify-center bg-brand-primary px-4 py-20">
       <div className="container mx-auto text-center">
-        <h1 className="mb-6 text-5xl font-black uppercase tracking-tight text-white md:text-7xl lg:text-8xl">
+        <h1 className="mb-6 text-5xl md:text-6xl lg:text-7xl font-bold text-text-inverse" style={{ letterSpacing: '-0.02em' }}>
           {title}
         </h1>
-        <p className="mx-auto mb-12 max-w-3xl text-xl font-medium text-white/90 md:text-2xl">
+        <p className="mx-auto mb-12 max-w-3xl text-xl md:text-2xl text-text-inverse/90 leading-relaxed">
           {subtitle}
         </p>
         <div className="flex flex-col gap-6 sm:flex-row sm:justify-center">
-          <Button size="lg" className="bg-[#CE4D0E] px-12 py-7 text-xl font-bold text-white hover:bg-[#A13D0D]" {...(buttonUrl && { asChild: true })}>
+          <Button 
+            size="lg" 
+            className="bg-brand-secondary hover:bg-brand-secondary-hover active:bg-brand-secondary-active focus:bg-brand-secondary-focus px-12 py-7 text-xl font-semibold text-text-inverse transition-colors" 
+            {...(buttonUrl && { asChild: true })}
+          >
             {buttonUrl ? <a href={buttonUrl}>{buttonText}</a> : buttonText}
           </Button>
-          <Button size="lg" className="bg-white px-12 py-7 text-xl font-bold text-[#1A70EF] hover:bg-white/90">
+          <Button 
+            size="lg" 
+            className="bg-surface-elevated hover:bg-neutral-100 active:bg-neutral-200 px-12 py-7 text-xl font-semibold text-brand-primary transition-colors"
+          >
             Learn More
           </Button>
         </div>

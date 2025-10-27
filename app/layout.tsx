@@ -1,16 +1,53 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Echo font for body text
+const echo = localFont({
+  src: [
+    {
+      path: "../public/fonts/echo/Echo-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/echo/Echo-RegularItalic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/echo/Echo-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/echo/Echo-MediumItalic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/echo/Echo-Semibold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/echo/Echo-SemiboldItalic.woff2",
+      weight: "600",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/echo/Echo-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/echo/Echo-BoldItalic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-echo",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${echo.variable} antialiased`}
       >
         <Navigation />
         {children}
