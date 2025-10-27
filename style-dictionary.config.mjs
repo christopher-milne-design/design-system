@@ -9,6 +9,7 @@ const tailwindFormatter = ({ dictionary }) => {
   const lineHeight = {};
   const borderRadius = {};
   const semantic = { colors: {} };
+  const typography = { desktop: {}, mobile: {} };
 
   dictionary.allTokens.forEach(token => {
     const path = token.path;
@@ -38,6 +39,26 @@ const tailwindFormatter = ({ dictionary }) => {
       lineHeight[path[1]] = token.value;
     } else if (path[0] === 'borderRadius') {
       borderRadius[path[1]] = token.value;
+    } else if (path[0] === 'typography') {
+      // Handle typography system: desktop/mobile → category → variant → property
+      const breakpoint = path[1]; // desktop or mobile
+      const category = path[2]; // headings, paragraphs, labels, buttons
+      const variant = path[3]; // h1, p1, button-large, etc.
+      const property = path[4]; // fontSize, lineHeight, letterSpacing, fontWeight
+      
+      if (!typography[breakpoint]) typography[breakpoint] = {};
+      if (!typography[breakpoint][category]) typography[breakpoint][category] = {};
+      if (!typography[breakpoint][category][variant]) typography[breakpoint][category][variant] = {};
+      
+      // Resolve fontWeight references
+      let value = token.value;
+      if (property === 'fontWeight' && typeof value === 'string' && value.includes('{')) {
+        value = value.replace(/\{fontWeight\.([^}]+)\}/g, (match, weight) => {
+          return fontWeight[weight] || match;
+        });
+      }
+      
+      typography[breakpoint][category][variant][property] = value;
     }
   });
 
@@ -48,7 +69,8 @@ const tailwindFormatter = ({ dictionary }) => {
     fontWeight,
     lineHeight,
     borderRadius,
-    semantic
+    semantic,
+    typography
   };
 
   // Remove empty objects

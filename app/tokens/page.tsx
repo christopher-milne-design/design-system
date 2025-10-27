@@ -60,38 +60,133 @@ export default function TokensPage() {
           {/* Brand Colors */}
           <div className="mb-10">
             <h3 className="text-xl font-semibold text-neutral-400 mb-4">Brand Colors</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <p className="text-sm text-neutral-300 mb-6">Interactive buttons demonstrating all semantic color states</p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Primary Brand */}
               <div className="bg-neutral-100 p-6 rounded-lg">
-                <div className="flex items-center justify-between mb-4">
-                  <code className="text-sm bg-neutral-200 px-3 py-1 rounded text-neutral-400">bg-brand-primary</code>
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="text-lg font-semibold text-neutral-400">Primary Brand</h4>
                   <span className="text-xs text-neutral-300 font-mono">→ bleu-500</span>
                 </div>
-                <div className="space-y-2">
-                  <div className="bg-brand-primary h-16 rounded-lg flex items-center justify-center text-neutral-50 font-semibold">
-                    Primary Brand
+                
+                <div className="space-y-4">
+                  {/* Default State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Default</label>
+                    <button className="w-full bg-brand-primary text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                      Primary Button
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">bg-brand-primary</code>
                   </div>
-                  <div className="bg-brand-primary-hover h-12 rounded-lg flex items-center justify-center text-neutral-50 text-sm">
-                    Hover State
+                  
+                  {/* Hover State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Hover</label>
+                    <button className="w-full bg-brand-primary-hover text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                      Hover State
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">bg-brand-primary-hover</code>
                   </div>
-                  <div className="bg-brand-primary-active h-12 rounded-lg flex items-center justify-center text-neutral-50 text-sm">
-                    Active State
+                  
+                  {/* Active State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Active/Pressed</label>
+                    <button className="w-full bg-brand-primary-active text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                      Active State
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">bg-brand-primary-active</code>
+                  </div>
+                  
+                  {/* Focus State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Focus</label>
+                    <button className="w-full bg-brand-primary text-neutral-50 px-6 py-3 rounded-lg font-semibold ring-4 ring-brand-primary-focus ring-opacity-30">
+                      Focused State
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">ring-brand-primary-focus</code>
+                  </div>
+                  
+                  {/* Disabled State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Disabled</label>
+                    <button disabled className="w-full bg-brand-disabled text-brand-disabled-text px-6 py-3 rounded-lg font-semibold cursor-not-allowed opacity-60">
+                      Disabled Button
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">bg-brand-disabled</code>
+                  </div>
+                  
+                  {/* Interactive Demo */}
+                  <div className="pt-2 border-t border-neutral-200">
+                    <label className="text-xs text-neutral-300 block mb-2">Interactive Demo</label>
+                    <button className="w-full bg-brand-primary hover:bg-brand-primary-hover active:bg-brand-primary-active focus:ring-4 focus:ring-brand-primary-focus focus:ring-opacity-30 text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                      Try Me!
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">hover:bg-brand-primary-hover active:bg-brand-primary-active</code>
                   </div>
                 </div>
               </div>
+              
+              {/* Secondary Brand */}
               <div className="bg-neutral-100 p-6 rounded-lg">
-                <div className="flex items-center justify-between mb-4">
-                  <code className="text-sm bg-neutral-200 px-3 py-1 rounded text-neutral-400">bg-brand-secondary</code>
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="text-lg font-semibold text-neutral-400">Secondary Brand</h4>
                   <span className="text-xs text-neutral-300 font-mono">→ orange-600</span>
                 </div>
-                <div className="space-y-2">
-                  <div className="bg-brand-secondary h-16 rounded-lg flex items-center justify-center text-neutral-50 font-semibold">
-                    Secondary Brand
+                
+                <div className="space-y-4">
+                  {/* Default State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Default</label>
+                    <button className="w-full bg-brand-secondary text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                      Secondary Button
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">bg-brand-secondary</code>
                   </div>
-                  <div className="bg-brand-secondary-hover h-12 rounded-lg flex items-center justify-center text-neutral-50 text-sm">
-                    Hover State
+                  
+                  {/* Hover State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Hover</label>
+                    <button className="w-full bg-brand-secondary-hover text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                      Hover State
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">bg-brand-secondary-hover</code>
                   </div>
-                  <div className="bg-brand-secondary-active h-12 rounded-lg flex items-center justify-center text-neutral-50 text-sm">
-                    Active State
+                  
+                  {/* Active State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Active/Pressed</label>
+                    <button className="w-full bg-brand-secondary-active text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                      Active State
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">bg-brand-secondary-active</code>
+                  </div>
+                  
+                  {/* Focus State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Focus</label>
+                    <button className="w-full bg-brand-secondary text-neutral-50 px-6 py-3 rounded-lg font-semibold ring-4 ring-brand-secondary-focus ring-opacity-30">
+                      Focused State
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">ring-brand-secondary-focus</code>
+                  </div>
+                  
+                  {/* Disabled State */}
+                  <div>
+                    <label className="text-xs text-neutral-300 block mb-2">Disabled</label>
+                    <button disabled className="w-full bg-brand-disabled text-brand-disabled-text px-6 py-3 rounded-lg font-semibold cursor-not-allowed opacity-60">
+                      Disabled Button
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">bg-brand-disabled</code>
+                  </div>
+                  
+                  {/* Interactive Demo */}
+                  <div className="pt-2 border-t border-neutral-200">
+                    <label className="text-xs text-neutral-300 block mb-2">Interactive Demo</label>
+                    <button className="w-full bg-brand-secondary hover:bg-brand-secondary-hover active:bg-brand-secondary-active focus:ring-4 focus:ring-brand-secondary-focus focus:ring-opacity-30 text-neutral-50 px-6 py-3 rounded-lg font-semibold transition-all">
+                      Try Me!
+                    </button>
+                    <code className="text-xs text-neutral-300 block mt-1">hover:bg-brand-secondary-hover active:bg-brand-secondary-active</code>
                   </div>
                 </div>
               </div>
@@ -309,93 +404,221 @@ export default function TokensPage() {
           </div>
         </section>
 
-        {/* Typography */}
+        {/* Typography System */}
         <section id="typography" className="mb-20">
-          <h2 className="text-3xl font-bold text-neutral-400 mb-6">Typography</h2>
+          <h2 className="text-3xl font-bold text-neutral-400 mb-6">Typography System</h2>
+          
+          <div className="bg-bleu-50 border-l-4 border-bleu-500 p-6 rounded-lg mb-8">
+            <h3 className="text-lg font-semibold text-bleu-900 mb-2">1.33x Type Scale</h3>
+            <p className="text-bleu-800 mb-3">
+              This typography system uses a <strong>1.33x scale ratio</strong> optimized for marketing sites, with 16px as the base unit. 
+              All calculations follow specific rules:
+            </p>
+            <ul className="text-bleu-700 text-sm space-y-1 list-disc list-inside">
+              <li><strong>Headings</strong>: Line height = font size × 1.2 (rounded down), letter-spacing -2%</li>
+              <li><strong>Paragraphs</strong>: Line height = font size × 1.5 (rounded to 4px), no letter-spacing</li>
+              <li><strong>Caps Labels</strong>: Line height 100%, letter-spacing +5%</li>
+              <li><strong>Buttons</strong>: Line height 100%, prevents multi-line wrapping</li>
+            </ul>
+          </div>
 
-          <div className="bg-neutral-100 p-6 rounded-lg mb-8">
-            <h3 className="text-sm font-semibold text-neutral-400 mb-3">Usage</h3>
+          {/* Desktop Headings */}
+          {tokens.typography?.desktop?.headings && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Headings (Desktop)</h3>
+              <p className="text-sm text-neutral-300 mb-6">All headings use -2% letter-spacing and 1.2x line height</p>
+              
+              <div className="space-y-6">
+                {Object.entries(tokens.typography.desktop.headings).map(([name, styles]: [string, any]) => (
+                  <div key={name} className="bg-neutral-100 p-6 rounded-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <code className="text-sm bg-neutral-200 px-3 py-1 rounded text-neutral-400">{name.toUpperCase()}</code>
+                        <span className="text-xs text-neutral-300 ml-3">{styles.description}</span>
+                      </div>
+                      <div className="text-right text-xs text-neutral-300 font-mono">
+                        <div>{styles.fontSize}</div>
+                        <div className="text-neutral-400">LH: {styles.lineHeight}</div>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        fontSize: styles.fontSize,
+                        lineHeight: styles.lineHeight,
+                        letterSpacing: styles.letterSpacing,
+                        fontWeight: styles.fontWeight
+                      }}
+                      className="text-neutral-400"
+                    >
+                      The quick brown fox jumps over the lazy dog
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Desktop Paragraphs */}
+          {tokens.typography?.desktop?.paragraphs && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Paragraphs (Desktop)</h3>
+              <p className="text-sm text-neutral-300 mb-6">Paragraphs use 1.5x line height with no letter-spacing adjustments</p>
+              
+              <div className="space-y-6">
+                {Object.entries(tokens.typography.desktop.paragraphs).map(([name, styles]: [string, any]) => (
+                  <div key={name} className="bg-neutral-100 p-6 rounded-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <code className="text-sm bg-neutral-200 px-3 py-1 rounded text-neutral-400">{name.toUpperCase()}</code>
+                        <span className="text-xs text-neutral-300 ml-3">{styles.description}</span>
+                      </div>
+                      <div className="text-right text-xs text-neutral-300 font-mono">
+                        <div>{styles.fontSize}</div>
+                        <div className="text-neutral-400">LH: {styles.lineHeight}</div>
+                      </div>
+                    </div>
+                    <p
+                      style={{
+                        fontSize: styles.fontSize,
+                        lineHeight: styles.lineHeight,
+                        letterSpacing: styles.letterSpacing,
+                        fontWeight: styles.fontWeight
+                      }}
+                      className="text-neutral-400"
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Labels */}
+          {tokens.typography?.desktop?.labels && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Labels</h3>
+              <p className="text-sm text-neutral-300 mb-6">Labels use 100% line height. Caps labels have +5% letter-spacing</p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                {Object.entries(tokens.typography.desktop.labels).map(([name, styles]: [string, any]) => (
+                  <div key={name} className="bg-neutral-100 p-6 rounded-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <code className="text-sm bg-neutral-200 px-3 py-1 rounded text-neutral-400">{name}</code>
+                      <span className="text-xs text-neutral-300 font-mono">{styles.fontSize}</span>
+                    </div>
+                    <div
+                      style={{
+                        fontSize: styles.fontSize,
+                        lineHeight: styles.lineHeight,
+                        letterSpacing: styles.letterSpacing,
+                        fontWeight: styles.fontWeight,
+                        textTransform: styles.textTransform || 'none'
+                      }}
+                      className="text-neutral-400"
+                    >
+                      {name.includes('caps') ? 'All Caps Label' : 'Label Text'}
+                    </div>
+                    <p className="text-xs text-neutral-300 mt-3">{styles.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Buttons */}
+          {tokens.typography?.desktop?.buttons && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Buttons</h3>
+              <p className="text-sm text-neutral-300 mb-6">Buttons use 100% line height to prevent wrapping and enable precise alignment</p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                {Object.entries(tokens.typography.desktop.buttons).map(([name, styles]: [string, any]) => (
+                  <div key={name} className="bg-neutral-100 p-6 rounded-lg">
+                    <code className="text-xs bg-neutral-200 px-2 py-1 rounded text-neutral-400 block mb-4">{name}</code>
+                    <button
+                      style={{
+                        fontSize: styles.fontSize,
+                        lineHeight: styles.lineHeight,
+                        letterSpacing: styles.letterSpacing,
+                        fontWeight: styles.fontWeight
+                      }}
+                      className="w-full bg-brand-primary text-neutral-50 px-6 py-3 rounded-lg"
+                    >
+                      Button Text
+                    </button>
+                    <p className="text-xs text-neutral-300 mt-3 text-center">{styles.fontSize}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Mobile Typography */}
+          {tokens.typography?.mobile && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Mobile Scale</h3>
+              <p className="text-sm text-neutral-300 mb-6">Reduced sizes for mobile viewports (< 768px)</p>
+              
+              <div className="bg-neutral-100 p-6 rounded-lg">
+                <h4 className="font-semibold text-neutral-400 mb-4">Mobile Headings</h4>
+                <div className="space-y-3">
+                  {Object.entries(tokens.typography.mobile.headings).map(([name, styles]: [string, any]) => (
+                    <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
+                      <code className="text-xs text-neutral-400">{name.toUpperCase()}</code>
+                      <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} (from {tokens.typography.desktop.headings[name as keyof typeof tokens.typography.desktop.headings]?.fontSize})</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Usage Examples */}
+          <div className="bg-neutral-100 p-6 rounded-lg">
+            <h3 className="text-sm font-semibold text-neutral-400 mb-3">Usage Examples</h3>
             <CodeBlock>
-{`// Font sizes
-<h1 className="text-4xl">Large heading</h1>
-<p className="text-base">Body text</p>
+{`// Headings with proper line height and letter-spacing
+<h1 style={{
+  fontSize: '60px',
+  lineHeight: '72px',  // 60px × 1.2
+  letterSpacing: '-0.02em',  // -2%
+  fontWeight: '700'
+}}>
+  Main Heading
+</h1>
 
-// Font weights
-<span className="font-bold">Bold text</span>
-<span className="font-normal">Normal text</span>
+// Paragraph with 1.5x line height
+<p style={{
+  fontSize: '16px',
+  lineHeight: '24px',  // 16px × 1.5
+  letterSpacing: '0',  // Never adjust
+  fontWeight: '400'
+}}>
+  Body text optimized for readability
+</p>
 
-// Line heights
-<p className="leading-tight">Tight line height</p>
-<p className="leading-relaxed">Relaxed line height</p>
+// Caps label with increased spacing
+<span style={{
+  fontSize: '14px',
+  lineHeight: '1',  // 100%
+  letterSpacing: '0.05em',  // +5%
+  fontWeight: '600',
+  textTransform: 'uppercase'
+}}>
+  Label
+</span>
 
-// Combined
-<h2 className="text-2xl font-semibold leading-tight">
-  Heading with multiple properties
-</h2>`}
+// Button with 100% line height
+<button style={{
+  fontSize: '14px',
+  lineHeight: '1',  // Prevents wrapping
+  letterSpacing: '0',
+  fontWeight: '600'
+}}>
+  Button Text
+</button>`}
             </CodeBlock>
-          </div>
-
-          {/* Font Sizes */}
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Font Sizes</h3>
-            <div className="space-y-4">
-              {Object.entries(tokens.fontSize).map(([name, value]) => (
-                <div key={name} className="bg-neutral-100 p-4 rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
-                    <code className="text-xs bg-neutral-200 px-2 py-1 rounded text-neutral-400">text-{name}</code>
-                    <span className="text-neutral-300 text-xs font-mono">{value}</span>
-                  </div>
-                  <span
-                    className="text-neutral-400 block"
-                    style={{ fontSize: value as string }}
-                  >
-                    The quick brown fox jumps over the lazy dog
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Font Weights */}
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Font Weights</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {Object.entries(tokens.fontWeight).map(([name, value]) => (
-                <div key={name} className="bg-neutral-100 p-4 rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
-                    <code className="text-xs bg-neutral-200 px-2 py-1 rounded text-neutral-400">font-{name}</code>
-                    <span className="text-neutral-300 text-xs font-mono">{value}</span>
-                  </div>
-                  <span
-                    className="text-neutral-400 text-lg block"
-                    style={{ fontWeight: value as string }}
-                  >
-                    The quick brown fox jumps over the lazy dog
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Line Heights */}
-          <div>
-            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Line Heights</h3>
-            <div className="space-y-4">
-              {Object.entries(tokens.lineHeight).map(([name, value]) => (
-                <div key={name} className="bg-neutral-100 p-4 rounded-lg">
-                  <div className="flex items-center justify-between mb-3">
-                    <code className="text-xs bg-neutral-200 px-2 py-1 rounded text-neutral-400">leading-{name}</code>
-                    <span className="text-neutral-300 text-xs">{value}</span>
-                  </div>
-                  <p
-                    className="text-neutral-400"
-                    style={{ lineHeight: value as string }}
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
