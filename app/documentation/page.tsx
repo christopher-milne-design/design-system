@@ -9,14 +9,26 @@ export default function Documentation() {
           Comprehensive guides, best practices, and technical documentation for the Canada Council for the Arts Design System.
         </p>
 
-        <div className="bg-neutral-100 p-12 rounded-lg border-2 border-neutral-200 text-center">
-          <h2 className="text-3xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
-            Coming Soon
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
-            This section will include detailed documentation on getting started, design principles, 
-            accessibility guidelines, contribution guidelines, and API references for all components and tokens.
-          </p>
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <a href="/changelog" className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
+            <h2 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
+              Changelog
+            </h2>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              View recent updates, features, and improvements synced from Linear.
+            </p>
+            <span className="text-brand-primary font-semibold">View changelog →</span>
+          </a>
+
+          <div className="bg-neutral-100 p-8 rounded-lg border-2 border-neutral-200">
+            <h2 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
+              Coming Soon
+            </h2>
+            <p className="text-text-secondary leading-relaxed">
+              Full documentation including getting started guides, design principles, 
+              accessibility guidelines, and API references.
+            </p>
+          </div>
         </div>
       </div>
     </main>
