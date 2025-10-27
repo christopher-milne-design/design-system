@@ -3,7 +3,7 @@
 ## Overview
 This document tracks the comprehensive design system implementation across the entire Next.js landing page project.
 
-## Typography Implementation ✅
+## Typography Implementation 
 
 ### Font Families
 - **Headings (h1-h6)**: Helvetica Neue (system font)
@@ -27,7 +27,7 @@ This document tracks the comprehensive design system implementation across the e
 - **Line Heights**: 1.2x for headings, 1.5x for body
 - **Letter Spacing**: -2% for headings, 0% for body, +5% for CAPS
 
-## Semantic Tokens Implementation ✅
+## Semantic Tokens Implementation 
 
 ### Token Categories
 1. **Brand Colors**
@@ -51,48 +51,48 @@ This document tracks the comprehensive design system implementation across the e
 - **Build process** via Style Dictionary transforms tokens to CSS variables
 - **Tailwind integration** via custom plugin exposes tokens as utility classes
 
-## Component Updates ✅
+## Component Updates 
 
 All components now consistently use design tokens and typography system:
 
 ### Updated Components
 
 #### `app/page.tsx` (Home/Landing Page)
-- ✅ Semantic color tokens (`bg-brand-primary`, `text-text-primary`, etc.)
-- ✅ Typography scale with responsive sizes
-- ✅ Proper font weights (bold for headings, semibold for emphasis)
-- ✅ Letter spacing (-2% for headings)
-- ✅ Line heights (leading-relaxed for body text)
+-  Semantic colour tokens (`bg-brand-primary`, `text-text-primary`, etc.)
+-  Typography scale with responsive sizes
+-  Proper font weights (bold for headings, semibold for emphasis)
+-  Letter spacing (-2% for headings)
+-  Line heights (leading-relaxed for body text)
 
 #### `components/Hero.tsx`
-- ✅ `bg-brand-primary` for hero background
-- ✅ `text-text-inverse` for text on colored backgrounds
-- ✅ `bg-brand-secondary` with hover/active/focus states for CTA button
-- ✅ Responsive typography (text-5xl md:text-6xl lg:text-7xl)
-- ✅ Proper letter spacing on headings
+-  `bg-brand-primary` for hero background
+-  `text-text-inverse` for text on colored backgrounds
+-  `bg-brand-secondary` with hover/active/focus states for CTA button
+-  Responsive typography (text-5xl md:text-6xl lg:text-7xl)
+-  Proper letter spacing on headings
 
 #### `components/Features.tsx`
-- ✅ Semantic colors (`text-text-primary`, `text-text-secondary`)
-- ✅ Primitive color tokens for feature cards (bg-rose-500, bg-jaune-400, etc.)
-- ✅ `text-text-inverse` for text on colored backgrounds
-- ✅ Typography system applied to headings and paragraphs
-- ✅ Leading-relaxed for readable body text
+-  Semantic colors (`text-text-primary`, `text-text-secondary`)
+-  Primitive colour tokens for feature cards (bg-rose-500, bg-jaune-400, etc.)
+-  `text-text-inverse` for text on colored backgrounds
+-  Typography system applied to headings and paragraphs
+-  Leading-relaxed for readable body text
 
 #### `components/CTA.tsx`
-- ✅ Gradient using primitive color tokens (from-rose-500 via-jaune-400 to-bleu-clair-500)
-- ✅ Semantic tokens for buttons
-- ✅ `bg-surface-elevated` for secondary button
-- ✅ Hover/active states using semantic tokens
-- ✅ Typography scale and letter spacing
+-  Gradient using primitive colour tokens (from-rose-500 via-jaune-400 to-bleu-clair-500)
+-  Semantic tokens for buttons
+-  `bg-surface-elevated` for secondary button
+-  Hover/active states using semantic tokens
+-  Typography scale and letter spacing
 
 #### `components/Navigation.tsx`
-- ✅ Already using semantic tokens (bg-neutral-50, text-brand-primary)
-- ✅ Proper letter spacing on brand text
-- ✅ Semantic color tokens for active/hover states
+-  Already using semantic tokens (bg-neutral-50, text-brand-primary)
+-  Proper letter spacing on brand text
+-  Semantic colour tokens for active/hover states
 
 ## Design Token Usage Patterns
 
-### Color Usage
+### Colour Usage
 ```tsx
 // Backgrounds
 className="bg-brand-primary"           // Primary brand background

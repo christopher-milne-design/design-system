@@ -17,7 +17,7 @@ const TOKENS_DIR = path.join(__dirname, '..', 'tokens');
 const REPO_PATH = '/tmp/cca-design-tokens/cca-design-tokens';
 const OUTPUT_PATH = path.join(REPO_PATH, 'tokens.json');
 
-console.log('📦 Converting tokens to Token Studio format...\n');
+console.log(' Converting tokens to Token Studio format...\n');
 
 // Read all token files
 const colors = fs.existsSync(path.join(TOKENS_DIR, 'colors.json'))
@@ -190,10 +190,10 @@ const tokenStudioFormat = {
 
 // Ensure repo directory exists
 if (!fs.existsSync(REPO_PATH)) {
-  console.error('❌ cca-design-tokens repo not found!');
+  console.error(' cca-design-tokens repo not found!');
   console.error(`   Expected at: ${REPO_PATH}`);
   console.error('');
-  console.error('💡 First run:');
+  console.error(' First run:');
   console.error('   cd /tmp && git clone https://github.com/christopher-milne-design/cca-design-tokens.git');
   process.exit(1);
 }
@@ -201,8 +201,8 @@ if (!fs.existsSync(REPO_PATH)) {
 // Write tokens.json
 fs.writeFileSync(OUTPUT_PATH, JSON.stringify(tokenStudioFormat, null, 2));
 
-console.log('✅ Tokens converted to Token Studio format\n');
-console.log('📊 Summary:');
+console.log(' Tokens converted to Token Studio format\n');
+console.log(' Summary:');
 console.log(`   Colors: ${Object.keys(convertedTokens.color || {}).length} palettes`);
 console.log(`   Spacing: ${Object.keys(convertedTokens.spacing || {}).length} tokens`);
 console.log(`   Font Families: ${Object.keys(convertedTokens.fontFamily || {}).length} tokens`);
@@ -212,9 +212,9 @@ console.log(`   Line Heights: ${Object.keys(convertedTokens.lineHeight || {}).le
 console.log(`   Border Radius: ${Object.keys(convertedTokens.borderRadius || {}).length} tokens`);
 console.log(`   Semantic: ${Object.keys(convertedTokens.semantic || {}).length} categories`);
 console.log('');
-console.log(`📁 File saved to: ${OUTPUT_PATH}`);
+console.log(` File saved to: ${OUTPUT_PATH}`);
 console.log('');
-console.log('📤 Next steps:');
+console.log(' Next steps:');
 console.log('   1. cd /tmp/cca-design-tokens/cca-design-tokens');
 console.log('   2. git add tokens.json');
 console.log('   3. git commit -m "chore: sync tokens from nextjs-landing-page"');

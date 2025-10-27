@@ -60,8 +60,8 @@ lib/
 └── utils.ts             # cn() utility for class merging
 
 tokens/
-├── colors.json          # Primitive color tokens
-├── semantic.json        # Semantic color tokens
+├── colors.json          # Primitive colour tokens
+├── semantic.json        # Semantic colour tokens
 ├── spacing.json         # Spacing scale tokens
 ├── typography.json      # Typography tokens (includes font families)
 ├── typography-system.json # Complete typography scale system
@@ -75,7 +75,7 @@ The project uses `@/*` alias for imports (e.g., `@/components/Hero`), configured
 
 #### ShadCN UI Integration
 - **Style**: New York variant
-- **Base color**: Neutral
+- **Base colour**: Neutral
 - **CSS Variables**: Enabled for theming
 - **Icon Library**: Lucide React
 - Components live in `components/ui/` and use the `cn()` utility for conditional styling
@@ -181,11 +181,11 @@ Tokens are stored in Token Studio format (Figma Tokens plugin) and transformed v
 **Token Studio Format** (`tokens/*.json`):
 ```json
 {
-  "color": {
+  "colour": {
     "bleu": {
       "500": {
         "value": "#1a70ef",
-        "type": "color"
+        "type": "colour"
       }
     }
   }
@@ -198,9 +198,9 @@ Tokens are stored in Token Studio format (Figma Tokens plugin) and transformed v
   "semantic": {
     "brand": {
       "primary": {
-        "value": "{color.bleu.500}",
-        "type": "color",
-        "description": "Primary brand color"
+        "value": "{colour.bleu.500}",
+        "type": "colour",
+        "description": "Primary brand colour"
       }
     }
   }
@@ -216,14 +216,14 @@ Tokens are stored in Token Studio format (Figma Tokens plugin) and transformed v
 ### Using Tokens in Components
 
 **Primitive Tokens:**
-- `bg-bleu-500` - Direct primitive color
-- `text-neutral-400` - Direct primitive text color
+- `bg-bleu-500` - Direct primitive colour
+- `text-neutral-400` - Direct primitive text colour
 - `p-md` - Spacing token
 
 **Semantic Tokens:**
-- `bg-brand-primary` - Primary brand color
+- `bg-brand-primary` - Primary brand colour
 - `hover:bg-brand-primary-hover` - Hover state
-- `text-text-primary` - Primary text color
+- `text-text-primary` - Primary text colour
 - `text-text-muted` - Muted text
 - `bg-surface-card` - Card backgrounds
 - `bg-feedback-success` - Success state
@@ -249,8 +249,8 @@ npm run sync:auto  # Clones/pulls token repo and rebuilds
 5. Dev server picks up changes via HMR
 
 ### Token File Structure
-- `tokens/colors.json` - All primitive color palettes
-- `tokens/semantic.json` - Semantic color mappings
+- `tokens/colors.json` - All primitive colour palettes
+- `tokens/semantic.json` - Semantic colour mappings
 - `tokens/spacing.json` - Spacing scale
 - `tokens/typography.json` - Font sizes, weights, line heights
 - `tokens/radius.json` - Border radius values

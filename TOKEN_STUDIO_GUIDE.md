@@ -39,7 +39,7 @@ git push origin main
 
 Your tokens are now visible in Figma! Designers can:
 - View primitive tokens (colors, spacing, etc.)
-- View semantic tokens with their references (e.g., `{color.bleu.500}`)
+- View semantic tokens with their references (e.g., `{colour.bleu.500}`)
 - Edit token values or mappings
 - Push changes back to GitHub
 
@@ -75,11 +75,11 @@ Token Studio expects this JSON format:
 **Primitive Tokens** (`tokens/colors.json`):
 ```json
 {
-  "color": {
+  "colour": {
     "bleu": {
       "500": {
         "value": "#1a70ef",
-        "type": "color"
+        "type": "colour"
       }
     }
   }
@@ -92,9 +92,9 @@ Token Studio expects this JSON format:
   "semantic": {
     "brand": {
       "primary": {
-        "value": "{color.bleu.500}",
-        "type": "color",
-        "description": "Primary brand color"
+        "value": "{colour.bleu.500}",
+        "type": "colour",
+        "description": "Primary brand colour"
       }
     }
   }
@@ -103,43 +103,43 @@ Token Studio expects this JSON format:
 
 ### Token References
 Token Studio uses `{path.to.token}` syntax for references:
-- `{color.bleu.500}` → References the primitive bleu-500 color
+- `{colour.bleu.500}` → References the primitive bleu-500 colour
 - `{semantic.brand.primary}` → References another semantic token
 
 When you run `npm run tokens`, Style Dictionary transforms these into:
-- `var(--color-bleu-500)` → CSS variable references
+- `var(--colour-bleu-500)` → CSS variable references
 - `#1a70ef` → Resolved hex values (for primitives)
 
 ## Best Practices
 
 ### 1. Always Use Semantic Tokens in Components
-❌ Don't:
+ Don't:
 ```tsx
 <button className="bg-bleu-500 hover:bg-bleu-700">
 ```
 
-✅ Do:
+ Do:
 ```tsx
 <button className="bg-brand-primary hover:bg-brand-primary-hover">
 ```
 
-This way, when designers change the brand color from blue to green, your components automatically update.
+This way, when designers change the brand colour from blue to green, your components automatically update.
 
 ### 2. Keep Primitive Tokens Generic
-- ✅ `bleu-500`, `orange-600` (color names)
-- ❌ `primary-blue`, `accent-orange` (purpose in primitive layer)
+-  `bleu-500`, `orange-600` (colour names)
+-  `primary-blue`, `accent-orange` (purpose in primitive layer)
 
 ### 3. Put Purpose in Semantic Tokens
-- ✅ `brand-primary`, `feedback-success`, `text-muted`
-- ❌ `blue-button`, `green-alert` (appearance in semantic layer)
+-  `brand-primary`, `feedback-success`, `text-muted`
+-  `blue-button`, `green-alert` (appearance in semantic layer)
 
 ### 4. Document Semantic Tokens
 Always add descriptions in Token Studio:
 ```json
 {
-  "value": "{color.bleu.500}",
-  "type": "color",
-  "description": "Primary brand color for CTAs and key interactive elements"
+  "value": "{colour.bleu.500}",
+  "type": "colour",
+  "description": "Primary brand colour for CTAs and key interactive elements"
 }
 ```
 
@@ -164,19 +164,19 @@ Always add descriptions in Token Studio:
 - Restart the dev server: `npm run dev`
 - Clear Next.js cache: `rm -rf .next && npm run dev`
 
-## Example: Changing Brand Color
+## Example: Changing Brand Colour
 
 ### In Figma (Token Studio)
 1. Find `semantic.brand.primary` token
-2. Change value from `{color.bleu.500}` to `{color.vert.500}`
+2. Change value from `{colour.bleu.500}` to `{colour.vert.500}`
 3. Push to GitHub
-4. Commit message: "Change brand color from blue to green"
+4. Commit message: "Change brand colour from blue to green"
 
 ### In Your Code
 ```bash
 npm run sync:auto
 ```
 
-All components using `bg-brand-primary` now show green instead of blue! 🎉
+All components using `bg-brand-primary` now show green instead of blue! 
 
 No code changes needed. The semantic token layer makes this possible.

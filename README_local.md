@@ -13,13 +13,13 @@ A modern, responsive landing page built with Next.js, ShadCN UI, Tailwind CSS, a
 
 ## Features
 
-- ⚡ Lightning-fast performance with Next.js App Router
-- 🎨 Beautiful, accessible UI components from ShadCN
-- 📱 Fully responsive design
-- 🔄 Dynamic content management via Contentful CMS
-- 🚀 Optimized for Vercel deployment
-- 💪 Type-safe with TypeScript
-- 🎯 SEO-ready
+-  Lightning-fast performance with Next.js App Router
+-  Beautiful, accessible UI components from ShadCN
+-  Fully responsive design
+-  Dynamic content management via Contentful CMS
+-  Optimized for Vercel deployment
+-  Type-safe with TypeScript
+-  SEO-ready
 
 ## Project Structure
 

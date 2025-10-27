@@ -4,37 +4,37 @@ const features = [
   {
     title: "Fast Performance",
     description: "Lightning-fast load times and optimized performance for the best user experience.",
-    icon: "⚡",
+    icon: "",
     colorClass: "bg-rose-500",
   },
   {
     title: "Scalable Architecture",
     description: "Built to grow with your business, from startup to enterprise scale.",
-    icon: "📈",
+    icon: "",
     colorClass: "bg-jaune-400",
   },
   {
     title: "Easy Integration",
     description: "Seamlessly integrate with your existing tools and workflows.",
-    icon: "🔗",
+    icon: "",
     colorClass: "bg-bleu-clair-500",
   },
   {
     title: "Secure by Default",
     description: "Enterprise-grade security and compliance built into every feature.",
-    icon: "🔒",
+    icon: "",
     colorClass: "bg-vert-400",
   },
   {
     title: "24/7 Support",
     description: "Our dedicated team is here to help you succeed around the clock.",
-    icon: "💬",
+    icon: "",
     colorClass: "bg-orange-500",
   },
   {
     title: "Custom Solutions",
     description: "Tailored solutions that fit your unique business requirements.",
-    icon: "🎯",
+    icon: "",
     colorClass: "bg-celadon-500",
   },
 ];

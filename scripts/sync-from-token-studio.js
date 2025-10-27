@@ -10,11 +10,11 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const TOKENS_DIR = path.join(__dirname, '..', 'tokens');
 
 if (!GITHUB_TOKEN) {
-  console.error('❌ Missing required environment variable:');
+  console.error(' Missing required environment variable:');
   console.error('   - GITHUB_TOKEN: Your GitHub personal access token');
   console.error('   - TOKEN_STUDIO_REPO: Your token studio repository (default: cca-design-tokens)');
   console.error('');
-  console.error('💡 To set up your environment, run: npm run setup:env');
+  console.error(' To set up your environment, run: npm run setup:env');
   process.exit(1);
 }
 
@@ -90,7 +90,7 @@ function convertTokenStudioFormat(tokens) {
         
         // Determine category based on type and path
         if (tokenType === 'color') {
-          // Handle color tokens
+          // Handle colour tokens
           // Path examples: ['Primary', 'Bleu', '500'] or ['Neutral', '100']
           let colorName, shade;
           
@@ -167,14 +167,14 @@ function saveTokens(tokens) {
   if (Object.keys(tokens.colors).length > 0) {
     const colorsFile = path.join(TOKENS_DIR, 'colors.json');
     fs.writeFileSync(colorsFile, JSON.stringify({ color: tokens.colors }, null, 2));
-    console.log('✅ Updated colors.json');
+    console.log(' Updated colors.json');
   }
 
   // Save spacing
   if (Object.keys(tokens.spacing).length > 0) {
     const spacingFile = path.join(TOKENS_DIR, 'spacing.json');
     fs.writeFileSync(spacingFile, JSON.stringify({ spacing: tokens.spacing }, null, 2));
-    console.log('✅ Updated spacing.json');
+    console.log(' Updated spacing.json');
   }
 
   // Save typography
@@ -192,22 +192,22 @@ function saveTokens(tokens) {
   
   if (Object.keys(typographyData).length > 0) {
     fs.writeFileSync(typographyFile, JSON.stringify(typographyData, null, 2));
-    console.log('✅ Updated typography.json');
+    console.log(' Updated typography.json');
   }
 
   // Save border radius
   if (Object.keys(tokens.borderRadius).length > 0) {
     const radiusFile = path.join(TOKENS_DIR, 'radius.json');
     fs.writeFileSync(radiusFile, JSON.stringify({ borderRadius: tokens.borderRadius }, null, 2));
-    console.log('✅ Updated radius.json');
+    console.log(' Updated radius.json');
   }
 }
 
 // Main sync function
 async function syncTokens() {
   try {
-    console.log(`🔄 Fetching tokens from ${TOKEN_STUDIO_REPO} repository...`);
-    console.log(`🔗 Repository: https://github.com/${TOKEN_STUDIO_REPO}`);
+    console.log(` Fetching tokens from ${TOKEN_STUDIO_REPO} repository...`);
+    console.log(` Repository: https://github.com/${TOKEN_STUDIO_REPO}`);
     
     // Fetch tokens.json from the repository
     const tokens = await fetchFromGitHub(`/repos/${TOKEN_STUDIO_REPO}/contents/tokens.json`);
@@ -216,7 +216,7 @@ async function syncTokens() {
       throw new Error('No valid tokens found in the repository');
     }
 
-    console.log(`📊 Found ${Object.keys(tokens).length} tokens`);
+    console.log(` Found ${Object.keys(tokens).length} tokens`);
 
     // Convert Token Studio format to individual files
     const convertedTokens = convertTokenStudioFormat(tokens);
@@ -224,12 +224,12 @@ async function syncTokens() {
     // Save tokens to individual files
     saveTokens(convertedTokens);
     
-    console.log('🎉 Design tokens synced successfully from Token Studio!');
+    console.log(' Design tokens synced successfully from Token Studio!');
     
   } catch (error) {
-    console.error('❌ Error syncing tokens:', error.message);
+    console.error(' Error syncing tokens:', error.message);
     console.error('');
-    console.error('🔍 Troubleshooting:');
+    console.error(' Troubleshooting:');
     console.error('1. Check that your GitHub token has access to the repository');
     console.error('2. Verify the repository name is correct');
     console.error('3. Ensure the tokens.json file exists in the repository root');

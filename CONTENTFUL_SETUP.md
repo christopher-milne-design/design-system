@@ -64,7 +64,7 @@
 | Primary Button URL | `primaryButtonUrl` | Short text | Optional |
 | Secondary Button Text | `secondaryButtonText` | Short text | Required |
 | Secondary Button URL | `secondaryButtonUrl` | Short text | Optional |
-| Background Color | `backgroundColor` | Short text | Optional (e.g., "primary", "secondary") |
+| Background Colour | `backgroundColor` | Short text | Optional (e.g., "primary", "secondary") |
 
 ---
 
@@ -87,12 +87,12 @@
 
 ### Step 1: Create Features (6 entries)
 Create 6 `feature` entries with the current hardcoded data:
-1. **Fast Performance** - ⚡ - "Lightning-fast load times and optimized performance for the best user experience."
-2. **Scalable Architecture** - 📈 - "Built to grow with your business, from startup to enterprise scale."
-3. **Easy Integration** - 🔗 - "Seamlessly integrate with your existing tools and workflows."
-4. **Secure by Default** - 🔒 - "Enterprise-grade security and compliance built into every feature."
-5. **24/7 Support** - 💬 - "Our dedicated team is here to help you succeed around the clock."
-6. **Custom Solutions** - 🎯 - "Tailored solutions that fit your unique business requirements."
+1. **Fast Performance** -  - "Lightning-fast load times and optimized performance for the best user experience."
+2. **Scalable Architecture** -  - "Built to grow with your business, from startup to enterprise scale."
+3. **Easy Integration** -  - "Seamlessly integrate with your existing tools and workflows."
+4. **Secure by Default** -  - "Enterprise-grade security and compliance built into every feature."
+5. **24/7 Support** -  - "Our dedicated team is here to help you succeed around the clock."
+6. **Custom Solutions** -  - "Tailored solutions that fit your unique business requirements."
 
 ### Step 2: Create Features Section
 Create 1 `featuresSection` entry:
@@ -134,12 +134,12 @@ Create 2-3 sample `blogPost` entries for testing
 
 Once you've completed the Contentful setup above, let me know and I'll:
 
-1. ✅ Update TypeScript interfaces in `lib/contentful.ts`
-2. ✅ Add new fetch functions for Features and CTA
-3. ✅ Convert `Features.tsx` to use Contentful
-4. ✅ Convert `CTA.tsx` to use Contentful
-5. ✅ Update `Hero.tsx` to use new fields
-6. ✅ Test the integration
+1.  Update TypeScript interfaces in `lib/contentful.ts`
+2.  Add new fetch functions for Features and CTA
+3.  Convert `Features.tsx` to use Contentful
+4.  Convert `CTA.tsx` to use Contentful
+5.  Update `Hero.tsx` to use new fields
+6.  Test the integration
 
 ---
 

@@ -10,7 +10,7 @@ Figma (Token Studio) ↔ cca-design-tokens repo ↔ This project
 
 ## File Structure
 
-- `tokens/colors.json` - Color palette synced from cca-design-tokens
+- `tokens/colors.json` - Colour palette synced from cca-design-tokens
 - `tokens/spacing.json` - Spacing scale synced from cca-design-tokens
 - `tokens/typography.json` - Typography tokens synced from cca-design-tokens
 - `tokens/radius.json` - Border radius tokens synced from cca-design-tokens
@@ -43,7 +43,7 @@ The tokens are available as Tailwind CSS classes and CSS variables:
 <div className="bg-marron-500 text-bleu-600">
 
 // As CSS variables
-<div style={{ color: 'var(--color-marron-500)' }}>
+<div style={{ colour: 'var(--colour-marron-500)' }}>
 ```
 
 #### Spacing
@@ -89,7 +89,7 @@ The tokens are available as Tailwind CSS classes and CSS variables:
   "category": {
     "token-name": {
       "value": "#FF0000",
-      "type": "color"
+      "type": "colour"
     }
   }
 }
@@ -97,7 +97,7 @@ The tokens are available as Tailwind CSS classes and CSS variables:
 
 ## Token Types
 
-- `color` - Color values (hex, rgb, hsl)
+- `colour` - Colour values (hex, rgb, hsl)
 - `spacing` - Spacing values with units
 - `fontSizes` - Font size values
 - `fontWeights` - Font weight values (400, 500, 600, 700)

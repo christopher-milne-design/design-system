@@ -26,14 +26,14 @@ if (!fs.existsSync(tokenFilePath)) {
   }
 }
 
-console.log(`📂 Reading tokens from: ${tokenFilePath}`);
+console.log(` Reading tokens from: ${tokenFilePath}`);
 
 // Check if file exists
 if (!fs.existsSync(tokenFilePath)) {
-  console.error('❌ Token file not found!');
+  console.error(' Token file not found!');
   console.error(`   Checked: ${tokenFilePath}`);
   console.error('');
-  console.error('💡 To sync:');
+  console.error(' To sync:');
   console.error('   1. cd /tmp');
   console.error('   2. git clone https://github.com/christopher-milne-design/cca-design-tokens.git');
   console.error('   3. cd back to your project');
@@ -82,7 +82,7 @@ function processTokenGroup(obj, pathArray = []) {
       
       // Determine category based on type and path
       if (tokenType === 'color') {
-        // Handle color tokens
+        // Handle colour tokens
         // Path examples: ['Primary', 'Bleu', '500'] or ['Neutral', '100']
         let colorName, shade;
         
@@ -157,14 +157,14 @@ function saveTokens(tokens) {
   if (Object.keys(tokens.colors).length > 0) {
     const colorsFile = path.join(TOKENS_DIR, 'colors.json');
     fs.writeFileSync(colorsFile, JSON.stringify({ color: tokens.colors }, null, 2));
-    console.log('✅ Updated colors.json');
+    console.log(' Updated colors.json');
   }
 
   // Save spacing
   if (Object.keys(tokens.spacing).length > 0) {
     const spacingFile = path.join(TOKENS_DIR, 'spacing.json');
     fs.writeFileSync(spacingFile, JSON.stringify({ spacing: tokens.spacing }, null, 2));
-    console.log('✅ Updated spacing.json');
+    console.log(' Updated spacing.json');
   }
 
   // Save typography
@@ -182,23 +182,23 @@ function saveTokens(tokens) {
   
   if (Object.keys(typographyData).length > 0) {
     fs.writeFileSync(typographyFile, JSON.stringify(typographyData, null, 2));
-    console.log('✅ Updated typography.json');
+    console.log(' Updated typography.json');
   }
 
   // Save border radius
   if (Object.keys(tokens.borderRadius).length > 0) {
     const radiusFile = path.join(TOKENS_DIR, 'radius.json');
     fs.writeFileSync(radiusFile, JSON.stringify({ borderRadius: tokens.borderRadius }, null, 2));
-    console.log('✅ Updated radius.json');
+    console.log(' Updated radius.json');
   }
 }
 
 saveTokens(converted);
 
 console.log('');
-console.log('🎉 Tokens synced successfully!');
+console.log(' Tokens synced successfully!');
 console.log('');
-console.log('📊 Summary:');
+console.log(' Summary:');
 console.log(`   Colors: ${Object.keys(converted.colors).length} palettes`);
 console.log(`   Spacing: ${Object.keys(converted.spacing).length} tokens`);
 console.log(`   Font Sizes: ${Object.keys(converted.typography.fontSize).length} tokens`);

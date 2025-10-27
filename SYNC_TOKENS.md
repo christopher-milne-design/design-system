@@ -1,6 +1,6 @@
 # How to Sync Tokens from Figma
 
-## 🎯 Quick Sync (When Changes Don't Show Up)
+##  Quick Sync (When Changes Don't Show Up)
 
 If you've made changes in Figma but they're not showing in GitHub:
 
@@ -28,7 +28,7 @@ npm run tokens
 npm run dev
 ```
 
-## 📋 Common Issues
+##  Common Issues
 
 ### Issue: "Changes not reflected in GitHub"
 
@@ -82,7 +82,7 @@ npm run tokens
 - Capitalization is lowercased: `Bleu` → `bleu`
 - Top-level groups (Primary/Secondary) are removed
 
-## 🔄 Complete Sync Workflow
+##  Complete Sync Workflow
 
 ### From Figma to Your App
 
@@ -102,7 +102,7 @@ npm run tokens
 2. Check `lib/tokens.js` - should have updated hex values
 3. Visit `http://localhost:3000/tokens` - should show new colors
 
-## 🚀 Available Commands
+##  Available Commands
 
 ```bash
 # Sync tokens (requires GITHUB_TOKEN)
@@ -121,7 +121,7 @@ npm run tokens:watch
 npm run sync:manual && npm run tokens && npm run dev
 ```
 
-## 📁 File Structure
+##  File Structure
 
 ```
 GitHub Repo (cca-design-tokens)
@@ -129,7 +129,7 @@ GitHub Repo (cca-design-tokens)
 
 Your Project
 ├── tokens/
-│   ├── colors.json          # Converted color tokens
+│   ├── colors.json          # Converted colour tokens
 │   ├── spacing.json         # Spacing tokens (if any)
 │   ├── typography.json      # Typography tokens (if any)
 │   └── radius.json          # Border radius tokens (if any)
@@ -141,7 +141,7 @@ Your Project
     └── manual-sync.js              # Manual sync (no token)
 ```
 
-## 💡 Pro Tips
+##  Pro Tips
 
 1. **Always check GitHub first**: If Token Studio says "synced" but you don't see changes, check if a PR was created
 2. **Use manual sync for development**: No need to set up GitHub token

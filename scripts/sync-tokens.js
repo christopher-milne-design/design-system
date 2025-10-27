@@ -10,7 +10,7 @@ const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY;
 const TOKENS_DIR = path.join(__dirname, '..', 'tokens');
 
 if (!FIGMA_TOKEN || !FIGMA_FILE_KEY) {
-  console.error('❌ Missing required environment variables:');
+  console.error(' Missing required environment variables:');
   console.error('   - FIGMA_TOKEN: Your Figma personal access token');
   console.error('   - FIGMA_FILE_KEY: Your Figma file key');
   process.exit(1);
@@ -135,14 +135,14 @@ function saveTokens(tokens) {
   if (Object.keys(tokens.colors).length > 0) {
     const colorsFile = path.join(TOKENS_DIR, 'colors.json');
     fs.writeFileSync(colorsFile, JSON.stringify({ color: tokens.colors }, null, 2));
-    console.log('✅ Updated colors.json');
+    console.log(' Updated colors.json');
   }
 
   // Save spacing
   if (Object.keys(tokens.spacing).length > 0) {
     const spacingFile = path.join(TOKENS_DIR, 'spacing.json');
     fs.writeFileSync(spacingFile, JSON.stringify({ spacing: tokens.spacing }, null, 2));
-    console.log('✅ Updated spacing.json');
+    console.log(' Updated spacing.json');
   }
 
   // Save typography
@@ -160,21 +160,21 @@ function saveTokens(tokens) {
   
   if (Object.keys(typographyData).length > 0) {
     fs.writeFileSync(typographyFile, JSON.stringify(typographyData, null, 2));
-    console.log('✅ Updated typography.json');
+    console.log(' Updated typography.json');
   }
 
   // Save border radius
   if (Object.keys(tokens.borderRadius).length > 0) {
     const radiusFile = path.join(TOKENS_DIR, 'radius.json');
     fs.writeFileSync(radiusFile, JSON.stringify({ borderRadius: tokens.borderRadius }, null, 2));
-    console.log('✅ Updated radius.json');
+    console.log(' Updated radius.json');
   }
 }
 
 // Main sync function
 async function syncTokens() {
   try {
-    console.log('🔄 Fetching design tokens from Figma...');
+    console.log(' Fetching design tokens from Figma...');
     
     // Fetch variables from Figma
     const variablesResponse = await fetchFromFigma(`/v1/files/${FIGMA_FILE_KEY}/variables`);
@@ -183,7 +183,7 @@ async function syncTokens() {
       throw new Error('No variables found in Figma file');
     }
 
-    console.log(`📊 Found ${Object.keys(variablesResponse.meta.variables).length} variables`);
+    console.log(` Found ${Object.keys(variablesResponse.meta.variables).length} variables`);
 
     // Extract tokens from variables
     const tokens = extractTokensFromVariables(variablesResponse.meta.variables);
@@ -191,10 +191,10 @@ async function syncTokens() {
     // Save tokens to files
     saveTokens(tokens);
     
-    console.log('🎉 Design tokens synced successfully!');
+    console.log(' Design tokens synced successfully!');
     
   } catch (error) {
-    console.error('❌ Error syncing tokens:', error.message);
+    console.error(' Error syncing tokens:', error.message);
     process.exit(1);
   }
 }

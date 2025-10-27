@@ -6,7 +6,7 @@ Your new `/showcase` page displays UI components with code examples side-by-side
 
 ## Current State
 
-✅ **Live now:** `/showcase` with hardcoded examples
+ **Live now:** `/showcase` with hardcoded examples
 - Buttons (variants, sizes, custom colors)
 - Cards (basic, colored with tokens)
 - Badges (token colors)
@@ -35,7 +35,7 @@ Make examples editable in Contentful so you can:
 | Description | `description` | Long text | Optional |
 | Category | `category` | Short text | Required (buttons, cards, badges, alerts, forms, etc.) |
 | Code | `code` | Long text | Required (the code snippet to display) |
-| Preview Type | `previewType` | Short text | Required (variant, size, color, etc.) |
+| Preview Type | `previewType` | Short text | Required (variant, size, colour, etc.) |
 | Is Published | `isPublished` | Boolean | Default: true |
 | Order | `order` | Integer | For sorting within category |
 | Layout | `layout` | Short text | Options: "side-by-side", "stacked" |
@@ -181,16 +181,16 @@ export default async function ShowcasePage() {
 ## Benefits
 
 ### For Content Editors
-- ✅ Add new examples without developer
-- ✅ Edit code snippets easily
-- ✅ Reorder examples
-- ✅ Draft/publish workflow
+-  Add new examples without developer
+-  Edit code snippets easily
+-  Reorder examples
+-  Draft/publish workflow
 
 ### For Developers
-- ✅ Separate content from code
-- ✅ Type-safe with TypeScript
-- ✅ Fallback to hardcoded examples
-- ✅ Easy to extend
+-  Separate content from code
+-  Type-safe with TypeScript
+-  Fallback to hardcoded examples
+-  Easy to extend
 
 ---
 

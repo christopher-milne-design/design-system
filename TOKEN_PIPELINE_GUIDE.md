@@ -1,6 +1,6 @@
 # Token Pipeline: Figma → Token Studio → GitHub → Style Dictionary → Tailwind
 
-## 🎯 Overview
+##  Overview
 
 Your design token pipeline is **fully operational** and working as follows:
 
@@ -18,26 +18,26 @@ lib/tokens.js + lib/tokens.css
 Available as Tailwind Classes
 ```
 
-## ✅ What's Currently Working
+##  What's Currently Working
 
 ### 1. **Token Categories in Sync**
-- ✅ **Colors**: 11 color palettes (mountain-mist, neutral, marron, jaune-clair, rose, jaune, celadon, bleu-clair, rouge, orange, vert, bleu)
-- ✅ **Spacing**: xs → 5xl (0.25rem → 8rem)
-- ✅ **Typography**: Font sizes (xs → 7xl), weights (normal → bold), line heights (tight, normal, relaxed)
-- ✅ **Border Radius**: none → full (0 → 9999px)
+-  **Colors**: 11 colour palettes (mountain-mist, neutral, marron, jaune-clair, rose, jaune, celadon, bleu-clair, rouge, orange, vert, bleu)
+-  **Spacing**: xs → 5xl (0.25rem → 8rem)
+-  **Typography**: Font sizes (xs → 7xl), weights (normal → bold), line heights (tight, normal, relaxed)
+-  **Border Radius**: none → full (0 → 9999px)
 
 ### 2. **Infrastructure**
-- ✅ Style Dictionary configured with custom formatters
-- ✅ Tailwind config imports and flattens tokens
-- ✅ GitHub Actions workflow for automated sync (daily at 9 AM UTC)
-- ✅ Manual sync scripts available
+-  Style Dictionary configured with custom formatters
+-  Tailwind config imports and flattens tokens
+-  GitHub Actions workflow for automated sync (daily at 9 AM UTC)
+-  Manual sync scripts available
 
 ### 3. **Generated Files**
 - `lib/tokens.js` - JavaScript exports for programmatic use
 - `lib/tokens.css` - CSS custom properties and utility classes
 - `tokens/*.json` - Source token files organized by category
 
-## 🚀 Daily Workflow
+##  Daily Workflow
 
 ### Making Changes in Figma
 
@@ -79,7 +79,7 @@ Available as Tailwind Classes
 #### Method 2: CSS Custom Properties
 ```css
 .my-component {
-  background-color: var(--color-bleu-500);
+  background-colour: var(--colour-bleu-500);
   padding: var(--spacing-md);
   border-radius: var(--border-radius-xl);
   font-size: var(--font-size-3xl);
@@ -100,7 +100,7 @@ import { tokens } from '@/lib/tokens';
 </div>
 ```
 
-## 📋 NPM Scripts Reference
+##  NPM Scripts Reference
 
 ```bash
 # Token Management
@@ -116,7 +116,7 @@ npm run build              # Run tokens + build for production
 npm run test:sync          # Test token sync (if available)
 ```
 
-## 🔍 Testing Your Pipeline
+##  Testing Your Pipeline
 
 ### View Token Showcase
 1. Start dev server: `npm run dev`
@@ -135,7 +135,7 @@ npm run tokens
 cat lib/tokens.js
 ```
 
-## 🔧 Configuration Files
+##  Configuration Files
 
 ### `style-dictionary.config.mjs`
 - Defines source token paths (`tokens/**/*.json`)
@@ -144,7 +144,7 @@ cat lib/tokens.js
 
 ### `tailwind.config.js`
 - Imports generated tokens from `lib/tokens.js`
-- Flattens nested color objects (e.g., `bleu.500` → `bleu-500`)
+- Flattens nested colour objects (e.g., `bleu.500` → `bleu-500`)
 - Extends Tailwind's default theme
 
 ### `scripts/sync-from-token-studio.js`
@@ -157,7 +157,7 @@ cat lib/tokens.js
 - Can be manually triggered
 - Auto-commits changes with `[skip ci]` tag
 
-## 🎨 Token Naming Conventions
+##  Token Naming Conventions
 
 ### Colors
 ```
@@ -183,7 +183,7 @@ Line Heights: tight, normal, relaxed
 none, sm, md, lg, xl, 2xl, full
 ```
 
-## 🔐 Environment Variables
+##  Environment Variables
 
 Required in `.env.local`:
 ```bash
@@ -196,7 +196,7 @@ CONTENTFUL_SPACE_ID=your_space_id
 CONTENTFUL_ACCESS_TOKEN=your_access_token
 ```
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Tokens not updating?
 1. Check GitHub Actions logs for sync errors
@@ -215,7 +215,7 @@ CONTENTFUL_ACCESS_TOKEN=your_access_token
 2. Ensure all tokens have `value` and `type` properties
 3. Review `style-dictionary.config.mjs` formatters
 
-## 📚 Adding New Token Types
+##  Adding New Token Types
 
 To add a new token category (e.g., shadows, animations):
 
@@ -242,15 +242,15 @@ To add a new token category (e.g., shadows, animations):
    boxShadow: tokens.shadows || {},
    ```
 
-## 🎯 Next Steps
+##  Next Steps
 
-1. ✅ **Pipeline is working** - Your tokens are syncing correctly
-2. 🎨 **Update Figma variables** - Changes will flow through automatically
-3. 🚀 **Use tokens in components** - Replace hardcoded values with token classes
-4. 📝 **Document your design system** - Add descriptions in Token Studio
-5. 🔄 **Set up GitHub Actions secrets** - For automated syncing
+1.  **Pipeline is working** - Your tokens are syncing correctly
+2.  **Update Figma variables** - Changes will flow through automatically
+3.  **Use tokens in components** - Replace hardcoded values with token classes
+4.  **Document your design system** - Add descriptions in Token Studio
+5.  **Set up GitHub Actions secrets** - For automated syncing
 
-## 📖 Resources
+##  Resources
 
 - [Style Dictionary Docs](https://amzn.github.io/style-dictionary/)
 - [Token Studio Plugin](https://tokens.studio/)
@@ -259,4 +259,4 @@ To add a new token category (e.g., shadows, animations):
 
 ---
 
-**Current Token Count**: 144 color tokens + 9 spacing + 11 font sizes + 4 font weights + 3 line heights + 7 border radii = **178 design tokens** 🎉
+**Current Token Count**: 144 colour tokens + 9 spacing + 11 font sizes + 4 font weights + 3 line heights + 7 border radii = **178 design tokens** 

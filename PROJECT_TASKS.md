@@ -4,7 +4,7 @@ Created: 2025-10-24
 
 ## Priority Order
 
-### 🔴 P1 - Critical (Start Here)
+###  P1 - Critical (Start Here)
 
 #### 1. Set up Contentful content model and test data
 **Priority**: Urgent  
@@ -55,7 +55,7 @@ CONTENTFUL_ACCESS_TOKEN=placeholder
 
 ---
 
-### 🟡 P2 - High Priority
+###  P2 - High Priority
 
 #### 3. Connect Contentful CMS to components (Hero, Features, CTA)
 **Priority**: High  
@@ -79,7 +79,7 @@ Replace hardcoded content with dynamic Contentful data.
 
 ---
 
-### 🟢 P3 - Medium Priority
+###  P3 - Medium Priority
 
 #### 4. Initial git commit and repository cleanup
 **Priority**: Medium  
@@ -127,7 +127,7 @@ npm run sync:manual     # Manual sync
 
 ---
 
-### ⚪ P4 - Low Priority
+###  P4 - Low Priority
 
 #### 6. Add TypeScript type checking to build process
 **Priority**: Low  

@@ -129,10 +129,10 @@ font-weight: semibold
 ## 4px Grid System
 
 All values rounded to nearest 4 pixels:
-- ✅ **Clean spacing relationships**
-- ✅ **No decimal values**
-- ✅ **Easier mental math**
-- ✅ **Consistent vertical rhythm**
+-  **Clean spacing relationships**
+-  **No decimal values**
+-  **Easier mental math**
+-  **Consistent vertical rhythm**
 
 Examples:
 - 44px × 1.2 = 52.8px → **52px** (rounded down for headings)

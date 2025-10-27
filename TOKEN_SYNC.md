@@ -19,10 +19,10 @@ The token sync system consists of:
 3. Ensure your `tokens.json` file follows the Token Studio format:
    ```json
    {
-     "color.primary.500": {
+     "colour.primary.500": {
        "value": "#3b82f6",
-       "type": "color",
-       "description": "Primary brand color"
+       "type": "colour",
+       "description": "Primary brand colour"
      },
      "spacing.md": {
        "value": "1rem",
@@ -108,7 +108,7 @@ You can also use the generated CSS custom properties:
 
 ```css
 .my-component {
-  background-color: var(--color-primary-500);
+  background-colour: var(--colour-primary-500);
   padding: var(--spacing-md);
   border-radius: var(--border-radius-lg);
 }
@@ -164,11 +164,11 @@ npm run tokens:watch
 ### Colors
 ```json
 {
-  "color": {
+  "colour": {
     "primary": {
-      "50": { "value": "#f0f9ff", "type": "color" },
-      "500": { "value": "#3b82f6", "type": "color" },
-      "900": { "value": "#1e3a8a", "type": "color" }
+      "50": { "value": "#f0f9ff", "type": "colour" },
+      "500": { "value": "#3b82f6", "type": "colour" },
+      "900": { "value": "#1e3a8a", "type": "colour" }
     }
   }
 }

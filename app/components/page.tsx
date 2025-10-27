@@ -95,13 +95,13 @@ export default function ComponentsPage() {
                 <Button size="sm">Small</Button>
                 <Button size="default">Default</Button>
                 <Button size="lg">Large</Button>
-                <Button size="icon">🎨</Button>
+                <Button size="icon"></Button>
               </div>
               <CodeBlock>
 {`<Button size="sm">Small</Button>
 <Button size="default">Default</Button>
 <Button size="lg">Large</Button>
-<Button size="icon">🎨</Button>`}
+<Button size="icon"></Button>`}
               </CodeBlock>
             </div>
 
@@ -413,11 +413,11 @@ export default function ComponentsPage() {
             All components are built with <strong>ShadCN UI</strong> and customized using our design system tokens:
           </p>
           <ul className="space-y-2 text-bleu-700">
-            <li>✓ <strong>Semantic color tokens</strong> (brand-primary, feedback-success, etc.)</li>
-            <li>✓ <strong>Typography system</strong> with calculated line heights and letter spacing</li>
-            <li>✓ <strong>Spacing tokens</strong> for consistent padding and margins</li>
-            <li>✓ <strong>Border radius tokens</strong> from the design system</li>
-            <li>✓ <strong>Fully accessible</strong> with proper ARIA attributes</li>
+            <li> <strong>Semantic color tokens</strong> (brand-primary, feedback-success, etc.)</li>
+            <li> <strong>Typography system</strong> with calculated line heights and letter spacing</li>
+            <li> <strong>Spacing tokens</strong> for consistent padding and margins</li>
+            <li> <strong>Border radius tokens</strong> from the design system</li>
+            <li> <strong>Fully accessible</strong> with proper ARIA attributes</li>
           </ul>
           <div className="mt-6">
             <Link href="/style-guide" className="text-brand-primary hover:text-brand-primary-hover font-semibold">
