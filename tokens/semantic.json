@@ -30,6 +30,26 @@
         "value": "{color.orange.800}",
         "type": "color",
         "description": "Active/pressed state for secondary brand color"
+      },
+      "primary-focus": {
+        "value": "{color.bleu.500}",
+        "type": "color",
+        "description": "Focus ring for primary brand elements"
+      },
+      "secondary-focus": {
+        "value": "{color.orange.600}",
+        "type": "color",
+        "description": "Focus ring for secondary brand elements"
+      },
+      "disabled": {
+        "value": "{color.cool-neutral.300}",
+        "type": "color",
+        "description": "Disabled state for interactive elements"
+      },
+      "disabled-text": {
+        "value": "{color.cool-neutral.500}",
+        "type": "color",
+        "description": "Text color for disabled elements"
       }
     },
     "text": {

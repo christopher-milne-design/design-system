@@ -185,11 +185,15 @@
 
   /* Semantic Tokens */
   --color-brand-primary: var(--semantic-brand-primary);
-  --color-brand-primary-hover: var(--semantic-brand-primaryHover);
-  --color-brand-primary-active: var(--semantic-brand-primaryActive);
+  --color-brand-primary-hover: var(--semantic-brand-primary-hover);
+  --color-brand-primary-active: var(--semantic-brand-primary-active);
+  --color-brand-primary-focus: var(--semantic-brand-primary-focus);
   --color-brand-secondary: var(--semantic-brand-secondary);
-  --color-brand-secondary-hover: var(--semantic-brand-secondaryHover);
-  --color-brand-secondary-active: var(--semantic-brand-secondaryActive);
+  --color-brand-secondary-hover: var(--semantic-brand-secondary-hover);
+  --color-brand-secondary-active: var(--semantic-brand-secondary-active);
+  --color-brand-secondary-focus: var(--semantic-brand-secondary-focus);
+  --color-brand-disabled: var(--semantic-brand-disabled);
+  --color-brand-disabled-text: var(--semantic-brand-disabled-text);
   --color-text-primary: var(--semantic-text-primary);
   --color-text-secondary: var(--semantic-text-secondary);
   --color-text-muted: var(--semantic-text-muted);

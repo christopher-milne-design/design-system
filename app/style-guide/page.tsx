@@ -1,4 +1,5 @@
 import { tokens } from '@/lib/tokens';
+import Link from 'next/link';
 
 function CodeBlock({ children, title }: { children: string; title?: string }) {
   return (
@@ -22,16 +23,16 @@ export default function TokensPage() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-5xl font-bold text-neutral-400 mb-4">
-            Design System Style Guide
+            Style Guide
           </h1>
           <p className="text-lg text-neutral-300 mb-4">
             Design tokens automatically synced from Figma via Token Studio → GitHub → Style Dictionary → Tailwind
           </p>
-          <div className="flex gap-4 text-sm">
-            <a href="#semantic" className="text-bleu-500 hover:text-bleu-700">Semantic Tokens</a>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <a href="#semantic" className="text-bleu-500 hover:text-bleu-700 font-medium">Semantic Tokens</a>
+            <a href="#typography" className="text-bleu-500 hover:text-bleu-700 font-medium">Typography System</a>
             <a href="#colors" className="text-bleu-500 hover:text-bleu-700">Primitive Colors</a>
             <a href="#spacing" className="text-bleu-500 hover:text-bleu-700">Spacing</a>
-            <a href="#typography" className="text-bleu-500 hover:text-bleu-700">Typography</a>
             <a href="#radius" className="text-bleu-500 hover:text-bleu-700">Border Radius</a>
             <a href="#examples" className="text-bleu-500 hover:text-bleu-700">Examples</a>
           </div>
@@ -558,7 +559,7 @@ export default function TokensPage() {
           {tokens.typography?.mobile && (
             <div className="mb-12">
               <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Mobile Scale</h3>
-              <p className="text-sm text-neutral-300 mb-6">Reduced sizes for mobile viewports (< 768px)</p>
+              <p className="text-sm text-neutral-300 mb-6">Reduced sizes for mobile viewports (&lt; 768px)</p>
               
               <div className="bg-neutral-100 p-6 rounded-lg">
                 <h4 className="font-semibold text-neutral-400 mb-4">Mobile Headings</h4>
