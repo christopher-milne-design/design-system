@@ -31,9 +31,7 @@ export interface HomePageContent {
 }
 
 export interface BlogPostContent {
-  sys: {
-    id: string;
-  };
+  contentTypeId: 'blogPost';
   fields: {
     title: string;
     subtitle: string;
@@ -55,6 +53,13 @@ export interface BlogPostContent {
       };
     };
   };
+}
+
+export interface BlogPostEntry {
+  sys: {
+    id: string;
+  };
+  fields: BlogPostContent['fields'];
 }
 
 // Fetch home page content with all referenced sections
@@ -79,13 +84,13 @@ export async function getHomePageContent() {
 
 
 // Fetch blog posts
-export async function getBlogPosts(): Promise<BlogPostContent[]> {
+export async function getBlogPosts(): Promise<BlogPostEntry[]> {
   try {
     const entries = await client.getEntries<BlogPostContent>({
       content_type: "blogPost",
     });
 
-    return entries.items as BlogPostContent[];
+    return entries.items as BlogPostEntry[];
   } catch (error) {
     console.error("Error fetching blog posts:", error);
     return [];
