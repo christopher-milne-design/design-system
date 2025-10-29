@@ -26,7 +26,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/style-guide" 
-                className="inline-flex items-center justify-center bg-bleu-500 hover:bg-bleu-600 text-white px-8 py-4 font-bold text-lg transition-colors"
+                className="inline-flex items-center justify-center bg-neutral-400 hover:bg-neutral-300 text-white px-8 py-4 font-bold text-lg transition-colors"
               >
                 View Foundation
               </Link>
