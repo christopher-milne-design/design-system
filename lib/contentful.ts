@@ -31,6 +31,9 @@ export interface HomePageContent {
 }
 
 export interface BlogPostContent {
+  sys: {
+    id: string;
+  };
   fields: {
     title: string;
     subtitle: string;
@@ -76,13 +79,13 @@ export async function getHomePageContent() {
 
 
 // Fetch blog posts
-export async function getBlogPosts() {
+export async function getBlogPosts(): Promise<BlogPostContent[]> {
   try {
     const entries = await client.getEntries<BlogPostContent>({
       content_type: "blogPost",
     });
 
-    return entries.items;
+    return entries.items as BlogPostContent[];
   } catch (error) {
     console.error("Error fetching blog posts:", error);
     return [];
