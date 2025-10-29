@@ -23,19 +23,19 @@ export default function ExamplesPage() {
         </div>
       </section>
       {/* Example 1: Grant Program Page */}
-      <section className="border-t-4 border-black">
+      <section>
         <div className="max-w-7xl mx-auto px-8 py-24">
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
             Grant Program: Explore and Create
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-text-secondary">
             A comprehensive funding opportunity page with hero, stats, and artist stories
           </p>
         </div>
 
         {/* Hero Section */}
-        <div className="bg-bleu-500 p-12 mb-8">
+        <div className="bg-bleu-500 p-12 md:p-16 mb-8">
           <div className="max-w-4xl">
             <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white" style={{ letterSpacing: '-0.02em' }}>
               Explore and Create
@@ -58,7 +58,7 @@ export default function ExamplesPage() {
 
         {/* Featured Stories */}
         <div>
-          <h4 className="text-2xl font-bold text-slate-900 mb-6">Featured Grant Recipients</h4>
+            <h4 className="text-2xl font-bold text-text-primary mb-6">Featured Grant Recipients</h4>
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardImage src="/images/features/homesick.jpg" alt="Homesick" aspectRatio="video" />
@@ -95,16 +95,16 @@ export default function ExamplesPage() {
       </section>
 
       {/* Example 2: Research Page */}
-      <section className="bg-slate-50 py-24 border-y-4 border-black">
+      <section className="bg-surface-background py-24 border-y border-border-divider">
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
               Research & Impact Landing Page
             </h2>
-            <p className="text-xl text-slate-600">Data-driven content with funding results and filterable reports</p>
+            <p className="text-xl text-text-secondary">Data-driven content with funding results and filterable reports</p>
           </div>
 
-          <div className="bg-rose-500 p-12 mb-8">
+          <div className="bg-rose-500 p-12 md:p-16 mb-8">
             <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white" style={{ letterSpacing: '-0.02em' }}>
               Research and Impact
             </h3>
@@ -116,7 +116,7 @@ export default function ExamplesPage() {
           {/* Search Bar */}
           <div className="bg-white p-6 mb-8 flex gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" />
               <input type="text" placeholder="Search research reports..." className="w-full pl-10 pr-4 py-3 border border-slate-300 focus:border-bleu-500 focus:ring-2 focus:ring-bleu-200 outline-none" />
             </div>
           </div>
@@ -150,24 +150,24 @@ export default function ExamplesPage() {
 
           {/* Stats */}
           <div className="mt-12 bg-white p-10 border-l-8 border-vert-500">
-            <h4 className="text-2xl font-bold text-slate-900 mb-8">Impact of the Arts</h4>
+            <h4 className="text-2xl font-bold text-text-primary mb-8">Impact of the Arts</h4>
             <div className="grid md:grid-cols-3 gap-8">
-              <div><p className="text-4xl font-bold text-vert-600 mb-2">$60B</p><p className="text-slate-700 font-semibold">Culture sector contribution to GDP</p></div>
-              <div><p className="text-4xl font-bold text-bleu-600 mb-2">Strong</p><p className="text-slate-700 font-semibold">Link between arts participation and health</p></div>
-              <div><p className="text-4xl font-bold text-orange-600 mb-2">Higher</p><p className="text-slate-700 font-semibold">Sense of belonging for participants</p></div>
+              <div><p className="text-4xl font-bold text-vert-600 mb-2">$60B</p><p className="text-text-secondary font-semibold">Culture sector contribution to GDP</p></div>
+              <div><p className="text-4xl font-bold text-bleu-600 mb-2">Strong</p><p className="text-text-secondary font-semibold">Link between arts participation and health</p></div>
+              <div><p className="text-4xl font-bold text-orange-600 mb-2">Higher</p><p className="text-text-secondary font-semibold">Sense of belonging for participants</p></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Example 3: Artist Story */}
-      <section className="border-t-4 border-black">
+      <section className="border-t border-border-divider">
         <div className="max-w-7xl mx-auto px-8 py-24">
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
             Artist Story: Feature Article
           </h2>
-          <p className="text-xl text-slate-600">Long-form storytelling with rich media</p>
+          <p className="text-xl text-text-secondary">Long-form storytelling with rich media</p>
         </div>
 
         <div className="mb-8">
@@ -180,37 +180,37 @@ export default function ExamplesPage() {
               <Badge variant="outline" className="bg-vert-50 text-vert-700 border-vert-200">Artist Stories</Badge>
               <Badge variant="outline" className="bg-rose-50 text-rose-700 border-rose-200">Funding</Badge>
             </div>
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Homesick: A Sonic Return Home</h3>
-            <p className="text-xl text-slate-600">Fresh off a JUNO win, Ciel (Cindy Li) is gaining recognition for both her sound and the cultural depth behind it.</p>
+            <h3 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">Homesick: A Sonic Return Home</h3>
+            <p className="text-xl text-text-secondary">Fresh off a JUNO win, Ciel (Cindy Li) is gaining recognition for both her sound and the cultural depth behind it.</p>
           </div>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-slate-700 mb-6">Her debut album, <em>Homesick</em>—supported through a Canada Council grant—is a vivid sonic memoir of diasporic identity.</p>
+            <p className="text-text-secondary mb-6">Her debut album, <em>Homesick</em>—supported through a Canada Council grant—is a vivid sonic memoir of diasporic identity.</p>
 
-            <div className="bg-vert-500 p-8 my-8">
+            <div className="bg-vert-500 p-10 md:p-12 my-8">
               <p className="text-2xl md:text-3xl font-bold italic leading-tight mb-4 text-white" style={{ letterSpacing: '-0.02em' }}>
                 "I really did everything I said I would. That gave me confidence—knowing I could lay out a plan and bring it to life."
               </p>
               <p className="text-white font-bold text-lg mt-6">— Ciel</p>
             </div>
 
-            <h4 className="text-2xl font-bold text-slate-900 mb-4 mt-12">From Blueprint to Breakthrough</h4>
-            <p className="text-slate-700 mb-6">Supported by a Concept to Realization grant, Ciel built her debut from the ground up. The funding enabled collaborations with instrumentalists, equipment acquisition, and music that mirrored ancestral memory and innovation.</p>
+            <h4 className="text-2xl font-bold text-text-primary mb-4 mt-12">From Blueprint to Breakthrough</h4>
+            <p className="text-text-secondary mb-6">Supported by a Concept to Realization grant, Ciel built her debut from the ground up. The funding enabled collaborations with instrumentalists, equipment acquisition, and music that mirrored ancestral memory and innovation.</p>
           </div>
         </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-slate-900 text-white py-24 border-t-4 border-black">
+      <section className="bg-surface-overlay text-text-inverse py-24 border-t border-border-divider">
         <div className="max-w-5xl mx-auto px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ letterSpacing: '-0.02em' }}>These Are Just Examples</h2>
-          <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Every page, every component—built with the same system. Consistent, scalable, ready for our content.</p>
+          <p className="text-xl text-text-inverse mb-10 max-w-2xl mx-auto opacity-90">Every page, every component—built with the same system. Consistent, scalable, ready for our content.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/components" className="inline-flex items-center justify-center bg-bleu-500 hover:bg-bleu-600 text-white px-8 py-4 font-bold text-lg">
               View Components
             </Link>
-            <Link href="/documentation" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-slate-900 text-white px-8 py-4 font-bold text-lg">
+            <Link href="/documentation" className="inline-flex items-center justify-center border-2 border-text-inverse hover:bg-text-inverse hover:text-text-primary text-text-inverse px-8 py-4 font-bold text-lg">
               Read Documentation
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>

@@ -6,7 +6,7 @@ export default function DocumentationPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-bleu-500">
+      <section className="bg-bleu-500 border-b border-border-divider">
         <div className="max-w-7xl mx-auto px-8 py-32 md:py-40">
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white" style={{ letterSpacing: '-0.02em' }}>
@@ -19,7 +19,7 @@ export default function DocumentationPage() {
         </div>
       </section>
       {/* Why This Matters */}
-      <section className="max-w-7xl mx-auto px-8 py-24 border-t-4 border-black">
+      <section className="max-w-7xl mx-auto px-8 py-24 border-t border-border-divider">
         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12" style={{ letterSpacing: '-0.02em' }}>
           Why This Matters
         </h2>
@@ -80,7 +80,7 @@ export default function DocumentationPage() {
       </section>
 
       {/* The System in Practice */}
-      <section className="bg-slate-50 py-24 border-y-4 border-black">
+      <section className="bg-surface-background py-24 border-y border-border-divider">
         <div className="max-w-7xl mx-auto px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12" style={{ letterSpacing: '-0.02em' }}>
             The System in Practice
@@ -175,7 +175,7 @@ export default function DocumentationPage() {
       </section>
 
       {/* Implementation Roadmap */}
-      <section className="max-w-7xl mx-auto px-8 py-24 border-t-4 border-black">
+      <section className="max-w-7xl mx-auto px-8 py-24 border-t border-border-divider">
         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12" style={{ letterSpacing: '-0.02em' }}>
           Implementation Roadmap
         </h2>
@@ -272,7 +272,7 @@ export default function DocumentationPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-slate-900 text-white py-24 border-t-4 border-black">
+      <section className="bg-surface-overlay text-text-inverse py-24 border-t border-border-divider">
         <div className="max-w-5xl mx-auto px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ letterSpacing: '-0.02em' }}>
             Ready to Get Started?

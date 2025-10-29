@@ -154,6 +154,11 @@
         "type": "color",
         "description": "Strong border - emphasized"
       },
+      "divider": {
+        "value": "#000000",
+        "type": "color",
+        "description": "Brutalist divider border - pure black for bold section breaks"
+      },
       "focus": {
         "value": "{color.bleu.500}",
         "type": "color",

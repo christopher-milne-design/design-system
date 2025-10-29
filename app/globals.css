@@ -213,6 +213,7 @@
   --color-border-default: var(--semantic-border-default);
   --color-border-subtle: var(--semantic-border-subtle);
   --color-border-strong: var(--semantic-border-strong);
+  --color-border-divider: var(--semantic-border-divider);
   --color-border-focus: var(--semantic-border-focus);
 }
 

@@ -8,14 +8,16 @@ export default function HowItWorksPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-vert-500">
-        <div className="max-w-7xl mx-auto px-8 py-24">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
-            How It Works
-          </h1>
-          <p className="text-xl md:text-2xl text-white max-w-3xl leading-relaxed font-medium">
-            From brand guidelines to production code—a seamless pipeline powered by design tokens
-          </p>
+      <section className="bg-vert-500 border-b border-border-divider">
+        <div className="max-w-7xl mx-auto px-8 py-32 md:py-40">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
+              How It Works
+            </h1>
+            <p className="text-xl md:text-2xl text-white max-w-3xl leading-relaxed font-medium">
+              From brand guidelines to production code—a seamless pipeline powered by design tokens
+            </p>
+          </div>
         </div>
       </section>
 

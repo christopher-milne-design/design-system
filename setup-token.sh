@@ -23,3 +23,5 @@ echo "✅ Environment file created!"
 echo ""
 echo "🧪 Testing connection..."
 npm run test:sync
+
+

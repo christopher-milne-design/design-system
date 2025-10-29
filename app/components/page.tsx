@@ -110,7 +110,7 @@ export default function ComponentsPage() {
         </div>
       </section>
 
-      <div className="border-t-4 border-black">
+      <div>
         <div className="max-w-7xl mx-auto px-8 py-20">
 
         {/* Accordion */}
@@ -221,7 +221,7 @@ export default function ComponentsPage() {
       </div>
 
       {/* Buttons */}
-      <div className="border-t-4 border-black">
+      <div className="border-t border-border-divider">
         <div className="max-w-7xl mx-auto px-8 py-20">
         <section id="buttons">
         <ComponentSection
@@ -665,11 +665,11 @@ export default function ComponentsPage() {
         </div>
       </div>
 
-      <div className="border-t-4 border-black">
+      <div className="border-t border-border-divider">
         <div className="max-w-7xl mx-auto px-8 py-20">
           {/* Integration Note */}
-          <section className="bg-vert-50 border-l-8 border-vert-500 p-12 rounded-lg">
-            <h3 className="text-3xl font-bold text-text-primary mb-6">Design System Integration</h3>
+          <section className="bg-vert-50 border-l-8 border-vert-500 p-12 md:p-16">
+            <h3 className="text-3xl font-bold text-text-primary mb-6" style={{ letterSpacing: '-0.02em' }}>Design System Integration</h3>
             <p className="text-text-secondary text-lg mb-6 leading-relaxed">
               All components are built with <strong>ShadCN UI</strong> and customized using our design system tokens:
             </p>
