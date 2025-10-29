@@ -8,25 +8,24 @@ export default function Navigation() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/examples", label: "Examples" },
-    { href: "/style-guide", label: "Style Guide" },
+    { href: "/style-guide", label: "Foundation" },
     { href: "/components", label: "Components" },
-    { href: "/documentation", label: "Documentation" },
+    { href: "/examples", label: "Examples" },
   ];
 
   return (
-    <nav className="bg-neutral-50 border-b border-neutral-200 sticky top-0 z-50">
+    <nav className="bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-neutral-400" style={{ letterSpacing: '-0.02em' }}>
+            <span className="text-xl font-bold text-foreground">
               Council Design System
             </span>
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex space-x-8">
+          <div className="flex space-x-6">
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -34,11 +33,11 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   className={`
-                    px-3 py-2 text-sm font-semibold transition-colors
+                    px-3 py-2 text-sm font-medium transition-colors rounded-md
                     ${
                       isActive
-                        ? "text-brand-primary border-b-2 border-brand-primary"
-                        : "text-neutral-300 hover:text-brand-primary"
+                        ? "text-brand-primary bg-accent"
+                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
                     }
                   `}
                 >
@@ -55,7 +54,7 @@ export default function Navigation() {
               href="https://linear.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-300 hover:text-brand-primary transition-colors"
+              className="text-muted-foreground hover:text-brand-primary transition-colors"
               aria-label="View in Linear"
             >
               <svg
@@ -73,7 +72,7 @@ export default function Navigation() {
               href="https://www.figma.com/design/your-figma-file-id"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-300 hover:text-brand-primary transition-colors"
+              className="text-muted-foreground hover:text-brand-primary transition-colors"
               aria-label="View in Figma"
             >
               <svg
@@ -95,7 +94,7 @@ export default function Navigation() {
               href="https://github.com/christopher-milne-design/cca-design-tokens"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-300 hover:text-brand-primary transition-colors"
+              className="text-muted-foreground hover:text-brand-primary transition-colors"
               aria-label="View on GitHub"
             >
               <svg

@@ -22,11 +22,11 @@ export default function TokensPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-slate-900" style={{ letterSpacing: '-0.02em' }}>
-            Foundation
+          <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            Foundations
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed mb-4">
-            Design tokens automatically synced from Figma via Token Studio → GitHub → Style Dictionary → Tailwind
+            Our brand guidelines, transformed into design tokens. Every color, every typeface, every spacing value—powering the entire system.
           </p>
           <div className="flex flex-wrap gap-4 text-sm">
             <a href="#semantic" className="text-bleu-500 hover:text-bleu-700 font-medium">Semantic Tokens</a>
@@ -39,7 +39,7 @@ export default function TokensPage() {
         </div>
 
         {/* Semantic Tokens */}
-        <section id="semantic" className="mb-20 border-t-4 border-black pt-20">
+        <section id="semantic" className="mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-3xl font-bold text-neutral-400">Semantic Tokens</h2>
             <span className="text-sm text-neutral-300">Purpose-based design tokens</span>
@@ -308,7 +308,7 @@ export default function TokensPage() {
         </section>
 
         {/* Primitive Colors */}
-        <section id="colors" className="mb-20 border-t-4 border-black pt-20">
+        <section id="colors" className="mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-3xl font-bold text-neutral-400">Colors</h2>
             <span className="text-sm text-neutral-300">{Object.keys(tokens.colors).length} palettes</span>
@@ -366,7 +366,7 @@ export default function TokensPage() {
         </section>
 
         {/* Spacing */}
-        <section id="spacing" className="mb-20 border-t-4 border-black pt-20">
+        <section id="spacing" className="mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-3xl font-bold text-neutral-400">Spacing</h2>
             <span className="text-sm text-neutral-300">{Object.keys(tokens.spacing).length} tokens</span>
@@ -406,7 +406,7 @@ export default function TokensPage() {
         </section>
 
         {/* Typography System */}
-        <section id="typography" className="mb-20 border-t-4 border-black pt-20">
+        <section id="typography" className="mb-20">
           <h2 className="text-3xl font-bold text-neutral-400 mb-6">Typography System</h2>
           
           <div className="bg-bleu-50 border-l-4 border-bleu-500 p-6 rounded-lg mb-8">
@@ -624,7 +624,7 @@ export default function TokensPage() {
         </section>
 
         {/* Border Radius */}
-        <section id="radius" className="mb-20 border-t-4 border-black pt-20">
+        <section id="radius" className="mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-3xl font-bold text-neutral-400">Border Radius</h2>
             <span className="text-sm text-neutral-300">{Object.keys(tokens.borderRadius).length} tokens</span>

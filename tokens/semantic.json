@@ -4,7 +4,7 @@
       "primary": {
         "value": "{color.bleu.500}",
         "type": "color",
-        "description": "Primary brand color for main CTAs and key interactive elements"
+        "description": "Primary brand color - Canada Council blue"
       },
       "primary-hover": {
         "value": "{color.bleu.600}",
@@ -19,17 +19,17 @@
       "secondary": {
         "value": "{color.orange.600}",
         "type": "color",
-        "description": "Secondary brand color for accent elements"
+        "description": "Secondary brand accent color"
       },
       "secondary-hover": {
         "value": "{color.orange.700}",
         "type": "color",
-        "description": "Hover state for secondary brand color"
+        "description": "Hover state for secondary color"
       },
       "secondary-active": {
         "value": "{color.orange.800}",
         "type": "color",
-        "description": "Active/pressed state for secondary brand color"
+        "description": "Active/pressed state for secondary color"
       },
       "primary-focus": {
         "value": "{color.bleu.500}",
@@ -39,61 +39,61 @@
       "secondary-focus": {
         "value": "{color.orange.600}",
         "type": "color",
-        "description": "Focus ring for secondary brand elements"
+        "description": "Focus ring for secondary elements"
       },
       "disabled": {
-        "value": "{color.cool-neutral.300}",
+        "value": "{color.slate.200}",
         "type": "color",
-        "description": "Disabled state for interactive elements"
+        "description": "Disabled state background"
       },
       "disabled-text": {
-        "value": "{color.cool-neutral.500}",
+        "value": "{color.slate.400}",
         "type": "color",
-        "description": "Text color for disabled elements"
+        "description": "Disabled text color"
       }
     },
     "text": {
       "primary": {
-        "value": "{color.neutral.400}",
+        "value": "{color.slate.900}",
         "type": "color",
-        "description": "Primary text color for body content"
+        "description": "Primary text - dark for readability"
       },
       "secondary": {
-        "value": "{color.neutral.300}",
+        "value": "{color.slate.700}",
         "type": "color",
-        "description": "Secondary text color for supporting content"
+        "description": "Secondary text - medium emphasis"
       },
       "muted": {
-        "value": "{color.cool-neutral.600}",
+        "value": "{color.slate.500}",
         "type": "color",
-        "description": "Muted text color for de-emphasized content"
+        "description": "Muted text - de-emphasized"
       },
       "inverse": {
-        "value": "{color.neutral.50}",
+        "value": "{color.slate.50}",
         "type": "color",
-        "description": "Inverse text color for dark backgrounds"
+        "description": "Inverse text for dark backgrounds"
       }
     },
     "surface": {
       "background": {
-        "value": "{color.neutral.50}",
+        "value": "{color.slate.50}",
         "type": "color",
-        "description": "Base background color"
+        "description": "Base background - clean white/light"
       },
       "card": {
-        "value": "{color.cool-neutral.50}",
+        "value": "{color.slate.50}",
         "type": "color",
-        "description": "Card and container background"
+        "description": "Card background - white surface"
       },
       "elevated": {
-        "value": "{color.neutral.50}",
+        "value": "{color.slate.100}",
         "type": "color",
-        "description": "Elevated surface (modals, dropdowns)"
+        "description": "Elevated surfaces - subtle gray"
       },
       "overlay": {
-        "value": "{color.cool-neutral.950}",
+        "value": "{color.slate.900}",
         "type": "color",
-        "description": "Overlay background for modals"
+        "description": "Modal overlay background"
       }
     },
     "feedback": {
@@ -140,24 +140,24 @@
     },
     "border": {
       "default": {
-        "value": "{color.cool-neutral.300}",
+        "value": "{color.slate.300}",
         "type": "color",
-        "description": "Default border color"
+        "description": "Default border - professional separation"
       },
       "subtle": {
-        "value": "{color.cool-neutral.200}",
+        "value": "{color.slate.200}",
         "type": "color",
-        "description": "Subtle border color"
+        "description": "Subtle border - barely visible"
       },
       "strong": {
-        "value": "{color.cool-neutral.500}",
+        "value": "{color.slate.400}",
         "type": "color",
-        "description": "Strong/emphasized border color"
+        "description": "Strong border - emphasized"
       },
       "focus": {
         "value": "{color.bleu.500}",
         "type": "color",
-        "description": "Focus ring color"
+        "description": "Focus ring - brand blue"
       }
     }
   }

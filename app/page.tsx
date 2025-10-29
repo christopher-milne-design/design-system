@@ -2,127 +2,99 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-50">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-bleu-50 via-neutral-50 to-celadon-50 border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6" style={{ letterSpacing: '-0.02em' }}>
-              Canada Council for the Arts Design System
+      <section className="relative overflow-hidden bg-orange-500">
+        <div className="max-w-7xl mx-auto px-8 py-32 md:py-40">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+              <span className="inline-block bg-jaune-400 text-slate-900 px-6 py-3 mb-4">
+                A Design System
+              </span>
+              <br />
+              <span className="inline-block bg-jaune-400 text-slate-900 px-6 py-3">
+                for the Canada Council
+              </span>
+              <br />
+              <span className="inline-block bg-jaune-400 text-slate-900 px-6 py-3 mt-4">
+                for the Arts
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
-              A comprehensive design system built with <strong>Token Studio</strong>, <strong>Style Dictionary</strong>, 
-              <strong>Tailwind CSS</strong>, <strong>ShadCN UI</strong> and <strong>Next.js</strong>. Featuring semantic tokens, 
-              a calculated typography system, and full Figma token integration.
+            <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl leading-relaxed font-medium">
+              Built on our new brand guidelines. Powered by design tokens.
             </p>
-            <div className="flex gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/style-guide" 
-                className="bg-brand-primary hover:bg-brand-primary-hover text-neutral-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                className="inline-flex items-center justify-center bg-bleu-500 hover:bg-bleu-600 text-white px-8 py-4 font-bold text-lg transition-colors"
               >
-                Explore Style Guide
-              </Link>
-              <Link 
-                href="/components" 
-                className="bg-neutral-100 hover:bg-neutral-200 text-neutral-400 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
-              >
-                View Components
+                View Foundation
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
-            System Features
-          </h2>
-          <p className="text-xl text-text-secondary leading-relaxed">
-            Everything you need to build consistent, scalable interfaces
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Feature 1: Design Tokens */}
-          <Link href="/style-guide#semantic" className="group">
-            <div className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
-              <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
-                Semantic Tokens
-              </h3>
-              <p className="text-text-secondary mb-4 leading-relaxed">
-                Purpose-based design tokens that reference primitives. Change your entire color scheme by updating semantic mappings.
-              </p>
-              <span className="text-brand-primary font-semibold group-hover:underline">Explore tokens →</span>
-            </div>
-          </Link>
-
-          {/* Feature 2: Typography */}
-          <Link href="/style-guide#typography" className="group">
-            <div className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
-              <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
-                Typography System
-              </h3>
-              <p className="text-text-secondary mb-4 leading-relaxed">
-                1.33x type scale with calculated line heights and letter-spacing. Optimized for marketing with proper heading and paragraph styles.
-              </p>
-              <span className="text-brand-primary font-semibold group-hover:underline">View typography →</span>
-            </div>
-          </Link>
-
-          {/* Feature 3: Components */}
-          <Link href="/components" className="group">
-            <div className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
-              <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
-                Component Library
-              </h3>
-              <p className="text-text-secondary mb-4 leading-relaxed">
-                Built with ShadCN UI components, customized with design tokens. All interactive states documented and showcased.
-              </p>
-              <span className="text-brand-primary font-semibold group-hover:underline">Browse components →</span>
-            </div>
-          </Link>
-
-          {/* Feature 4: Token Studio */}
-          <div className="bg-neutral-100 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
-              Figma Integration
-            </h3>
-            <p className="text-text-secondary mb-4 leading-relaxed">
-              Bidirectional sync with Figma via Token Studio. Designers update tokens in Figma, push to GitHub, developers pull and rebuild.
+      {/* Brand Showcase */}
+      <section className="bg-gradient-to-br from-slate-50 to-white py-24 border-t-4 border-black">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+              Our Brand
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Every color, every typeface, every spacing value from our brand guidelines—now a living, breathing system
             </p>
-            <span className="text-neutral-300 text-sm">Figma ↔ GitHub ↔ Code</span>
           </div>
 
-          {/* Feature 5: Responsive */}
-          <div className="bg-neutral-100 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
-              Responsive Scales
-            </h3>
-            <p className="text-text-secondary mb-4 leading-relaxed">
-              Separate mobile and desktop typography scales. Components adapt gracefully across all breakpoints with consistent spacing.
-            </p>
-            <span className="text-neutral-300 text-sm">Mobile-first approach</span>
+          {/* Color Palette Preview */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
+            <div className="group cursor-pointer">
+              <div className="h-32 bg-bleu-500 border-4 border-white shadow-lg transition-transform group-hover:scale-105" />
+              <p className="text-center mt-3 font-bold text-slate-700">Bleu</p>
+            </div>
+            <div className="group cursor-pointer">
+              <div className="h-32 bg-orange-500 border-4 border-white shadow-lg transition-transform group-hover:scale-105" />
+              <p className="text-center mt-3 font-bold text-slate-700">Orange</p>
+            </div>
+            <div className="group cursor-pointer">
+              <div className="h-32 bg-vert-500 border-4 border-white shadow-lg transition-transform group-hover:scale-105" />
+              <p className="text-center mt-3 font-bold text-slate-700">Vert</p>
+            </div>
+            <div className="group cursor-pointer">
+              <div className="h-32 bg-rose-500 border-4 border-white shadow-lg transition-transform group-hover:scale-105" />
+              <p className="text-center mt-3 font-bold text-slate-700">Rose</p>
+            </div>
+            <div className="group cursor-pointer">
+              <div className="h-32 bg-jaune-500 border-4 border-white shadow-lg transition-transform group-hover:scale-105" />
+              <p className="text-center mt-3 font-bold text-slate-700">Jaune</p>
+            </div>
           </div>
 
-          {/* Feature 6: Documentation */}
-          <Link href="/style-guide" className="group">
-            <div className="bg-neutral-100 p-8 rounded-lg border-2 border-transparent hover:border-brand-primary transition-all">
-              <h3 className="text-2xl font-bold text-text-primary mb-3" style={{ letterSpacing: '-0.02em' }}>
-                Interactive Docs
-              </h3>
-              <p className="text-text-secondary mb-4 leading-relaxed">
-                Live examples, code snippets, and interactive demos. See every token, component state, and usage pattern in action.
-              </p>
-              <span className="text-brand-primary font-semibold group-hover:underline">Read the docs →</span>
+          <div className="bg-white p-10 border-l-8 border-bleu-500 shadow-lg">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <p className="text-5xl font-bold text-bleu-600 mb-2">10</p>
+                <p className="text-slate-600 font-semibold">Color Palettes</p>
+                <p className="text-sm text-slate-500 mt-1">With 11 shades each</p>
+              </div>
+              <div>
+                <p className="text-5xl font-bold text-orange-600 mb-2">24</p>
+                <p className="text-slate-600 font-semibold">Typography Scales</p>
+                <p className="text-sm text-slate-500 mt-1">Desktop & mobile optimized</p>
+              </div>
+              <div>
+                <p className="text-5xl font-bold text-vert-600 mb-2">50+</p>
+                <p className="text-slate-600 font-semibold">Design Tokens</p>
+                <p className="text-sm text-slate-500 mt-1">Spacing, radius, shadows</p>
+              </div>
             </div>
-          </Link>
+          </div>
         </div>
       </section>
 
       {/* Tech Stack */}
-      <section className="bg-neutral-100 border-y border-neutral-200 py-20">
+      <section className="bg-neutral-100 border-y-4 border-black py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-12 text-center" style={{ letterSpacing: '-0.02em' }}>
             Built With
@@ -230,13 +202,13 @@ export default function Home() {
           Ready to Explore?
         </h2>
         <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
-          Dive into the style guide to see all design tokens, typography scales, and interactive components in action.
+          Explore the foundation to see all design tokens, typography scales, and interactive components in action.
         </p>
         <Link 
           href="/style-guide" 
           className="inline-block bg-brand-primary hover:bg-brand-primary-hover text-neutral-50 px-10 py-5 rounded-lg font-semibold text-lg transition-colors"
         >
-          View Complete Style Guide
+          View Foundation
         </Link>
       </section>
     </main>

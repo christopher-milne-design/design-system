@@ -1,68 +1,95 @@
+import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
-    title: "Fast Performance",
-    description: "Lightning-fast load times and optimized performance for the best user experience.",
-    icon: "",
+    title: "Artist Story: Feature Article",
+    description: "Discover the stories behind the artists shaping Canada's cultural landscape.",
+    image: "/images/features/artist-story.jpg",
     colorClass: "bg-rose-500",
   },
   {
-    title: "Scalable Architecture",
-    description: "Built to grow with your business, from startup to enterprise scale.",
-    icon: "",
+    title: "Featured Misha Maseka: Not That Deep",
+    description: "An intimate look at creative expression and personal connection.",
+    image: "/images/features/misha-maseka.png",
     colorClass: "bg-jaune-400",
   },
   {
-    title: "Easy Integration",
-    description: "Seamlessly integrate with your existing tools and workflows.",
-    icon: "",
+    title: "Featured Music All Around",
+    description: "Experience the rich diversity of musical performances across Canada.",
+    image: "/images/features/music-all-around.png",
     colorClass: "bg-bleu-clair-500",
   },
   {
-    title: "Secure by Default",
-    description: "Enterprise-grade security and compliance built into every feature.",
-    icon: "",
+    title: "Research Cards Impact",
+    description: "Explore the data and insights shaping arts and culture policy.",
+    image: "/images/features/research-impact.jpg",
     colorClass: "bg-vert-400",
   },
   {
-    title: "24/7 Support",
-    description: "Our dedicated team is here to help you succeed around the clock.",
-    icon: "",
+    title: "Arts Across Canada",
+    description: "Connect with artistic communities from coast to coast to coast.",
+    image: "/images/features/arts-canada.jpg",
     colorClass: "bg-orange-500",
   },
   {
-    title: "Custom Solutions",
-    description: "Tailored solutions that fit your unique business requirements.",
-    icon: "",
+    title: "Featured Homesick",
+    description: "Electronic music and live performance pushing creative boundaries.",
+    image: "/images/features/homesick.jpg",
     colorClass: "bg-celadon-500",
+  },
+  {
+    title: "Explore and Create",
+    description: "Tools and resources to support your artistic journey and growth.",
+    image: "/images/features/explore-create.png",
+    colorClass: "bg-bleu-500",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="bg-surface-background px-4 py-24">
-      <div className="container mx-auto">
+    <section className="bg-white py-20 md:py-28">
+      <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
-          <h2 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary" style={{ letterSpacing: '-0.02em' }}>
+          <h2 className="mb-4 text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary">
             Why Choose Us
           </h2>
-          <p className="mx-auto max-w-3xl text-xl text-text-secondary leading-relaxed">
+          <p className="mx-auto max-w-2xl text-lg text-text-secondary">
             Discover the features that make our platform the perfect choice for your business.
           </p>
         </div>
-        <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
+        
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <div
+            <Card
               key={feature.title}
-              className={`${feature.colorClass} p-12 transition-all hover:scale-105`}
+              className="group relative overflow-hidden border border-border-default bg-white hover:shadow-lg transition-all duration-300"
             >
-              <div className="mb-4 text-6xl">{feature.icon}</div>
-              <h3 className="mb-4 text-2xl font-bold text-text-inverse" style={{ letterSpacing: '-0.02em' }}>
-                {feature.title}
-              </h3>
-              <p className="text-lg text-text-inverse/90 leading-relaxed">{feature.description}</p>
-            </div>
+              {/* Accent color bar */}
+              <div className={`absolute top-0 left-0 w-full h-1.5 ${feature.colorClass}`} />
+              
+              {/* Feature image */}
+              <div className="relative w-full h-48 overflow-hidden">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              
+              <CardHeader className="pt-6">
+                <CardTitle className="text-xl font-bold text-text-primary">
+                  {feature.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base text-text-secondary leading-relaxed">
+                  {feature.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

@@ -11,13 +11,14 @@ export async function GET() {
     }
 
     const query = `
-      query Issues {
+      query {
         issues(
           first: 50
           filter: {
             completedAt: { null: false }
+            project: { id: { eq: "2c0f78ec-387e-44e1-ba80-40a34e42f877" } }
           }
-          orderBy: completedAt
+          orderBy: updatedAt
         ) {
           nodes {
             id
