@@ -121,7 +121,7 @@ export default function TokenExample() {
           className="p-md rounded-xl"
           style={{
             backgroundColor: tokens.colors['jaune-clair'][500],
-            color: tokens.colors.mountain.mist[900],
+            color: tokens.colors.neutral[900],
             padding: tokens.spacing.lg,
             borderRadius: tokens.borderRadius.xl,
           }}
