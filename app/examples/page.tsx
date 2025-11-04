@@ -99,7 +99,7 @@ export default function ExamplesPage() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
-              Research & Impact Landing Page
+              Research and Impact Landing Page
             </h2>
             <p className="text-xl text-text-secondary">Data-driven content with funding results and filterable reports</p>
           </div>

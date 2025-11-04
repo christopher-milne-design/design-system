@@ -26,12 +26,12 @@ export default function TokensPage() {
             Foundations
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed mb-4">
-            Our brand guidelines, transformed into design tokens. Every color, every typeface, every spacing value—powering the entire system.
+            Our brand guidelines, transformed into design tokens. Every colour, every typeface, every spacing value—powering the entire system.
           </p>
           <div className="flex flex-wrap gap-4 text-sm">
             <a href="#semantic" className="text-bleu-500 hover:text-bleu-700 font-medium">Semantic Tokens</a>
             <a href="#typography" className="text-bleu-500 hover:text-bleu-700 font-medium">Typography System</a>
-            <a href="#colors" className="text-bleu-500 hover:text-bleu-700">Primitive Colors</a>
+            <a href="#colors" className="text-bleu-500 hover:text-bleu-700">Primitive Colours</a>
             <a href="#spacing" className="text-bleu-500 hover:text-bleu-700">Spacing</a>
             <a href="#radius" className="text-bleu-500 hover:text-bleu-700">Border Radius</a>
             <a href="#examples" className="text-bleu-500 hover:text-bleu-700">Examples</a>
@@ -60,8 +60,8 @@ export default function TokensPage() {
 
           {/* Brand Colors */}
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Brand Colors</h3>
-            <p className="text-sm text-neutral-300 mb-6">Interactive buttons demonstrating all semantic color states</p>
+            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Brand Colours</h3>
+            <p className="text-sm text-neutral-300 mb-6">Interactive buttons demonstrating all semantic colour states</p>
             
             <div className="grid md:grid-cols-2 gap-8">
               {/* Primary Brand */}
@@ -196,11 +196,11 @@ export default function TokensPage() {
 
           {/* Text Colors */}
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Text Colors</h3>
+            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Text Colours</h3>
             <div className="bg-neutral-100 p-6 rounded-lg">
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-neutral-200 pb-3">
-                  <span className="text-text-primary text-lg">Primary text color (body content)</span>
+                  <span className="text-text-primary text-lg">Primary text colour (body content)</span>
                   <code className="text-xs bg-neutral-200 px-2 py-1 rounded">text-text-primary</code>
                 </div>
                 <div className="flex items-center justify-between border-b border-neutral-200 pb-3">
@@ -221,7 +221,7 @@ export default function TokensPage() {
 
           {/* Surface Colors */}
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Surface Colors</h3>
+            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Surface Colours</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-surface-background border-2 border-neutral-200 p-6 rounded-lg">
                 <code className="text-xs bg-neutral-200 px-2 py-1 rounded mb-3 inline-block">bg-surface-background</code>
@@ -236,7 +236,7 @@ export default function TokensPage() {
 
           {/* Feedback Colors */}
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Feedback Colors</h3>
+            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Feedback Colours</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-feedback-success-subtle border-l-4 border-feedback-success p-4 rounded">
                 <p className="text-feedback-success font-semibold mb-1">Success</p>
@@ -259,7 +259,7 @@ export default function TokensPage() {
 
           {/* Border Colors */}
           <div className="mb-10">
-            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Border Colors</h3>
+            <h3 className="text-xl font-semibold text-neutral-400 mb-4">Border Colours</h3>
             <div className="space-y-4">
               <div className="border-2 border-border-subtle p-4 rounded-lg">
                 <code className="text-xs bg-neutral-200 px-2 py-1 rounded">border-border-subtle</code>
@@ -275,7 +275,7 @@ export default function TokensPage() {
               </div>
               <div className="border-2 border-border-focus p-4 rounded-lg">
                 <code className="text-xs bg-neutral-200 px-2 py-1 rounded">border-border-focus</code>
-                <p className="text-neutral-300 text-sm mt-2">Focus ring color</p>
+                <p className="text-neutral-300 text-sm mt-2">Focus ring colour</p>
               </div>
             </div>
           </div>
@@ -310,20 +310,20 @@ export default function TokensPage() {
         {/* Primitive Colors */}
         <section id="colors" className="mb-20">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-3xl font-bold text-neutral-400">Colors</h2>
+            <h2 className="text-3xl font-bold text-neutral-400">Colours</h2>
             <span className="text-sm text-neutral-300">{Object.keys(tokens.colors).length} palettes</span>
           </div>
           
           <div className="bg-neutral-100 p-6 rounded-lg mb-8">
             <h3 className="text-sm font-semibold text-neutral-400 mb-3">Usage</h3>
             <CodeBlock>
-{`// Background colors
+{`// Background colours
 <div className="bg-bleu-500">Primary blue background</div>
 
-// Text colors
+// Text colours
 <p className="text-vert-600">Green text</p>
 
-// Border colors
+// Border colours
 <div className="border-2 border-rouge-400">Red border</div>
 
 // Hover states

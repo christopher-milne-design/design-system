@@ -87,7 +87,7 @@ export default function HowItWorksPage() {
               <FileText className="w-10 h-10 text-orange-500 mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">1. Brand Guidelines</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Your brand guidelines define colors, typography, spacing, and visual identity.
+                Your brand guidelines define colours, typography, spacing, and visual identity.
               </p>
             </CardContent>
           </Card>
@@ -97,7 +97,7 @@ export default function HowItWorksPage() {
               <Figma className="w-10 h-10 text-bleu-500 mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-3">2. Token Studio</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Designers define tokens in Figma using Token Studio plugin. Colors, spacing, typography—all captured as structured data.
+                Designers define tokens in Figma using Token Studio plugin. Colours, spacing, typography—all captured as structured data.
               </p>
             </CardContent>
           </Card>
@@ -203,7 +203,7 @@ export default function HowItWorksPage() {
           <p className="text-slate-300 ml-4">&quot;bleu&quot;: {'{'}</p>
           <p className="text-slate-300 ml-8">&quot;500&quot;: {'{'}</p>
           <p className="ml-12"><span className="text-orange-400">&quot;value&quot;</span>: <span className="text-vert-400">&quot;#1a70ef&quot;</span>,</p>
-          <p className="ml-12"><span className="text-orange-400">&quot;type&quot;</span>: <span className="text-vert-400">&quot;color&quot;</span></p>
+          <p className="ml-12"><span className="text-orange-400">&quot;type&quot;</span>: <span className="text-vert-400">&quot;colour&quot;</span></p>
           <p className="text-slate-300 ml-8">{'}'}</p>
           <p className="text-slate-300 ml-4">{'}'}</p>
           <p className="text-slate-300">{'}'}</p>
@@ -240,7 +240,7 @@ export default function HowItWorksPage() {
               href="/foundations" 
               className="inline-flex items-center justify-center bg-bleu-500 hover:bg-bleu-600 text-white px-8 py-4 font-bold text-lg transition-colors"
             >
-              View Foundationss
+              View Foundations
             </Link>
             <Link 
               href="/components" 
