@@ -58,7 +58,7 @@ export default function TokensPage() {
             </p>
           </div>
 
-          {/* Brand Colors */}
+          {/* Brand Colours */}
           <div className="mb-10">
             <h3 className="text-xl font-semibold text-neutral-400 mb-4">Brand Colours</h3>
             <p className="text-sm text-neutral-300 mb-6">Interactive buttons demonstrating all semantic colour states</p>
@@ -194,7 +194,7 @@ export default function TokensPage() {
             </div>
           </div>
 
-          {/* Text Colors */}
+          {/* Text Colours */}
           <div className="mb-10">
             <h3 className="text-xl font-semibold text-neutral-400 mb-4">Text Colours</h3>
             <div className="bg-neutral-100 p-6 rounded-lg">
@@ -219,7 +219,7 @@ export default function TokensPage() {
             </div>
           </div>
 
-          {/* Surface Colors */}
+          {/* Surface Colours */}
           <div className="mb-10">
             <h3 className="text-xl font-semibold text-neutral-400 mb-4">Surface Colours</h3>
             <div className="grid md:grid-cols-2 gap-6">
@@ -234,7 +234,7 @@ export default function TokensPage() {
             </div>
           </div>
 
-          {/* Feedback Colors */}
+          {/* Feedback Colours */}
           <div className="mb-10">
             <h3 className="text-xl font-semibold text-neutral-400 mb-4">Feedback Colours</h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -257,7 +257,7 @@ export default function TokensPage() {
             </div>
           </div>
 
-          {/* Border Colors */}
+          {/* Border Colours */}
           <div className="mb-10">
             <h3 className="text-xl font-semibold text-neutral-400 mb-4">Border Colours</h3>
             <div className="space-y-4">
@@ -307,7 +307,7 @@ export default function TokensPage() {
           </div>
         </section>
 
-        {/* Primitive Colors */}
+        {/* Primitive Colours */}
         <section id="colors" className="mb-20">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-3xl font-bold text-neutral-400">Colours</h2>
