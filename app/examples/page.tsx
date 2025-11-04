@@ -214,12 +214,6 @@ export default function ExamplesPage() {
           </div>
 
           <Card>
-            <CardImage 
-              src="/images/features/arts-canada.jpg" 
-              alt="Homepage Recreation" 
-              aspectRatio="video"
-              className="bg-bleu-100"
-            />
             <CardContent className="p-6">
               <CardTitle className="text-xl mb-2">Corporate Homepage Redesign</CardTitle>
               <CardDescription className="mb-6">
