@@ -201,18 +201,49 @@ export default function ExamplesPage() {
         </div>
       </section>
 
+      {/* Example 4: Homepage Recreation */}
+      <section>
+        <div className="max-w-7xl mx-auto px-8 py-24">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
+              Homepage Recreation: Corporate Site
+            </h2>
+            <p className="text-xl text-text-secondary">
+              A complete recreation of the Canada Council homepage, refactored using our design system tokens and components.
+            </p>
+          </div>
+
+          <Card>
+            <CardImage 
+              src="/images/features/arts-canada.jpg" 
+              alt="Homepage Recreation" 
+              aspectRatio="video"
+              className="bg-bleu-100"
+            />
+            <CardContent className="p-6">
+              <CardTitle className="text-xl mb-2">Corporate Homepage Redesign</CardTitle>
+              <CardDescription className="mb-6">
+                See how the existing corporate homepage would look rebuilt with semantic tokens, consistent typography, and reusable components. Every element uses the design system—from the header navigation to the footer.
+              </CardDescription>
+              <Link href="/examples/homepage">
+                <Button className="bg-brand-primary hover:bg-brand-primary-hover text-white font-bold">
+                  View Homepage Recreation
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="bg-surface-overlay text-text-inverse py-24 border-t border-border-divider">
+      <section className="bg-surface-overlay text-text-inverse py-24">
         <div className="max-w-5xl mx-auto px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ letterSpacing: '-0.02em' }}>These Are Just Examples</h2>
           <p className="text-xl text-text-inverse mb-10 max-w-2xl mx-auto opacity-90">Every page, every component—built with the same system. Consistent, scalable, ready for our content.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/components" className="inline-flex items-center justify-center bg-bleu-500 hover:bg-bleu-600 text-white px-8 py-4 font-bold text-lg">
               View Components
-            </Link>
-            <Link href="/documentation" className="inline-flex items-center justify-center border-2 border-text-inverse hover:bg-text-inverse hover:text-text-primary text-text-inverse px-8 py-4 font-bold text-lg">
-              Read Documentation
-              <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
         </div>

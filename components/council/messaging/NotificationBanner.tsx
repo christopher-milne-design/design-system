@@ -69,23 +69,23 @@ export default function NotificationBanner({
   return (
     <Alert
       className={cn(
-        "relative border-l-4 shadow-sm",
+        "relative border-l-4 shadow-sm w-full !grid-cols-[0_1fr]",
         config.className,
         className
       )}
     >
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-3 w-full col-start-2">
         <Icon className={cn("h-5 w-5 flex-shrink-0 mt-0.5", config.iconClassName)} />
         
         <div className="flex-1 min-w-0">
           {title && (
-            <div className="font-semibold mb-1">
+            <div className="font-semibold mb-1 text-current">
               {title}
             </div>
           )}
-          <AlertDescription className="text-sm leading-relaxed">
+          <div className="text-sm leading-relaxed break-words text-current">
             {message}
-          </AlertDescription>
+          </div>
           
           {action && (
             <div className="mt-3">
@@ -113,7 +113,7 @@ export default function NotificationBanner({
             variant="ghost"
             size="sm"
             onClick={handleDismiss}
-            className="h-6 w-6 p-0 hover:bg-black/5 flex-shrink-0"
+            className="h-6 w-6 p-0 hover:bg-black/5 flex-shrink-0 ml-auto"
           >
             <X className="h-4 w-4" />
             <span className="sr-only">Dismiss</span>
