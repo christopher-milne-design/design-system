@@ -240,7 +240,7 @@ export default function HowItWorksPage() {
               href="/foundations" 
               className="inline-flex items-center justify-center bg-bleu-500 hover:bg-bleu-600 text-white px-8 py-4 font-bold text-lg transition-colors"
             >
-              View Foundations
+              View Foundationss
             </Link>
             <Link 
               href="/components" 

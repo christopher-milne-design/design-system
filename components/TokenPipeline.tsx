@@ -318,7 +318,7 @@ border-border-default`
              px-8 py-4 
              font-bold 
              transition-colors">
-  View Foundation
+  View Foundations
 </button>`
               }
             ]}
@@ -338,7 +338,7 @@ border-border-default`
             </p>
             <div className="flex justify-center mb-8">
               <button className="bg-brand-primary hover:bg-brand-primary-hover active:bg-brand-primary-active text-text-inverse px-10 py-5 font-bold text-lg transition-colors">
-                View Foundation
+                View Foundations
               </button>
             </div>
             <div className="bg-white p-6 border border-border-default">
@@ -348,7 +348,7 @@ border-border-default`
              hover:bg-brand-primary-hover 
              text-text-inverse 
              px-10 py-5">
-  View Foundation
+  View Foundations
 </button>`}</code>
               </pre>
             </div>

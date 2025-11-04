@@ -187,7 +187,7 @@ export default function DocumentationPage() {
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <p className="text-sm font-bold text-bleu-600 mb-2 uppercase tracking-wide">Phase 1</p>
-                  <h3 className="text-2xl font-bold text-slate-900">Foundation & Validation</h3>
+                  <h3 className="text-2xl font-bold text-slate-900">Foundations & Validation</h3>
                 </div>
                 <Clock className="w-10 h-10 text-bleu-600" />
               </div>

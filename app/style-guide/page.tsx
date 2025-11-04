@@ -23,7 +23,7 @@ export default function TokensPage() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-slate-900" style={{ letterSpacing: '-0.02em' }}>
-            Foundation
+            Foundations
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed mb-4">
             Design tokens automatically synced from Figma via Token Studio → GitHub → Style Dictionary → Tailwind

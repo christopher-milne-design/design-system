@@ -682,7 +682,7 @@ export default function ComponentsPage() {
             </ul>
             <div className="mt-8">
               <Link href="/style-guide" className="inline-block text-brand-primary hover:text-brand-primary-hover font-bold text-lg underline decoration-2 underline-offset-4">
-                View Foundation →
+                View Foundations →
               </Link>
             </div>
           </section>

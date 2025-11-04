@@ -29,7 +29,7 @@ export default function Home() {
                 href="/foundations" 
                 className="inline-flex items-center justify-center bg-neutral-400 hover:bg-neutral-300 text-white px-8 py-4 font-bold text-lg transition-colors"
               >
-                View Foundation
+                View Foundations
               </Link>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function Home() {
             href="/foundations" 
             className="inline-block bg-neutral-400 hover:bg-neutral-300 text-white px-10 py-5 font-bold text-lg transition-colors"
           >
-            View Foundation
+            View Foundations
           </Link>
         </div>
       </section>
