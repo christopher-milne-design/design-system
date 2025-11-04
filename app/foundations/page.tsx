@@ -18,8 +18,8 @@ function CodeBlock({ children, title }: { children: string; title?: string }) {
 
 export default function TokensPage() {
   return (
-    <div className="min-h-screen bg-neutral-50 p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-neutral-50">
+      <div className="max-w-7xl mx-auto p-8">
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
