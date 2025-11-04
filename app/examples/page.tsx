@@ -202,44 +202,20 @@ export default function ExamplesPage() {
       </section>
 
       {/* Example 4: Homepage Recreation */}
-      <section>
-        <div className="max-w-7xl mx-auto px-8 py-24">
-          <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
-              Homepage Recreation: Corporate Site
-            </h2>
-            <p className="text-xl text-text-secondary">
-              A complete recreation of the Canada Council homepage, refactored using our design system tokens and components.
-            </p>
-          </div>
-
-          <Card>
-            <CardContent className="p-6">
-              <CardTitle className="text-xl mb-2">Corporate Homepage Redesign</CardTitle>
-              <CardDescription className="mb-6">
-                See how the existing corporate homepage would look rebuilt with semantic tokens, consistent typography, and reusable components. Every element uses the design system—from the header navigation to the footer.
-              </CardDescription>
-              <Link href="/examples/homepage">
-                <Button className="bg-brand-primary hover:bg-brand-primary-hover text-white font-bold">
-                  View Homepage Recreation
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-surface-overlay text-text-inverse py-24">
+      <section className="bg-vert-500 py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ letterSpacing: '-0.02em' }}>These Are Just Examples</h2>
-          <p className="text-xl text-text-inverse mb-10 max-w-2xl mx-auto opacity-90">Every page, every component—built with the same system. Consistent, scalable, ready for our content.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/components" className="inline-flex items-center justify-center bg-bleu-500 hover:bg-bleu-600 text-white px-8 py-4 font-bold text-lg">
-              View Components
-            </Link>
-          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
+            Homepage Recreation
+          </h2>
+          <p className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+            See a complete recreation of the Canada Council homepage, refactored using our design system tokens and components.
+          </p>
+          <Link 
+            href="/examples/homepage" 
+            className="inline-block bg-neutral-400 hover:bg-neutral-300 text-white px-10 py-5 font-bold text-lg transition-colors"
+          >
+            View Homepage Recreation
+          </Link>
         </div>
       </section>
     </main>

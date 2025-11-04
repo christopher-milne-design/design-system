@@ -665,30 +665,26 @@ export default function ComponentsPage() {
         </div>
       </div>
 
-      <div className="border-t border-border-divider">
-        <div className="max-w-7xl mx-auto px-8 py-20">
-          {/* Integration Note */}
-          <section className="bg-vert-50 border-l-8 border-vert-500 p-12 md:p-16">
-            <h3 className="text-3xl font-bold text-text-primary mb-6" style={{ letterSpacing: '-0.02em' }}>Design System Integration</h3>
-            <p className="text-text-secondary text-lg mb-6 leading-relaxed">
-              All components are built with <strong>ShadCN UI</strong> and customized using our design system tokens:
-            </p>
-            <ul className="space-y-3 text-text-secondary text-lg">
-              <li>✦ <strong>Semantic color tokens</strong> (brand-primary, feedback-success, etc.)</li>
-              <li>✦ <strong>Typography system</strong> with calculated line heights and letter spacing</li>
-              <li>✦ <strong>Spacing tokens</strong> for consistent padding and margins</li>
-              <li>✦ <strong>Border radius tokens</strong> from the design system</li>
-              <li>✦ <strong>Fully accessible</strong> with proper ARIA attributes</li>
-            </ul>
-            <div className="mt-8">
-              <Link href="/style-guide" className="inline-block text-brand-primary hover:text-brand-primary-hover font-bold text-lg underline decoration-2 underline-offset-4">
-                View Foundations →
-              </Link>
-            </div>
-          </section>
+      </div>
+      </div>
+
+      {/* CTA Section */}
+      <section className="bg-vert-500 py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-8 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
+            See Real Examples
+          </h2>
+          <p className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+            Explore complete page examples showing how these components work together to create real Canada Council experiences.
+          </p>
+          <Link 
+            href="/examples" 
+            className="inline-block bg-neutral-400 hover:bg-neutral-300 text-white px-10 py-5 font-bold text-lg transition-colors"
+          >
+            View Examples
+          </Link>
         </div>
-      </div>
-      </div>
+      </section>
     </div>
   );
 }

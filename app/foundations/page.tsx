@@ -663,6 +663,24 @@ export default function TokensPage() {
         </section>
 
       </div>
+
+      {/* CTA Section */}
+      <section className="bg-vert-500 py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-8 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
+            See Components in Action
+          </h2>
+          <p className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+            Explore our component library to see how these design tokens come together in interactive, accessible components.
+          </p>
+          <Link 
+            href="/components" 
+            className="inline-block bg-neutral-400 hover:bg-neutral-300 text-white px-10 py-5 font-bold text-lg transition-colors"
+          >
+            View Components
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
