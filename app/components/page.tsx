@@ -218,11 +218,8 @@ export default function ComponentsPage() {
           </CodeBlock>
         </ComponentSection>
         </section>
-      </div>
 
-      {/* Buttons */}
-      <div className="border-t border-border-divider">
-        <div className="max-w-7xl mx-auto px-8 py-20">
+        {/* Buttons */}
         <section id="buttons">
         <ComponentSection
           title="Buttons"
@@ -663,9 +660,6 @@ export default function ComponentsPage() {
         </ComponentSection>
         </section>
         </div>
-      </div>
-
-      </div>
       </div>
 
       {/* CTA Section */}
