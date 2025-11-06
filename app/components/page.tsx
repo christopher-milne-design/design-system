@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,76 +13,48 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ComponentExample from "@/components/ComponentExample";
-import MainNav from "@/components/council/navigation/MainNav";
-import SearchCombobox from "@/components/council/forms/SearchCombobox";
-import FilterPanel from "@/components/council/forms/FilterPanel";
-import { InfoBanner, WarningBanner, SuccessBanner, ErrorBanner } from "@/components/council/messaging/NotificationBanner";
-import { CardExamples } from "@/components/CardExamples";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 function ComponentSection({ 
   title, 
   description, 
-  children 
+  example,
+  code
 }: { 
   title: string; 
   description: string; 
-  children: React.ReactNode;
+  example: React.ReactNode;
+  code: string;
 }) {
   return (
     <section className="mb-24">
-      <div className="mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold text-text-primary mb-2" style={{ letterSpacing: '-0.02em' }}>
           {title}
         </h2>
-        <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-3xl">{description}</p>
+        <p className="text-text-secondary leading-relaxed">{description}</p>
       </div>
-      {children}
+      <div className="grid lg:grid-cols-2 gap-8">
+        <div className="bg-surface-elevated p-8 border border-border-subtle">
+          {example}
+        </div>
+        <div className="bg-neutral-400 overflow-hidden">
+          <pre className="p-6 overflow-x-auto h-full">
+            <code className="text-sm text-neutral-100">{code}</code>
+          </pre>
+        </div>
+      </div>
     </section>
   );
 }
 
-function CodeBlock({ children }: { children: string }) {
-  return (
-    <div className="bg-surface-elevated rounded-lg overflow-hidden mt-4 border border-border-subtle">
-      <pre className="p-4 overflow-x-auto">
-        <code className="text-sm text-text-secondary">{children}</code>
-      </pre>
-    </div>
-  );
-}
-
 export default function ComponentsPage() {
-  const [locale, setLocale] = React.useState<"en" | "fr">("en");
-  const [searchResults] = React.useState([
-    { id: "1", title: "Arts Funding Programs", description: "Support for artists and organizations", category: "Programs", href: "/programs" },
-    { id: "2", title: "Research Publications", description: "Latest arts research and reports", category: "Resources", href: "/research" },
-  ]);
-  const [activeFilters, setActiveFilters] = React.useState<any[]>([]);
-
-  const filterGroups = [
-    {
-      id: "discipline",
-      label: "Discipline",
-      type: "checkbox" as const,
-      options: [
-        { id: "visual", label: "Visual Arts", count: 45 },
-        { id: "music", label: "Music", count: 32 },
-        { id: "theatre", label: "Theatre", count: 28 },
-        { id: "dance", label: "Dance", count: 15 },
-      ],
-    },
-    {
-      id: "date",
-      label: "Date Range",
-      type: "select" as const,
-      options: [
-        { id: "all", label: "All Time" },
-        { id: "year", label: "Past Year" },
-        { id: "month", label: "Past Month" },
-      ],
-    },
-  ];
+  const [dialogOpen, setDialogOpen] = React.useState(false);
 
   return (
     <div className="min-h-screen">
@@ -97,13 +70,17 @@ export default function ComponentsPage() {
             </p>
             <nav className="flex gap-6 text-base flex-wrap" aria-label="Page sections">
               <a href="#accordion" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Accordion</a>
-              <a href="#alerts" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Alerts</a>
-              <a href="#buttons" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Buttons</a>
-              <a href="#cards" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Cards</a>
-              <a href="#filters" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Filters</a>
-              <a href="#forms" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Forms</a>
-              <a href="#notifications" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Notifications</a>
-              <a href="#search" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Search</a>
+              <a href="#alert" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Alert</a>
+              <a href="#badge" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Badge</a>
+              <a href="#breadcrumb" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Breadcrumb</a>
+              <a href="#button" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Button</a>
+              <a href="#card" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Card</a>
+              <a href="#carousel" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Carousel</a>
+              <a href="#dialog" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Dialog</a>
+              <a href="#dropdown" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Dropdown</a>
+              <a href="#form" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Form</a>
+              <a href="#navigation" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Navigation</a>
+              <a href="#table" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Table</a>
               <a href="#tabs" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Tabs</a>
             </nav>
           </div>
@@ -114,34 +91,27 @@ export default function ComponentsPage() {
         <div className="max-w-7xl mx-auto px-8 py-20">
 
         {/* Accordion */}
-        <section id="accordion">
-        <ComponentSection
-          title="Accordion"
-          description="Expandable content sections for FAQs and collapsible information."
-        >
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What funding programs are available?</AccordionTrigger>
-              <AccordionContent>
-                The Canada Council offers various programs including Explore and Create, Concept to Realization, and Arts Across Canada.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>How do I apply for funding?</AccordionTrigger>
-              <AccordionContent>
-                Applications are submitted through our online portal. You'll need to create an account and provide project details.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>What are the eligibility requirements?</AccordionTrigger>
-              <AccordionContent>
-                Eligibility varies by program. Generally, applicants must be Canadian artists or arts organizations.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-
-          <CodeBlock>
-{`<Accordion type="single" collapsible>
+        <section id="accordion" className="scroll-mt-20">
+          <ComponentSection
+            title="Accordion"
+            description="Expandable content sections for FAQs and collapsible information."
+            example={
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>What funding programs are available?</AccordionTrigger>
+                  <AccordionContent>
+                    The Canada Council offers various programs including Explore and Create, Concept to Realization, and Arts Across Canada.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>How do I apply for funding?</AccordionTrigger>
+                  <AccordionContent>
+                    Applications are submitted through our online portal. You'll need to create an account and provide project details.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            }
+            code={`<Accordion type="single" collapsible>
   <AccordionItem value="item-1">
     <AccordionTrigger>Question?</AccordionTrigger>
     <AccordionContent>
@@ -149,516 +119,433 @@ export default function ComponentsPage() {
     </AccordionContent>
   </AccordionItem>
 </Accordion>`}
-          </CodeBlock>
-        </ComponentSection>
+          />
         </section>
 
-        {/* Alerts */}
-        <section id="alerts">
-        <ComponentSection
-          title="Alerts"
-          description="Feedback messages and notifications for different states."
-        >
-          <div className="space-y-6">
-            <Alert>
-              <AlertTitle>Default Alert</AlertTitle>
-              <AlertDescription>
-                This is a standard alert message. Use for general information.
-              </AlertDescription>
-            </Alert>
-
-            <Alert variant="destructive">
-              <AlertTitle>Error Alert</AlertTitle>
-              <AlertDescription>
-                Something went wrong. Please check your input and try again.
-              </AlertDescription>
-            </Alert>
-
-            <Alert className="bg-feedback-success-subtle border-l-4 border-feedback-success">
-              <AlertTitle className="text-feedback-success">Success!</AlertTitle>
-              <AlertDescription className="text-feedback-success">
-                Your changes have been saved successfully.
-              </AlertDescription>
-            </Alert>
-
-            <Alert className="bg-feedback-warning-subtle border-l-4 border-feedback-warning">
-              <AlertTitle className="text-feedback-warning">Warning</AlertTitle>
-              <AlertDescription className="text-feedback-warning">
-                Please review your information before continuing.
-              </AlertDescription>
-            </Alert>
-
-            <Alert className="bg-feedback-info-subtle border-l-4 border-feedback-info">
-              <AlertTitle className="text-feedback-info">Information</AlertTitle>
-              <AlertDescription className="text-feedback-info">
-                Did you know? You can customize alerts with semantic tokens.
-              </AlertDescription>
-            </Alert>
-          </div>
-
-          <CodeBlock>
-{`<Alert>
-  <AlertTitle>Alert Title</AlertTitle>
-  <AlertDescription>
-    Alert message here
-  </AlertDescription>
-</Alert>
-
-<Alert variant="destructive">
-  <AlertTitle>Error</AlertTitle>
-  <AlertDescription>
-    Error message
-  </AlertDescription>
-</Alert>
-
-<Alert className="bg-feedback-success-subtle border-l-4 border-feedback-success">
-  <AlertTitle>Success</AlertTitle>
-  <AlertDescription>Success message</AlertDescription>
-</Alert>`}
-          </CodeBlock>
-        </ComponentSection>
-        </section>
-
-        {/* Buttons */}
-        <section id="buttons">
-        <ComponentSection
-          title="Buttons"
-          description="Interactive buttons with multiple variants and states. All use semantic tokens for consistent theming."
-        >
-          <div className="space-y-12">
-            {/* Button Variants */}
-            <div className="bg-surface-elevated p-10 rounded-lg border border-border-subtle">
-              <h3 className="text-2xl font-semibold text-text-primary mb-8">Variants</h3>
-              <div className="flex flex-wrap gap-4">
-                <Button>Default Button</Button>
-                <Button variant="secondary">Secondary</Button>
-                <Button variant="destructive">Destructive</Button>
-                <Button variant="outline">Outline</Button>
-                <Button variant="ghost">Ghost</Button>
-                <Button variant="link">Link</Button>
-              </div>
-              <CodeBlock>
-{`<Button>Default Button</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="destructive">Destructive</Button>
-<Button variant="outline">Outline</Button>
-<Button variant="ghost">Ghost</Button>
-<Button variant="link">Link</Button>`}
-              </CodeBlock>
-            </div>
-
-            {/* Button Sizes */}
-            <div className="bg-surface-elevated p-10 rounded-lg border border-border-subtle">
-              <h3 className="text-2xl font-semibold text-text-primary mb-8">Sizes</h3>
-              <div className="flex flex-wrap items-center gap-4">
-                <Button size="sm">Small</Button>
-                <Button size="default">Default</Button>
-                <Button size="lg">Large</Button>
-                <Button size="icon"></Button>
-              </div>
-              <CodeBlock>
-{`<Button size="sm">Small</Button>
-<Button size="default">Default</Button>
-<Button size="lg">Large</Button>
-<Button size="icon"></Button>`}
-              </CodeBlock>
-            </div>
-
-            {/* Button States */}
-            <div className="bg-surface-elevated p-10 rounded-lg border border-border-subtle">
-              <h3 className="text-2xl font-semibold text-text-primary mb-8">States</h3>
-              <div className="flex flex-wrap gap-4">
-                <Button>Normal</Button>
-                <Button disabled>Disabled</Button>
-                <Button className="hover:bg-brand-primary-hover">Hover Me</Button>
-                <Button className="active:bg-brand-primary-active">Click Me</Button>
-              </div>
-              <CodeBlock>
-{`<Button>Normal</Button>
-<Button disabled>Disabled</Button>
-<Button className="hover:bg-brand-primary-hover">Hover Me</Button>`}
-              </CodeBlock>
-            </div>
-          </div>
-        </ComponentSection>
-        </section>
-
-        {/* Cards */}
-        <section id="cards">
-        <ComponentSection
-          title="Cards"
-          description="Composable card system and base card components."
-        >
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold text-text-primary mb-6">Composable Card System</h3>
-            <CardExamples />
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-2xl font-semibold text-text-primary mb-6">Base Card Components</h3>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Simple Card</CardTitle>
-                <CardDescription>A basic card with header and content</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-text-secondary">
-                  Cards are versatile containers for grouping related content and actions.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Card with Footer</CardTitle>
-                <CardDescription>Including actions at the bottom</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-text-secondary">
-                  Add buttons or other actions in the footer section.
-                </p>
-              </CardContent>
-              <CardFooter className="flex gap-2">
-                <Button size="sm">Action</Button>
-                <Button size="sm" variant="outline">Cancel</Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="border-brand-primary border-2">
-              <CardHeader>
-                <CardTitle>Highlighted Card</CardTitle>
-                <CardDescription>With custom border styling</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-text-secondary">
-                  Cards can be customized with borders and backgrounds using semantic tokens.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <CodeBlock>
-{`<Card>
-  <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card description text</CardDescription>
-  </CardHeader>
-  <CardContent>
-    <p>Your content here</p>
-  </CardContent>
-  <CardFooter>
-    <Button>Action</Button>
-  </CardFooter>
-</Card>`}
-          </CodeBlock>
-        </ComponentSection>
-        </section>
-
-        {/* Filters */}
-        <section id="filters">
-        <ComponentSection
-          title="Filters"
-          description="Filterable sidebar for research, programs, and results."
-        >
-          <div className="grid md:grid-cols-4 gap-6">
-            <div>
-              <FilterPanel
-                groups={filterGroups}
-                activeFilters={activeFilters}
-                onFilterChange={setActiveFilters}
-                onClearAll={() => setActiveFilters([])}
-                showMobileToggle={false}
-              />
-            </div>
-            <div className="md:col-span-3 space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Results</CardTitle>
-                  <CardDescription>
-                    {activeFilters.length > 0
-                      ? `${activeFilters.length} filter(s) applied`
-                      : "Showing all results"}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-text-secondary">
-                    Results would appear here based on active filters.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          <CodeBlock>
-{`<FilterPanel
-  groups={filterGroups}
-  activeFilters={activeFilters}
-  onFilterChange={setActiveFilters}
-  onClearAll={() => setActiveFilters([])}
-/>`}
-          </CodeBlock>
-        </ComponentSection>
-        </section>
-
-        {/* Forms */}
-        <section id="forms">
-        <ComponentSection
-          title="Forms"
-          description="Input fields, textareas, selects, and labels for building forms."
-        >
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Input Examples */}
-            <div className="bg-surface-elevated p-10 rounded-lg border border-border-subtle">
-              <h3 className="text-2xl font-semibold text-text-primary mb-8">Input Fields</h3>
+        {/* Alert */}
+        <section id="alert" className="scroll-mt-20">
+          <ComponentSection
+            title="Alert"
+            description="Status and feedback messages with accessible color contrast."
+            example={
               <div className="space-y-4">
+                <Alert className="bg-feedback-success border-0">
+                  <AlertTitle className="text-white">Success</AlertTitle>
+                  <AlertDescription className="text-white">Your grant application has been submitted successfully.</AlertDescription>
+                </Alert>
+                <Alert className="bg-feedback-error border-0">
+                  <AlertTitle className="text-white">Error</AlertTitle>
+                  <AlertDescription className="text-white">Please check your input and try again.</AlertDescription>
+                </Alert>
+                <Alert className="bg-feedback-warning border-0">
+                  <AlertTitle className="text-white">Warning</AlertTitle>
+                  <AlertDescription className="text-white">Please review your information before continuing.</AlertDescription>
+                </Alert>
+              </div>
+            }
+            code={`<Alert className="bg-feedback-success border-0">
+  <AlertTitle>Success</AlertTitle>
+  <AlertDescription>Message here</AlertDescription>
+</Alert>`}
+          />
+        </section>
+
+        {/* Badge */}
+        <section id="badge" className="scroll-mt-20">
+          <ComponentSection
+            title="Badge"
+            description="Status indicators for open, closed, new, or featured content."
+            example={
+              <div className="flex flex-wrap gap-3">
+                <Badge className="bg-feedback-success text-white">Open</Badge>
+                <Badge className="bg-feedback-error text-white">Closed</Badge>
+                <Badge className="bg-brand-primary text-white">New</Badge>
+                <Badge className="bg-bleu-500 text-white">Featured</Badge>
+              </div>
+            }
+            code={`<Badge className="bg-feedback-success text-white">
+  Open
+</Badge>
+<Badge className="bg-feedback-error text-white">
+  Closed
+</Badge>`}
+          />
+        </section>
+
+        {/* Breadcrumb */}
+        <section id="breadcrumb" className="scroll-mt-20">
+          <ComponentSection
+            title="Breadcrumb"
+            description="Hierarchical navigation for deep content like funding programs."
+            example={
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/programs">Programs</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>Explore and Create</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            }
+            code={`<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Current</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`}
+          />
+        </section>
+
+        {/* Button */}
+        <section id="button" className="scroll-mt-20">
+          <ComponentSection
+            title="Button"
+            description="Primary and secondary CTAs for user interactions."
+            example={
+              <div className="flex flex-wrap gap-4">
+                <Button className="bg-brand-primary text-white">Apply Now</Button>
+                <Button className="bg-brand-secondary text-white">Read More</Button>
+                <Button variant="outline">Learn More</Button>
+              </div>
+            }
+            code={`<Button className="bg-brand-primary text-white">
+  Apply Now
+</Button>
+<Button variant="outline">
+  Learn More
+</Button>`}
+          />
+        </section>
+
+        {/* Card */}
+        <section id="card" className="scroll-mt-20">
+          <ComponentSection
+            title="Card"
+            description="Program teasers, grant summaries, and featured content."
+            example={
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Card without badge */}
+                <Card className="border-0">
+                  <div className="relative w-full h-32 bg-neutral-200">
+                    <Image
+                      src="/images/features/artist-story.jpg"
+                      alt="Program"
+                      fill
+                      className="object-cover"
+                      sizes="200px"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Explore and Create</CardTitle>
+                    <CardDescription>Support for artistic exploration and creation.</CardDescription>
+                  </CardHeader>
+                </Card>
+                
+                {/* Card with badges */}
+                <Card className="border-0">
+                  <div className="relative w-full h-32 bg-neutral-200">
+                    <Image
+                      src="/images/features/misha-maseka.png"
+                      alt="Program"
+                      fill
+                      className="object-cover"
+                      sizes="200px"
+                    />
+                  </div>
+                  <CardHeader>
+                    <div className="flex gap-2 mb-2">
+                      <Badge className="bg-brand-primary text-white text-xs">New</Badge>
+                      <Badge className="bg-feedback-success text-white text-xs">Open</Badge>
+                    </div>
+                    <CardTitle className="text-lg">Arts Across Canada</CardTitle>
+                    <CardDescription>Connect with artistic communities nationwide.</CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
+            }
+            code={`<Card className="border-0">
+  <div className="relative w-full h-32">
+    <Image src="/..." alt="..." />
+  </div>
+  <CardHeader>
+    <div className="flex gap-2 mb-2">
+      <Badge>New</Badge>
+    </div>
+    <CardTitle>Title</CardTitle>
+    <CardDescription>Description</CardDescription>
+  </CardHeader>
+</Card>`}
+          />
+        </section>
+
+        {/* Carousel */}
+        <section id="carousel" className="scroll-mt-20">
+          <ComponentSection
+            title="Carousel"
+            description="Rotating features and visual highlights for engagement."
+            example={
+              <Carousel className="w-full max-w-md mx-auto">
+                <CarouselContent>
+                  <CarouselItem className="bg-bleu-500 text-white p-8 text-center min-h-40 flex items-center justify-center">
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">Featured Artist</h3>
+                      <p>Discover incredible talent</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="bg-vert-500 text-white p-8 text-center min-h-40 flex items-center justify-center">
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">New Program</h3>
+                      <p>Open for applications</p>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="bg-orange-500 text-white p-8 text-center min-h-40 flex items-center justify-center">
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">Success Story</h3>
+                      <p>Read inspiring stories</p>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="left-0" />
+                <CarouselNext className="right-0" />
+              </Carousel>
+            }
+            code={`<Carousel>
+  <CarouselContent>
+    <CarouselItem>Slide 1</CarouselItem>
+    <CarouselItem>Slide 2</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>`}
+          />
+        </section>
+
+        {/* Dialog */}
+        <section id="dialog" className="scroll-mt-20">
+          <ComponentSection
+            title="Dialog"
+            description="Modal windows for confirmations, disclosures, and sign-ups."
+            example={
+              <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="bg-brand-primary text-white">Open Dialog</Button>
+                </DialogTrigger>
+                <DialogContent className="border-0">
+                  <DialogHeader>
+                    <DialogTitle>Accessibility Statement</DialogTitle>
+                    <DialogDescription>
+                      Our commitment to accessibility and inclusive design for all users.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    <p className="text-sm text-text-secondary">
+                      We are committed to ensuring digital accessibility for individuals with disabilities.
+                    </p>
+                    <Button onClick={() => setDialogOpen(false)} className="bg-brand-primary text-white">
+                      Close
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            }
+            code={`<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Title</DialogTitle>
+      <DialogDescription>Description</DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>`}
+          />
+        </section>
+
+        {/* Dropdown Menu */}
+        <section id="dropdown" className="scroll-mt-20">
+          <ComponentSection
+            title="Dropdown Menu"
+            description="Secondary navigation, user menus, and filters."
+            example={
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline">Menu</Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="border-0">
+                  <DropdownMenuItem>Language: English</DropdownMenuItem>
+                  <DropdownMenuItem>Language: Français</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            }
+            code={`<DropdownMenu>
+  <DropdownMenuTrigger>Menu</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Item 1</DropdownMenuItem>
+    <DropdownMenuItem>Item 2</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`}
+          />
+        </section>
+
+        {/* Form */}
+        <section id="form" className="scroll-mt-20">
+          <ComponentSection
+            title="Form"
+            description="Newsletter signups, contact forms, and input fields."
+            example={
+              <div className="space-y-4 max-w-sm">
                 <div>
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Enter your name" />
+                  <Input id="name" placeholder="Your name" className="border-0" />
                 </div>
                 <div>
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="email@example.com" />
+                  <Input id="email" type="email" placeholder="your@email.com" className="border-0" />
                 </div>
-                <div>
-                  <Label htmlFor="disabled">Disabled Input</Label>
-                  <Input id="disabled" disabled placeholder="Disabled" />
-                </div>
-              </div>
-              <CodeBlock>
-{`<Label htmlFor="name">Name</Label>
-<Input id="name" placeholder="Enter your name" />`}
-              </CodeBlock>
-            </div>
-
-            {/* Textarea and Select */}
-            <div className="bg-surface-elevated p-10 rounded-lg border border-border-subtle">
-              <h3 className="text-2xl font-semibold text-text-primary mb-8">Textarea & Select</h3>
-              <div className="space-y-4">
                 <div>
                   <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Type your message here" rows={4} />
+                  <Textarea id="message" placeholder="Your message" className="border-0" rows={3} />
                 </div>
-                <div>
-                  <Label htmlFor="select">Select Option</Label>
-                  <Select>
-                    <SelectTrigger id="select">
-                      <SelectValue placeholder="Choose an option" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="option1">Option 1</SelectItem>
-                      <SelectItem value="option2">Option 2</SelectItem>
-                      <SelectItem value="option3">Option 3</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                <Button className="bg-brand-primary text-white w-full">Submit</Button>
               </div>
-              <CodeBlock>
-{`<Label htmlFor="message">Message</Label>
-<Textarea id="message" placeholder="Type here" />
-
-<Select>
-  <SelectTrigger>
-    <SelectValue placeholder="Choose" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="opt1">Option 1</SelectItem>
-  </SelectContent>
-</Select>`}
-              </CodeBlock>
-            </div>
-
-            {/* Complete Form Example */}
-            <div className="md:col-span-2 bg-surface-elevated p-10 rounded-lg border border-border-subtle">
-              <h3 className="text-2xl font-semibold text-text-primary mb-8">Complete Form Example</h3>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Form</CardTitle>
-                  <CardDescription>Send us a message</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="John" />
-                    </div>
-                    <div>
-                      <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Doe" />
-                    </div>
-                  </div>
-                  <div>
-                    <Label htmlFor="formEmail">Email</Label>
-                    <Input id="formEmail" type="email" placeholder="john@example.com" />
-                  </div>
-                  <div>
-                    <Label htmlFor="subject">Subject</Label>
-                    <Select>
-                      <SelectTrigger id="subject">
-                        <SelectValue placeholder="Select a subject" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="general">General Inquiry</SelectItem>
-                        <SelectItem value="support">Support</SelectItem>
-                        <SelectItem value="feedback">Feedback</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="formMessage">Message</Label>
-                    <Textarea id="formMessage" placeholder="Your message here..." rows={4} />
-                  </div>
-                </CardContent>
-                <CardFooter className="flex gap-2">
-                  <Button>Send Message</Button>
-                  <Button variant="outline">Reset</Button>
-                </CardFooter>
-              </Card>
-            </div>
-          </div>
-        </ComponentSection>
+            }
+            code={`<form className="space-y-4">
+  <div>
+    <Label>Name</Label>
+    <Input placeholder="..." />
+  </div>
+  <Textarea placeholder="..." />
+  <Button type="submit">Submit</Button>
+</form>`}
+          />
         </section>
 
-        {/* Notifications */}
-        <section id="notifications">
-        <ComponentSection
-          title="Notifications"
-          description="Important site messages and announcements."
-        >
-          <div className="space-y-4">
-            <InfoBanner
-              title="New Grant Programs Available"
-              message="Applications are now open for our 2025 funding programs."
-              action={{ label: "View Programs", href: "/programs" }}
-            />
-            <WarningBanner
-              message="System maintenance scheduled for March 20, 2025 from 2-4 AM ET."
-            />
-            <SuccessBanner
-              title="Application Submitted"
-              message="Your grant application has been successfully submitted. You'll receive a confirmation email shortly."
-            />
-            <ErrorBanner
-              title="Form Error"
-              message="Please correct the highlighted fields before submitting."
-              dismissible={false}
-            />
-          </div>
-
-          <CodeBlock>
-{`<InfoBanner
-  title="New Grant Programs Available"
-  message="Applications are now open for our 2025 funding programs."
-  action={{ label: "View Programs", href: "/programs" }}
-/>
-
-<WarningBanner
-  message="System maintenance scheduled."
-/>
-
-<SuccessBanner
-  title="Success"
-  message="Your action was successful."
-/>`}
-          </CodeBlock>
-        </ComponentSection>
+        {/* Navigation Menu */}
+        <section id="navigation" className="scroll-mt-20">
+          <ComponentSection
+            title="Navigation Menu"
+            description="Main site navigation and sub-menus."
+            example={
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Programs</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="w-40 p-4 space-y-2">
+                        <p className="text-sm font-semibold">Explore and Create</p>
+                        <p className="text-sm font-semibold">Concept to Realization</p>
+                        <p className="text-sm font-semibold">Arts Across Canada</p>
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            }
+            code={`<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Menu</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        Menu items...
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>`}
+          />
         </section>
 
-        {/* Search */}
-        <section id="search">
-        <ComponentSection
-          title="Search"
-          description="Autocomplete search with categorized results."
-        >
-          <div className="max-w-2xl">
-            <SearchCombobox
-              results={searchResults}
-              onSearch={(q) => console.log("Search:", q)}
-              onSelect={(r) => console.log("Selected:", r)}
-            />
-          </div>
-
-          <CodeBlock>
-{`<SearchCombobox
-  results={searchResults}
-  onSearch={(q) => console.log("Search:", q)}
-  onSelect={(r) => console.log("Selected:", r)}
-/>`}
-          </CodeBlock>
-        </ComponentSection>
+        {/* Table */}
+        <section id="table" className="scroll-mt-20">
+          <ComponentSection
+            title="Table"
+            description="Tabular content for grant listings, funding data, and schedules."
+            example={
+              <div className="overflow-x-auto border-0">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="border-0 border-b border-border-default">
+                      <TableHead className="text-text-primary">Program</TableHead>
+                      <TableHead className="text-text-primary">Status</TableHead>
+                      <TableHead className="text-text-primary">Deadline</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow className="border-0 border-b border-border-subtle">
+                      <TableCell>Explore and Create</TableCell>
+                      <TableCell><Badge className="bg-feedback-success text-white">Open</Badge></TableCell>
+                      <TableCell>Dec 31, 2024</TableCell>
+                    </TableRow>
+                    <TableRow className="border-0 border-b border-border-subtle">
+                      <TableCell>Concept to Realization</TableCell>
+                      <TableCell><Badge className="bg-feedback-success text-white">Open</Badge></TableCell>
+                      <TableCell>Jan 15, 2025</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+            }
+            code={`<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Column 1</TableHead>
+      <TableHead>Column 2</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Data</TableCell>
+      <TableCell>Data</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`}
+          />
         </section>
 
         {/* Tabs */}
-        <section id="tabs">
-        <ComponentSection
-          title="Tabs"
-          description="Tabbed navigation for organizing related content."
-        >
-          <Tabs defaultValue="account" className="w-full">
-            <TabsList>
-              <TabsTrigger value="account">Account</TabsTrigger>
-              <TabsTrigger value="programs">Programs</TabsTrigger>
-              <TabsTrigger value="funding">Funding</TabsTrigger>
-            </TabsList>
-            <TabsContent value="account">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Account Settings</CardTitle>
-                  <CardDescription>Manage your account preferences.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div>
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" defaultValue="John Doe" />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" defaultValue="john@example.com" />
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="programs">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Funding Programs</CardTitle>
-                  <CardDescription>Explore available funding opportunities.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-text-secondary">Program information would appear here.</p>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="funding">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Funding History</CardTitle>
-                  <CardDescription>View your past applications and grants.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-text-secondary">Funding history would appear here.</p>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-
-          <CodeBlock>
-{`<Tabs defaultValue="tab1">
+        <section id="tabs" className="scroll-mt-20">
+          <ComponentSection
+            title="Tabs"
+            description="Toggling content sections within a page."
+            example={
+              <Tabs defaultValue="overview" className="w-full">
+                <TabsList>
+                  <TabsTrigger value="overview">Overview</TabsTrigger>
+                  <TabsTrigger value="eligibility">Eligibility</TabsTrigger>
+                  <TabsTrigger value="apply">How to Apply</TabsTrigger>
+                </TabsList>
+                <TabsContent value="overview" className="mt-4">
+                  <p className="text-text-secondary">Program overview and key information goes here.</p>
+                </TabsContent>
+                <TabsContent value="eligibility" className="mt-4">
+                  <p className="text-text-secondary">Eligibility requirements and criteria.</p>
+                </TabsContent>
+                <TabsContent value="apply" className="mt-4">
+                  <p className="text-text-secondary">Instructions and steps to apply.</p>
+                </TabsContent>
+              </Tabs>
+            }
+            code={`<Tabs defaultValue="tab1">
   <TabsList>
     <TabsTrigger value="tab1">Tab 1</TabsTrigger>
     <TabsTrigger value="tab2">Tab 2</TabsTrigger>
   </TabsList>
-  <TabsContent value="tab1">
-    Content for tab 1
-  </TabsContent>
-  <TabsContent value="tab2">
-    Content for tab 2
-  </TabsContent>
+  <TabsContent value="tab1">Content 1</TabsContent>
+  <TabsContent value="tab2">Content 2</TabsContent>
 </Tabs>`}
-          </CodeBlock>
-        </ComponentSection>
+          />
         </section>
+
         </div>
       </div>
 
