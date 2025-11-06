@@ -93,7 +93,7 @@ export default function ComponentsPage() {
               Component Library
             </h1>
             <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl leading-relaxed font-medium">
-              Canada Council for the Arts design system—built with ShadCN UI and customized with our design tokens.
+              Canada Council for the Arts design system, built with ShadCN UI and customized with our design tokens.
             </p>
             <nav className="flex gap-6 text-base flex-wrap" aria-label="Page sections">
               <a href="#accordion" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Accordion</a>
@@ -669,7 +669,7 @@ export default function ComponentsPage() {
             See Real Examples
           </h2>
           <p className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
-            Explore complete page examples showing how these components work together to create real Canada Council experiences.
+            Explore complete page examples showing how components work together to create real Canada Council experiences.
           </p>
           <Link 
             href="/examples" 
