@@ -26,7 +26,7 @@ export default function TokensPage() {
             Foundations
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed mb-4">
-            Our brand guidelines, transformed into design tokens. Every colour, every typeface, every spacing value—powering the entire system.
+            Our brand guidelines, transformed into design tokens. Every colour, every typeface, every spacing value powering the entire system.
           </p>
           <div className="flex flex-wrap gap-4 text-sm">
             <a href="#semantic" className="text-bleu-500 hover:text-bleu-700 font-medium">Semantic Tokens</a>
@@ -48,8 +48,7 @@ export default function TokensPage() {
           <div className="bg-bleu-50 border-l-4 border-bleu-500 p-6 rounded-lg mb-8">
             <h3 className="text-lg font-semibold text-bleu-900 mb-2">What are semantic tokens?</h3>
             <p className="text-bleu-800 mb-3">
-              Semantic tokens reference primitive tokens but are named by their <strong>purpose</strong>, not their appearance. 
-              This allows you to change the entire design system by updating just the semantic mappings.
+              Semantic tokens reference primitive tokens but are named by their <strong>purpose</strong>, not their appearance. This lets you change the entire design system by updating just the semantic mappings.
             </p>
             <p className="text-bleu-700 text-sm">
               For example: <code className="bg-bleu-100 px-2 py-1 rounded">bg-brand-primary</code> → 
@@ -412,8 +411,7 @@ export default function TokensPage() {
           <div className="bg-bleu-50 border-l-4 border-bleu-500 p-6 rounded-lg mb-8">
             <h3 className="text-lg font-semibold text-bleu-900 mb-2">1.33x Type Scale</h3>
             <p className="text-bleu-800 mb-3">
-              This typography system uses a <strong>1.33x scale ratio</strong> optimized for marketing sites, with 16px as the base unit. 
-              All calculations follow specific rules:
+              This typography system uses a <strong>1.33x scale ratio</strong> optimized for marketing sites, with 16px as the base unit. All calculations follow specific rules.
             </p>
             <ul className="text-bleu-700 text-sm space-y-1 list-disc list-inside">
               <li><strong>Headings</strong>: Line height = font size × 1.2 (rounded down), letter-spacing -2%</li>
@@ -671,7 +669,7 @@ export default function TokensPage() {
             See Components in Action
           </h2>
           <p className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto leading-relaxed">
-            Explore our component library to see how these design tokens come together in interactive, accessible components.
+            Explore our component library to see how design tokens come together in interactive, accessible components.
           </p>
           <Link 
             href="/components" 
