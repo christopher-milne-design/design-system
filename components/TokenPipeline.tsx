@@ -92,12 +92,12 @@ export default function TokenPipeline() {
                 className="flex flex-col items-center gap-4 group"
               >
                 <div className="h-16 flex items-center justify-center">
-                  <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 200 300" fill="none">
-                    <rect x="50" y="50" width="50" height="50" rx="10" fill="#F24E1E"/>
-                    <rect x="100" y="50" width="50" height="50" rx="10" fill="#A259FF"/>
-                    <rect x="100" y="100" width="50" height="50" rx="10" fill="#1ABCFE"/>
-                    <circle cx="75" cy="150" r="25" fill="#0ACF83"/>
-                    <rect x="100" y="150" width="50" height="50" rx="10" fill="#FF61F6"/>
+                  <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 38 57" fill="none">
+                    <path d="M19 28.5C19 23.8056 22.8056 20 27.5 20C32.1944 20 36 23.8056 36 28.5C36 33.1944 32.1944 37 27.5 37C22.8056 37 19 33.1944 19 28.5Z" fill="#1ABCFE"/>
+                    <path d="M2 46.5C2 41.8056 5.80558 38 10.5 38H19V46.5C19 51.1944 15.1944 55 10.5 55C5.80558 55 2 51.1944 2 46.5Z" fill="#0ACF83"/>
+                    <path d="M19 2V20H27.5C32.1944 20 36 16.1944 36 11.5C36 6.80558 32.1944 3 27.5 3L19 2Z" fill="#FF7262"/>
+                    <path d="M2 11.5C2 16.1944 5.80558 20 10.5 20H19V3H10.5C5.80558 3 2 6.80558 2 11.5Z" fill="#F24E1E"/>
+                    <path d="M2 28.5C2 33.1944 5.80558 37 10.5 37H19V20H10.5C5.80558 20 2 23.8056 2 28.5Z" fill="#A259FF"/>
                   </svg>
                 </div>
                 <div className="text-center">
@@ -167,10 +167,8 @@ export default function TokenPipeline() {
                 className="flex flex-col items-center gap-4 group"
               >
                 <div className="h-16 flex items-center justify-center">
-                  <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 200 200" fill="none">
-                    <rect width="200" height="200" rx="40" fill="#8B5CF6"/>
-                    <path d="M60 100L100 60L140 100L100 140L60 100Z" fill="white"/>
-                    <circle cx="100" cy="100" r="15" fill="#8B5CF6"/>
+                  <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 7c-1.649-.324-2.935-1.512-3.285-3.032C14.665 1.19 11.28.325 9 1.52c.925.636 1.55 1.606 1.695 2.705.052.306.148.606.268.896a4.427 4.427 0 0 0 1.888 2.077c.522.307 1.122.467 1.704.62.478.158.916.39 1.283.698 1.538 1.224 1.538 3.745 0 4.969-.367.308-.805.54-1.283.698-.58.153-1.182.312-1.704.62-1.104.617-1.94 1.72-2.156 2.973-.145 1.1-.77 2.07-1.695 2.706 2.278 1.193 5.663.326 6.338-2.599.35-1.52 1.636-2.708 3.285-3.032 4.503-.883 4.503-6.816 0-7.7v-.001ZM8.305 17.777a4.173 4.173 0 0 0-.268-.897 4.427 4.427 0 0 0-1.888-2.077c-.522-.306-1.122-.466-1.704-.62a3.875 3.875 0 0 1-1.283-.698c-1.538-1.224-1.538-3.745 0-4.969.367-.308.805-.54 1.283-.698.58-.154 1.182-.312 1.704-.62 1.105-.617 1.94-1.72 2.156-2.974.145-1.1.77-2.07 1.695-2.705-2.278-1.194-5.663-.329-6.338 2.598-.35 1.52-1.637 2.709-3.285 3.032-4.503.884-4.503 6.818 0 7.701 1.647.323 2.935 1.512 3.285 3.032.673 2.927 4.058 3.793 6.338 2.598-.925-.636-1.55-1.606-1.695-2.705v.002Z" fill="#0C0F0F"/>
                   </svg>
                 </div>
                 <div className="text-center">
@@ -187,12 +185,8 @@ export default function TokenPipeline() {
                 className="flex flex-col items-center gap-4 group"
               >
                 <div className="h-16 flex items-center justify-center">
-                  <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 200 200" fill="none">
-                    <rect width="200" height="200" rx="0" fill="#000"/>
-                    <rect x="20" y="50" width="30" height="100" fill="#FF6B6B"/>
-                    <rect x="60" y="40" width="30" height="110" fill="#4ECDC4"/>
-                    <rect x="100" y="60" width="30" height="90" fill="#45B7D1"/>
-                    <rect x="140" y="30" width="30" height="120" fill="#95E1D3"/>
+                  <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 192 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#0C0F0F" d="M27.623 14.15c-1.649-.324-2.935-1.512-3.285-3.032C23.665 8.19 20.28 7.325 18 8.52c.925.636 1.55 1.606 1.695 2.705.052.306.148.606.268.896a4.427 4.427 0 0 0 1.888 2.077c.522.307 1.122.467 1.704.62.478.158.916.39 1.283.698 1.538 1.224 1.538 3.745 0 4.969-.367.308-.805.54-1.283.698-.58.153-1.182.312-1.704.62-1.104.617-1.94 1.72-2.156 2.973-.145 1.1-.77 2.07-1.695 2.706 2.278 1.193 5.663.326 6.338-2.599.35-1.52 1.636-2.708 3.285-3.032 4.503-.883 4.503-6.816 0-7.7v-.001ZM16.305 24.777a4.173 4.173 0 0 0-.268-.897 4.427 4.427 0 0 0-1.888-2.077c-.522-.306-1.122-.466-1.704-.62a3.875 3.875 0 0 1-1.283-.698c-1.538-1.224-1.538-3.745 0-4.969.367-.308.805-.54 1.283-.698.58-.154 1.182-.312 1.704-.62 1.105-.617 1.94-1.72 2.156-2.974.145-1.1.77-2.07 1.695-2.705-2.278-1.194-5.663-.329-6.338 2.598-.35 1.52-1.637 2.709-3.285 3.032-4.503.884-4.503 6.818 0 7.701 1.647.323 2.935 1.512 3.285 3.032.673 2.927 4.058 3.793 6.338 2.598-.925-.636-1.55-1.606-1.695-2.705v .002Z"/>
                   </svg>
                 </div>
                 <div className="text-center">
@@ -209,10 +203,16 @@ export default function TokenPipeline() {
                 className="flex flex-col items-center gap-4 group"
               >
                 <div className="h-16 flex items-center justify-center">
-                  <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" viewBox="0 0 256 256" fill="none">
-                    <rect width="256" height="256" rx="60" fill="black"/>
-                    <path d="M128 34L94 98L128 162L162 98L128 34Z" fill="white"/>
-                    <path d="M128 162L94 226H162L128 162Z" fill="white" opacity="0.7"/>
+                  <svg className="h-12 w-auto transition-opacity group-hover:opacity-70" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clipPath="url(#clip0_790_3387)">
+                      <path d="M81.25 49.9996L50 81.2496" stroke="black" strokeWidth="6.25" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M75 15.6246L15.625 74.9996" stroke="black" strokeWidth="6.25" strokeLinecap="round" strokeLinejoin="round"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_790_3387">
+                        <rect width="100" height="100" fill="white" transform="translate(0 -0.000366211)"/>
+                      </clipPath>
+                    </defs>
                   </svg>
                 </div>
                 <div className="text-center">
