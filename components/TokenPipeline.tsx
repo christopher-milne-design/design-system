@@ -75,11 +75,7 @@ export default function TokenPipeline() {
             The Token Pipeline
           </h2>
           <p className="text-xl text-text-secondary leading-relaxed mb-4">
-            Every design decision flows through a precise pipeline—from brand guidelines in Figma to production code. 
-            Follow a single button component as it transforms through each stage of our design system.
-          </p>
-          <p className="text-text-secondary leading-relaxed mb-12">
-            This workflow ensures consistency, eliminates manual updates, and keeps design and code perfectly synchronized.
+            Every design decision flows through a precise pipeline, from brand guidelines in Figma to production code. Follow a single button as it transforms through each stage. This workflow ensures consistency, eliminates manual updates, and keeps design and code synchronized.
           </p>
           
           {/* Built With section moved here */}
@@ -191,7 +187,7 @@ export default function TokenPipeline() {
             toolName="Figma"
             title="Primitive Tokens"
             description="Designers define brand colours, typography, and spacing as variables in Figma"
-            detailedExplanation="These are the raw design values from your brand guidelines—specific hex codes, font sizes, and spacing measurements. They're called 'primitive' because they represent the foundational values before semantic meaning is applied."
+            detailedExplanation="Raw design values from brand guidelines: hex codes, typography, spacing. They're called 'primitive' because they're foundational values before semantic meaning is applied."
             codeExample={[
               {
                 label: "Figma Variables",
@@ -211,7 +207,7 @@ rose-500: #fc72e0`
             toolName="Token Studio"
             title="Semantic Mapping"
             description="Primitive tokens are mapped to semantic names based on their purpose, not appearance"
-            detailedExplanation="Instead of using 'bleu-500' directly in code, we create semantic tokens like 'brand-primary' that reference primitive values. This abstraction means we can change the entire brand colour scheme by updating the semantic mapping, without touching component code."
+            detailedExplanation="Instead of using 'bleu-500' directly in code, semantic tokens like 'brand-primary' reference primitive values. This means changing the entire brand colour scheme requires only updating the semantic mapping, with no component code changes needed."
             codeExample={[
               {
                 label: "Semantic Token Definitions",
@@ -232,7 +228,7 @@ surface-background: {color.slate.50}`
             toolName="GitHub"
             title="Version Control"
             description="Token Studio syncs tokens to a GitHub repository"
-            detailedExplanation="All design tokens live as JSON files in a centralized repository. This creates a single source of truth that can be shared across projects, versioned, and integrated into CI/CD pipelines. You push and pull changes between Token Studio and GitHub, keeping design and code repositories synchronized."
+            detailedExplanation="All design tokens live as JSON files in a centralized repository. This creates a single source of truth that can be shared across projects, versioned, and integrated into CI/CD pipelines. Push and pull changes between Token Studio and GitHub to keep design and code repositories synchronized."
             codeExample={[
               {
                 label: "Repository Structure",
@@ -257,9 +253,9 @@ surface-background: {color.slate.50}`
           <PipelineStep
             stepNumber={4}
             toolName="Style Dictionary"
-            title="Transform & Generate"
+            title="Transform and Generate"
             description="Style Dictionary transforms JSON tokens into CSS variables, TypeScript types, and other platform formats"
-            detailedExplanation="This is where tokens become code. Style Dictionary reads the token files and generates CSS custom properties, making all tokens available as CSS variables. It also resolves semantic token references, turning {color.bleu.500} into the actual hex value #1a70ef."
+            detailedExplanation="This is where tokens become code. Style Dictionary reads token files and generates CSS custom properties. It resolves semantic token references, turning {color.bleu.500} into the actual hex value #1a70ef."
             codeExample={[
               {
                 label: "Generated CSS Variables",
@@ -282,7 +278,7 @@ surface-background: {color.slate.50}`
             toolName="Tailwind CSS"
             title="Utility Classes"
             description="Tailwind generates utility classes from CSS variables, making tokens accessible as class names"
-            detailedExplanation="A custom Tailwind plugin maps CSS variables to utility classes. Instead of writing style={{ backgroundColor: 'var(--color-brand-primary)' }, you can simply use bg-brand-primary. This provides type safety, autocomplete, and the full power of Tailwind's responsive and state variants."
+            detailedExplanation="A custom Tailwind plugin maps CSS variables to utility classes. Instead of writing style={{ backgroundColor: 'var(--color-brand-primary)' }}, use bg-brand-primary. This provides type safety, autocomplete, and Tailwind's responsive and state variants."
             codeExample={[
               {
                 label: "Available Classes",
@@ -306,7 +302,7 @@ border-border-default`
             toolName="Component"
             title="Live Component"
             description="Components use semantic tokens via Tailwind classes, creating a maintainable and consistent design system"
-            detailedExplanation="Finally, the token reaches a React component. Developers use semantic token classes, which means the component reflects any design updates. If the brand colour changes in Figma, every component using bg-brand-primary updates with no code changes required."
+            detailedExplanation="The token reaches a React component. Developers use semantic token classes, so components reflect design updates automatically. When brand colour changes in Figma, every component using bg-brand-primary updates with no code changes required."
             codeExample={[
               {
                 label: "React Component",
@@ -373,7 +369,7 @@ border-border-default`
               <li className="list-decimal"><strong className="text-text-primary">Components</strong> → Every button, card, and element using <code className="bg-surface-card px-2 py-1 text-sm font-mono">bg-brand-primary</code> updates—no code changes required</li>
             </ol>
             <p className="text-text-secondary text-lg leading-relaxed mt-8">
-              No component code changes. No manual CSS updates. Just design-driven, token-powered consistency across the entire system.
+              No component code changes. No manual CSS updates. Design-driven, token-powered consistency across the system.
             </p>
           </div>
         </div>

@@ -22,7 +22,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl leading-relaxed font-medium">
-              Built on our new brand guidelines. Powered by design tokens.
+              Built on our brand guidelines. Powered by design tokens.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
