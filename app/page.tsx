@@ -7,14 +7,29 @@ import { Badge } from "@/components/ui/badge";
 export default function Home() {
   return (
     <main className="min-h-screen bg-surface-background">
+      {/* Alert Banner */}
+      <div className="bg-feedback-info border-b border-border-subtle py-4">
+        <div className="max-w-7xl mx-auto px-8 flex items-start justify-between gap-4">
+          <div className="flex-1">
+            <p className="text-sm text-text-primary leading-relaxed">
+              <strong>Gradual opening of the Canada Council's updated funding portal</strong><br />
+              To ensure a smooth and reliable experience for everyone, we're taking a phased approach to the opening. This means that different features and access points will become available in stages, allowing feedback and tailored support to be provided as needed. For details on changes to programs and services, visit the Updates to Funding Opportunities and Portal web page.
+            </p>
+          </div>
+          <button className="text-text-primary hover:text-text-secondary mt-1 flex-shrink-0">
+            ×
+          </button>
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="bg-bleu-500 py-20 md:py-32">
+      <section className="bg-neutral-100 py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Bringing the arts to life
             </h1>
-            <p className="text-lg md:text-xl text-white mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-text-primary mb-8 leading-relaxed">
               The Canada Council for the Arts is proud to be Canada's public arts funder. The Council contributes to the vibrancy of a creative and diverse arts and literary scene through grants, services, prizes and payments to artists and arts organizations from Canada.
             </p>
             <Button className="bg-brand-primary hover:bg-brand-primary-hover text-white font-bold text-base px-6 py-3">
