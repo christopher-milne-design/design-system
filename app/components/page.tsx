@@ -233,7 +233,7 @@ export default function ComponentsPage() {
         <section id="card" className="scroll-mt-20">
           <ComponentSection
             title="Card"
-            description="Program teasers, grant summaries, and featured content."
+            description="Featured content with image, title, and description."
             example={
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Card without badge */}
@@ -264,7 +264,7 @@ export default function ComponentsPage() {
                       sizes="200px"
                     />
                   </div>
-                  <CardHeader>
+                  <CardHeader className="pb-8">
                     <div className="flex gap-2 mb-2">
                       <Badge className="bg-brand-primary text-white text-xs">New</Badge>
                       <Badge className="bg-feedback-success text-white text-xs">Open</Badge>
