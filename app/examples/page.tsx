@@ -8,23 +8,26 @@ import { Button } from "@/components/ui/button";
 
 export default function ExamplesPage() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="bg-vert-500">
-        <div className="max-w-7xl mx-auto px-8 py-32 md:py-40">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white" style={{ letterSpacing: '-0.02em' }}>
-              Examples
-            </h1>
-            <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl leading-relaxed font-medium">
-              Real Canada Council pages, built with the design system. Components composed into complete experiences.
-            </p>
+    <main className="min-h-screen bg-neutral-50">
+      <div className="max-w-7xl mx-auto p-8">
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            Examples
+          </h1>
+          <p className="text-xl text-text-secondary leading-relaxed mb-4">
+            Real Canada Council pages, built with the design system. Components composed into complete experiences.
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <a href="#grant-program" className="text-bleu-500 hover:text-bleu-700 font-medium">Grant Program Page</a>
+            <a href="#research" className="text-bleu-500 hover:text-bleu-700 font-medium">Research Landing</a>
+            <a href="#artist-story" className="text-bleu-500 hover:text-bleu-700 font-medium">Artist Story</a>
+            <a href="#homepage" className="text-bleu-500 hover:text-bleu-700 font-medium">Homepage Recreation</a>
           </div>
         </div>
-      </section>
       {/* Example 1: Grant Program Page */}
-      <section>
-        <div className="max-w-7xl mx-auto px-8 py-24">
+      <section id="grant-program" className="scroll-mt-20">
+        <div className="py-24">
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
             Grant Program: Explore and Create
@@ -95,8 +98,8 @@ export default function ExamplesPage() {
       </section>
 
       {/* Example 2: Research Page */}
-      <section className="bg-surface-background py-24 border-y border-border-divider">
-        <div className="max-w-7xl mx-auto px-8">
+      <section id="research" className="scroll-mt-20 bg-surface-background py-24 border-y border-border-divider">
+        <div>
           <div className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
               Research and Impact Landing Page
@@ -161,8 +164,8 @@ export default function ExamplesPage() {
       </section>
 
       {/* Example 3: Artist Story */}
-      <section className="border-t border-border-divider">
-        <div className="max-w-7xl mx-auto px-8 py-24">
+      <section id="artist-story" className="scroll-mt-20 border-t border-border-divider">
+        <div className="py-24">
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4" style={{ letterSpacing: '-0.02em' }}>
             Artist Story: Feature Article
@@ -202,7 +205,7 @@ export default function ExamplesPage() {
       </section>
 
       {/* Example 4: Homepage Recreation */}
-      <section className="bg-vert-500 py-24 md:py-32">
+      <section id="homepage" className="scroll-mt-20 bg-vert-500 py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-8 text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
             Homepage Recreation
@@ -218,6 +221,7 @@ export default function ExamplesPage() {
           </Link>
         </div>
       </section>
+      </div>
     </main>
   );
 }

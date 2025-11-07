@@ -57,35 +57,32 @@ export default function ComponentsPage() {
   const [dialogOpen, setDialogOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-rose-500">
-        <div className="max-w-7xl mx-auto px-8 py-32 md:py-40">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white" style={{ letterSpacing: '-0.02em' }}>
-              Component Library
-            </h1>
-            <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl leading-relaxed font-medium">
-              Canada Council for the Arts design system, built with ShadCN UI and customized with our design tokens.
-            </p>
-            <nav className="flex gap-6 text-base flex-wrap" aria-label="Page sections">
-              <a href="#accordion" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Accordion</a>
-              <a href="#alert" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Alert</a>
-              <a href="#badge" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Badge</a>
-              <a href="#breadcrumb" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Breadcrumb</a>
-              <a href="#button" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Button</a>
-              <a href="#card" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Card</a>
-              <a href="#carousel" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Carousel</a>
-              <a href="#dialog" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Dialog</a>
-              <a href="#dropdown" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Dropdown</a>
-              <a href="#form" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Form</a>
-              <a href="#navigation" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Navigation</a>
-              <a href="#table" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Table</a>
-              <a href="#tabs" className="text-white hover:text-jaune-300 font-semibold border-b-2 border-transparent hover:border-jaune-300 transition-colors">Tabs</a>
-            </nav>
+    <div className="min-h-screen bg-neutral-50">
+      <div className="max-w-7xl mx-auto p-8">
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            Components
+          </h1>
+          <p className="text-xl text-text-secondary leading-relaxed mb-4">
+            Canada Council for the Arts design system, built with ShadCN UI and customized with our design tokens.
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <a href="#accordion" className="text-bleu-500 hover:text-bleu-700 font-medium">Accordion</a>
+            <a href="#alert" className="text-bleu-500 hover:text-bleu-700 font-medium">Alert</a>
+            <a href="#badge" className="text-bleu-500 hover:text-bleu-700 font-medium">Badge</a>
+            <a href="#breadcrumb" className="text-bleu-500 hover:text-bleu-700 font-medium">Breadcrumb</a>
+            <a href="#button" className="text-bleu-500 hover:text-bleu-700 font-medium">Button</a>
+            <a href="#card" className="text-bleu-500 hover:text-bleu-700 font-medium">Card</a>
+            <a href="#carousel" className="text-bleu-500 hover:text-bleu-700 font-medium">Carousel</a>
+            <a href="#dialog" className="text-bleu-500 hover:text-bleu-700 font-medium">Dialog</a>
+            <a href="#dropdown" className="text-bleu-500 hover:text-bleu-700 font-medium">Dropdown</a>
+            <a href="#form" className="text-bleu-500 hover:text-bleu-700 font-medium">Form</a>
+            <a href="#navigation" className="text-bleu-500 hover:text-bleu-700 font-medium">Navigation</a>
+            <a href="#table" className="text-bleu-500 hover:text-bleu-700 font-medium">Table</a>
+            <a href="#tabs" className="text-bleu-500 hover:text-bleu-700 font-medium">Tabs</a>
           </div>
         </div>
-      </section>
 
       <div>
         <div className="max-w-7xl mx-auto px-8 py-20">
@@ -547,6 +544,7 @@ export default function ComponentsPage() {
         </section>
 
         </div>
+      </div>
       </div>
 
       {/* CTA Section */}

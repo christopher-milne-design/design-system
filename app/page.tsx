@@ -25,19 +25,21 @@ export default function Home() {
               Built on our brand guidelines. Powered by design tokens.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/foundations" 
+              <a 
+                href="#token-pipeline" 
                 className="inline-flex items-center justify-center bg-neutral-400 hover:bg-neutral-300 text-white px-8 py-4 font-bold text-lg transition-colors"
               >
-                View Foundations
-              </Link>
+                See How It Works
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Token Pipeline */}
-      <TokenPipeline />
+      <section id="token-pipeline">
+        <TokenPipeline />
+      </section>
 
       {/* CTA Section */}
       <section className="bg-vert-500 py-24 md:py-32">
