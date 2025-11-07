@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardImage, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { WarningBanner } from "@/components/council/messaging/NotificationBanner";
@@ -18,11 +19,13 @@ export default function HomepageExample() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-brand-primary"></div>
-              <div>
-                <div className="text-sm font-bold text-text-primary">Canada Council for the Arts</div>
-                <div className="text-xs text-text-secondary">Conseil des arts du Canada</div>
-              </div>
+              <Image
+                src="/cca-logo-black.svg"
+                alt="Canada Council for the Arts / Conseil des arts du Canada"
+                width={200}
+                height={40}
+                className="h-10 w-auto"
+              />
             </div>
             
             {/* Utility Links */}

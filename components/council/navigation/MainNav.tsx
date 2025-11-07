@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Globe } from "lucide-react";
 import {
   NavigationMenu,
@@ -108,11 +109,14 @@ export default function MainNav({
     <div className="w-full border-b border-border-default bg-surface-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded bg-brand-primary" />
-          <span className="text-lg font-bold text-text-primary">
-            Canada Council for the Arts
-          </span>
+        <Link href="/" className="flex items-center space-x-3">
+          <Image
+            src="/cca-logo-black.svg"
+            alt="Canada Council for the Arts"
+            width={120}
+            height={24}
+            className="h-6 w-auto"
+          />
         </Link>
 
         {/* Main Navigation */}

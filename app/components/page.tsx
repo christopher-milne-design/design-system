@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Download, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -211,10 +212,20 @@ export default function ComponentsPage() {
             title="Button"
             description="Primary and secondary CTAs for user interactions."
             example={
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 items-center">
                 <Button className="bg-brand-primary text-white">Apply Now</Button>
                 <Button className="bg-brand-secondary text-white">Read More</Button>
                 <Button variant="outline">Learn More</Button>
+                <Button variant="outline" size="icon" asChild>
+                  <a href="/guidelines.pdf" download>
+                    <Download className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="icon" asChild>
+                  <a href="https://canadacouncil.ca" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
               </div>
             }
             code={`<Button className="bg-brand-primary text-white">
@@ -222,6 +233,12 @@ export default function ComponentsPage() {
 </Button>
 <Button variant="outline">
   Learn More
+</Button>
+<Button variant="outline" size="icon">
+  <Download className="h-4 w-4" />
+</Button>
+<Button variant="outline" size="icon">
+  <ExternalLink className="h-4 w-4" />
 </Button>`}
           />
         </section>
