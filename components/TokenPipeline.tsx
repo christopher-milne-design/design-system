@@ -23,7 +23,7 @@ function PipelineStep({
   numberColor
 }: PipelineStepProps) {
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full">
       {/* Step number - large, outside box with brand colour */}
       <div className="mb-8">
         <div className={`text-[120px] md:text-[180px] font-bold leading-none ${numberColor}`} style={{ letterSpacing: '-0.02em' }}>
@@ -70,7 +70,7 @@ export default function TokenPipeline() {
   return (
     <section className="bg-white py-32">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="max-w-4xl mx-auto mb-20">
+        <div className="mb-20">
           <h2 className="text-5xl md:text-6xl font-bold text-text-primary mb-6" style={{ letterSpacing: '-0.02em' }}>
             The Token Pipeline
           </h2>
@@ -401,7 +401,7 @@ border-border-default`
         </div>
 
         {/* Live Example */}
-        <div className="mt-24 max-w-5xl mx-auto">
+        <div className="mt-24">
           <div className="bg-surface-elevated p-12">
             <h3 className="text-3xl font-bold text-text-primary mb-6" style={{ letterSpacing: '-0.02em' }}>
               See It In Action
@@ -429,7 +429,7 @@ border-border-default`
         </div>
 
         {/* Summary */}
-        <div className="mt-24 max-w-5xl mx-auto">
+        <div className="mt-24">
           <div className="bg-bleu-50 p-12">
             <h3 className="text-3xl font-bold text-text-primary mb-6" style={{ letterSpacing: '-0.02em' }}>
               One Change, Everywhere

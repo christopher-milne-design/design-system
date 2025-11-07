@@ -41,7 +41,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="bg-vert-500 py-24 md:py-32">
-        <div className="max-w-5xl mx-auto px-8 text-center">
+        <div className="max-w-7xl mx-auto px-8 text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
             Ready to Explore?
           </h2>
