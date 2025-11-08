@@ -142,12 +142,12 @@ export async function getBlogPosts(): Promise<BlogPostEntry[]> {
 // Fetch all spotlight articles
 export async function getSpotlights(): Promise<SpotlightEntry[]> {
   try {
-    const entries = await client.getEntries<SpotlightContent>({
+    const entries = await client.getEntries({
       content_type: "spotlight",
-      order: ['-fields.publishDate'], // Most recent first
+      order: ['-sys.createdAt'], // Most recent first
     });
 
-    return entries.items as SpotlightEntry[];
+    return entries.items as unknown as SpotlightEntry[];
   } catch (error) {
     console.error("Error fetching spotlights:", error);
     return [];
@@ -157,14 +157,14 @@ export async function getSpotlights(): Promise<SpotlightEntry[]> {
 // Fetch a single spotlight by slug
 export async function getSpotlightBySlug(slug: string): Promise<SpotlightEntry | null> {
   try {
-    const entries = await client.getEntries<SpotlightContent>({
+    const entries = await client.getEntries({
       content_type: "spotlight",
-      'fields.slug': slug,
+      'fields.slug[match]': slug,
       limit: 1,
     });
 
     if (entries.items.length > 0) {
-      return entries.items[0] as SpotlightEntry;
+      return entries.items[0] as unknown as SpotlightEntry;
     }
 
     return null;
@@ -184,7 +184,7 @@ export async function getCardGridSection(): Promise<CardGridSectionContent['fiel
     });
 
     if (entries.items.length > 0) {
-      return entries.items[0].fields as CardGridSectionContent['fields'];
+      return entries.items[0].fields as any as CardGridSectionContent['fields'];
     }
 
     return null;

@@ -1,6 +1,6 @@
 import { getSpotlights } from "@/lib/contentful";
 import SpotlightGrid from "@/components/SpotlightGrid";
-import { BrandHero } from "@/components/BrandHero";
+import BrandHero from "@/components/BrandHero";
 
 // This is a Server Component - it fetches data at build/request time
 export default async function SpotlightsPage() {
@@ -13,8 +13,8 @@ export default async function SpotlightsPage() {
       <BrandHero
         title="Spotlights"
         subtitle="Discover inspiring stories from artists, organizations, and communities across Canada. Explore our featured articles highlighting the vibrant arts and culture landscape."
-        colorScheme="bleu"
-        showPattern={true}
+        colorScheme="bleu-celadon"
+        pattern={2}
       />
 
       {/* Spotlight Grid Section */}
