@@ -42,3 +42,6 @@ next-env.d.ts
 
 # style-dictionary generated files
 /lib/tokens.js
+
+*storybook.log
+storybook-static

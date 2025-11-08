@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Download, ExternalLink } from "lucide-react";
+import { StorybookLink } from "@/components/StorybookLink";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -25,16 +26,19 @@ function ComponentSection({
   title, 
   description, 
   example,
-  code
+  code,
+  storyPath
 }: { 
   title: string; 
   description: string; 
   example: React.ReactNode;
   code: string;
+  storyPath?: string;
 }) {
   return (
     <section className="mb-24">
       <div className="mb-8">
+        {storyPath && <StorybookLink story={storyPath} className="mb-3" />}
         <h2 className="text-3xl font-bold text-text-primary mb-2" style={{ letterSpacing: '-0.02em' }}>
           {title}
         </h2>
@@ -93,6 +97,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Accordion"
             description="Expandable content sections for FAQs and collapsible information."
+            storyPath="components-accordion--accordion-example"
             example={
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
@@ -125,6 +130,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Alert"
             description="Status and feedback messages with accessible color contrast."
+            storyPath="components-alert--alert-variants"
             example={
               <div className="space-y-4">
                 <Alert className="bg-feedback-success border-0">
@@ -153,6 +159,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Badge"
             description="Status indicators for open, closed, new, or featured content."
+            storyPath="components-badge--badge-variants"
             example={
               <div className="flex flex-wrap gap-3">
                 <Badge className="bg-feedback-success text-white">Open</Badge>
@@ -175,6 +182,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Breadcrumb"
             description="Hierarchical navigation for deep content like funding programs."
+            storyPath="components-breadcrumb--breadcrumb-example"
             example={
               <Breadcrumb>
                 <BreadcrumbList>
@@ -211,6 +219,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Button"
             description="Primary and secondary CTAs for user interactions."
+            storyPath="components-button--all-variants"
             example={
               <div className="flex flex-wrap gap-4 items-center">
                 <Button className="bg-brand-primary text-white">Apply Now</Button>
@@ -248,6 +257,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Card"
             description="Featured content with image, title, and description."
+            storyPath="components-card--card-with-badge"
             example={
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Card without badge */}
@@ -309,6 +319,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Carousel"
             description="Rotating features and visual highlights for engagement."
+            storyPath="components-carousel--carousel-example"
             example={
               <Carousel className="w-full max-w-md mx-auto">
                 <CarouselContent>
@@ -351,6 +362,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Dialog"
             description="Modal windows for confirmations, disclosures, and sign-ups."
+            storyPath="components-dialog--dialog-example"
             example={
               <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                 <DialogTrigger asChild>
@@ -391,6 +403,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Dropdown Menu"
             description="Secondary navigation, user menus, and filters."
+            storyPath="components-dropdown--dropdown-example"
             example={
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -417,6 +430,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Form"
             description="Newsletter signups, contact forms, and input fields."
+            storyPath="components-form--form-example"
             example={
               <div className="space-y-4 max-w-sm">
                 <div>
@@ -450,6 +464,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Navigation Menu"
             description="Main site navigation and sub-menus."
+            storyPath="components-navigation--navigation-example"
             example={
               <NavigationMenu>
                 <NavigationMenuList>
@@ -484,6 +499,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Table"
             description="Tabular content for grant listings, funding data, and schedules."
+            storyPath="components-table--table-example"
             example={
               <div className="overflow-x-auto border-0">
                 <Table>
@@ -531,6 +547,7 @@ export default function ComponentsPage() {
           <ComponentSection
             title="Tabs"
             description="Toggling content sections within a page."
+            storyPath="components-tabs--tabs-example"
             example={
               <Tabs defaultValue="overview" className="w-full">
                 <TabsList>

@@ -24,6 +24,12 @@ npm run tokens:watch    # Watch and rebuild tokens on changes
 npm run sync:auto       # Sync tokens from GitHub repo and rebuild
 ```
 
+### Storybook Commands
+```bash
+npm run storybook       # Start Storybook dev server at localhost:6006
+npm run build-storybook # Build static Storybook site
+```
+
 ## Architecture Overview
 
 ### Tech Stack
@@ -273,3 +279,96 @@ The transformation is configured in `style-dictionary.config.mjs`:
 - Converts to CSS variable format `var(--token-name)`
 - Generates both `tokens.js` and `tokens.css`
 - Handles semantic token references to primitives
+
+## Storybook Integration
+
+### Overview
+Storybook provides an interactive showcase for the design system and component library, demonstrating how Token Studio tokens are applied in real components.
+
+### Running Storybook
+```bash
+npm run storybook       # Dev server at localhost:6006
+npm run build-storybook # Build static site for deployment
+```
+
+### Story Structure
+Stories are organized in `stories/` directory:
+
+```
+stories/
+├── Tokens.stories.tsx      # Design token showcase (colors, spacing, typography)
+├── Button.stories.tsx      # ShadCN Button component variations
+└── Hero.stories.tsx        # Hero section with different content
+```
+
+### Token Showcase Stories
+The `Tokens.stories.tsx` file demonstrates:
+- **Color Tokens**: All semantic colors (brand, text, surface, feedback, border)
+- **Spacing Tokens**: Visual representation of the spacing scale
+- **Typography System**: Font families, sizes, and styles
+
+These stories automatically reflect changes when you sync tokens from Token Studio via `npm run sync:auto`.
+
+### Component Stories
+Component stories show:
+- All variants and states of UI components
+- Integration with design tokens
+- Interactive controls for testing different props
+- Auto-generated documentation via `tags: ['autodocs']`
+
+### Configuration
+- `.storybook/main.ts` - Storybook configuration, addons, and framework settings
+- `.storybook/preview.ts` - Imports `app/globals.css` to load Tailwind and token styles
+- Static assets from `public/` are automatically available
+
+### Addons Enabled
+- **@storybook/addon-docs** - Auto-generated documentation
+- **@storybook/addon-a11y** - Accessibility testing
+- **@storybook/addon-vitest** - Visual testing integration
+- **@chromatic-com/storybook** - Visual regression testing
+
+### Token Pipeline Integration
+Storybook is fully integrated with the token pipeline:
+
+1. Edit tokens in Token Studio (Figma)
+2. Sync via `npm run sync:auto`
+3. Tokens rebuild automatically
+4. Storybook hot-reloads with new token values
+5. See changes reflected in all component stories
+
+### Writing New Stories
+
+**For Server Components:**
+Since Next.js server components can't be used directly in Storybook, create a client wrapper:
+
+```tsx
+// Create a client version without async/await
+const ComponentClient = ({ prop }: Props) => {
+  return (
+    // Component JSX
+  )
+}
+
+const meta: Meta<typeof ComponentClient> = {
+  title: 'Category/ComponentName',
+  component: ComponentClient,
+}
+```
+
+**For Client Components:**
+Export directly:
+
+```tsx
+const meta: Meta<typeof Component> = {
+  title: 'Category/ComponentName',
+  component: Component,
+  tags: ['autodocs'],
+}
+```
+
+### Best Practices
+- Use semantic token classes in stories to demonstrate the design system
+- Create stories that show state variations (hover, active, disabled, etc.)
+- Document token usage in story descriptions
+- Keep stories simple and focused on one concept
+- Use `parameters: { layout: 'fullscreen' }` for full-page sections
