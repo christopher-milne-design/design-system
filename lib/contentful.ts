@@ -62,6 +62,48 @@ export interface BlogPostEntry {
   fields: BlogPostContent['fields'];
 }
 
+// Spotlight article content type
+export interface SpotlightContent {
+  contentTypeId: 'spotlight';
+  fields: {
+    title: string;
+    slug: string;
+    excerpt: string;
+    body: any; // Rich text content
+    featuredImage?: {
+      fields: {
+        file: {
+          url: string;
+        };
+        title?: string;
+        description?: string;
+      };
+    };
+    publishDate: string;
+    author?: string;
+    tags?: string[];
+    category?: string;
+  };
+}
+
+export interface SpotlightEntry {
+  sys: {
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+  };
+  fields: SpotlightContent['fields'];
+}
+
+// Card Grid Section content type
+export interface CardGridSectionContent {
+  fields: {
+    heading: string;
+    description?: string;
+    spotlights?: SpotlightEntry[];
+  };
+}
+
 // Fetch home page content with all referenced sections
 export async function getHomePageContent() {
   try {
@@ -94,6 +136,61 @@ export async function getBlogPosts(): Promise<BlogPostEntry[]> {
   } catch (error) {
     console.error("Error fetching blog posts:", error);
     return [];
+  }
+}
+
+// Fetch all spotlight articles
+export async function getSpotlights(): Promise<SpotlightEntry[]> {
+  try {
+    const entries = await client.getEntries<SpotlightContent>({
+      content_type: "spotlight",
+      order: ['-fields.publishDate'], // Most recent first
+    });
+
+    return entries.items as SpotlightEntry[];
+  } catch (error) {
+    console.error("Error fetching spotlights:", error);
+    return [];
+  }
+}
+
+// Fetch a single spotlight by slug
+export async function getSpotlightBySlug(slug: string): Promise<SpotlightEntry | null> {
+  try {
+    const entries = await client.getEntries<SpotlightContent>({
+      content_type: "spotlight",
+      'fields.slug': slug,
+      limit: 1,
+    });
+
+    if (entries.items.length > 0) {
+      return entries.items[0] as SpotlightEntry;
+    }
+
+    return null;
+  } catch (error) {
+    console.error(`Error fetching spotlight with slug ${slug}:`, error);
+    return null;
+  }
+}
+
+// Fetch card grid section content
+export async function getCardGridSection(): Promise<CardGridSectionContent['fields'] | null> {
+  try {
+    const entries = await client.getEntries({
+      content_type: "cardGridSection",
+      limit: 1,
+      include: 2, // Include referenced spotlight entries
+    });
+
+    if (entries.items.length > 0) {
+      return entries.items[0].fields as CardGridSectionContent['fields'];
+    }
+
+    return null;
+  } catch (error) {
+    console.error("Error fetching card grid section:", error);
+    return null;
   }
 }
 
