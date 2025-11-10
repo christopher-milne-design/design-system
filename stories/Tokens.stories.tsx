@@ -118,51 +118,152 @@ export const Spacing: Story = {
   ),
 }
 
+const TypographyExample = ({ 
+  label, 
+  mobileSize, 
+  desktopSize, 
+  children 
+}: { 
+  label: string
+  mobileSize: string
+  desktopSize: string
+  children: React.ReactNode 
+}) => (
+  <div className="space-y-2">
+    <div className="flex items-center gap-4 text-xs text-text-muted">
+      <span className="font-mono w-24">{label}</span>
+      <span className="text-text-muted">
+        <span className="md:hidden">{mobileSize}</span>
+        <span className="hidden md:inline">{desktopSize} (from {mobileSize})</span>
+      </span>
+    </div>
+    {children}
+  </div>
+)
+
 export const Typography: Story = {
   render: () => (
-    <div className="p-8 space-y-8">
+    <div className="p-8 space-y-12">
       <div>
         <h1 className="text-3xl font-bold mb-2">Typography System</h1>
-        <p className="text-text-muted mb-8">
+        <p className="text-text-muted mb-4">
           Helvetica Neue for headings, Echo for body text
+        </p>
+        <p className="text-sm text-text-secondary">
+          Resize your browser to see mobile (< 768px) vs desktop scales
         </p>
       </div>
 
-      <section className="space-y-6">
-        <div>
-          <p className="text-xs text-text-muted mb-2">Heading 1</p>
-          <h1 className="text-6xl font-bold">The quick brown fox jumps</h1>
-        </div>
-        <div>
-          <p className="text-xs text-text-muted mb-2">Heading 2</p>
-          <h2 className="text-5xl font-bold">The quick brown fox jumps</h2>
-        </div>
-        <div>
-          <p className="text-xs text-text-muted mb-2">Heading 3</p>
-          <h3 className="text-4xl font-semibold">The quick brown fox jumps</h3>
-        </div>
-        <div>
-          <p className="text-xs text-text-muted mb-2">Heading 4</p>
-          <h4 className="text-3xl font-semibold">The quick brown fox jumps</h4>
-        </div>
-        <div>
-          <p className="text-xs text-text-muted mb-2">Body Large</p>
-          <p className="text-lg">
+      <section className="space-y-8">
+        <h2 className="text-2xl font-semibold mb-4">Headings</h2>
+        
+        <TypographyExample label="H1" mobileSize="40px" desktopSize="60px">
+          <h1 className="text-[40px] leading-[48px] md:text-[60px] md:leading-[72px] font-bold tracking-[-0.02em]">
+            The quick brown fox jumps
+          </h1>
+        </TypographyExample>
+
+        <TypographyExample label="H2" mobileSize="32px" desktopSize="44px">
+          <h2 className="text-[32px] leading-[40px] md:text-[44px] md:leading-[52px] font-bold tracking-[-0.02em]">
+            The quick brown fox jumps
+          </h2>
+        </TypographyExample>
+
+        <TypographyExample label="H3" mobileSize="24px" desktopSize="32px">
+          <h3 className="text-[24px] leading-[28px] md:text-[32px] md:leading-[40px] font-bold tracking-[-0.02em]">
+            The quick brown fox jumps
+          </h3>
+        </TypographyExample>
+
+        <TypographyExample label="H4" mobileSize="20px" desktopSize="24px">
+          <h4 className="text-[20px] leading-[24px] md:text-[24px] md:leading-[28px] font-bold tracking-[-0.02em]">
+            The quick brown fox jumps
+          </h4>
+        </TypographyExample>
+
+        <TypographyExample label="H5" mobileSize="16px" desktopSize="20px">
+          <h5 className="text-[16px] leading-[20px] md:text-[20px] md:leading-[24px] font-semibold tracking-[-0.02em]">
+            The quick brown fox jumps
+          </h5>
+        </TypographyExample>
+
+        <TypographyExample label="H6" mobileSize="14px" desktopSize="16px">
+          <h6 className="text-[14px] leading-[16px] md:text-[16px] md:leading-[20px] font-semibold tracking-[-0.02em]">
+            The quick brown fox jumps
+          </h6>
+        </TypographyExample>
+      </section>
+
+      <section className="space-y-8">
+        <h2 className="text-2xl font-semibold mb-4">Paragraphs</h2>
+        
+        <TypographyExample label="P1" mobileSize="18px" desktopSize="20px">
+          <p className="text-[18px] leading-[28px] md:text-[20px] md:leading-[32px]">
+            The quick brown fox jumps over the lazy dog. This is body text using the Echo font family with comfortable line spacing for extended reading.
+          </p>
+        </TypographyExample>
+
+        <TypographyExample label="P2" mobileSize="16px" desktopSize="16px">
+          <p className="text-[16px] leading-[24px]">
+            The quick brown fox jumps over the lazy dog. This is body text using the Echo font family with comfortable line spacing for extended reading.
+          </p>
+        </TypographyExample>
+
+        <TypographyExample label="P3" mobileSize="14px" desktopSize="14px">
+          <p className="text-[14px] leading-[20px]">
             The quick brown fox jumps over the lazy dog. This is body text using the Echo font family.
           </p>
-        </div>
-        <div>
-          <p className="text-xs text-text-muted mb-2">Body Regular</p>
-          <p className="text-base">
-            The quick brown fox jumps over the lazy dog. This is body text using the Echo font family.
+        </TypographyExample>
+      </section>
+
+      <section className="space-y-8">
+        <h2 className="text-2xl font-semibold mb-4">Labels</h2>
+        
+        <TypographyExample label="CAPS Large" mobileSize="12px" desktopSize="14px">
+          <p className="text-[12px] md:text-[14px] leading-none font-semibold uppercase tracking-[0.05em]">
+            ALL CAPS LABEL
           </p>
-        </div>
-        <div>
-          <p className="text-xs text-text-muted mb-2">Body Small</p>
-          <p className="text-sm">
-            The quick brown fox jumps over the lazy dog. This is body text using the Echo font family.
+        </TypographyExample>
+
+        <TypographyExample label="CAPS Small" mobileSize="10px" desktopSize="12px">
+          <p className="text-[10px] md:text-[12px] leading-none font-semibold uppercase tracking-[0.05em]">
+            ALL CAPS LABEL
           </p>
-        </div>
+        </TypographyExample>
+
+        <TypographyExample label="Label Large" mobileSize="14px" desktopSize="14px">
+          <p className="text-[14px] leading-none font-medium">
+            Standard Label
+          </p>
+        </TypographyExample>
+
+        <TypographyExample label="Label Small" mobileSize="12px" desktopSize="12px">
+          <p className="text-[12px] leading-none font-medium">
+            Small Label
+          </p>
+        </TypographyExample>
+      </section>
+
+      <section className="space-y-8">
+        <h2 className="text-2xl font-semibold mb-4">Buttons</h2>
+        
+        <TypographyExample label="Button Large" mobileSize="16px" desktopSize="16px">
+          <span className="text-[16px] leading-none font-semibold">
+            Button Text
+          </span>
+        </TypographyExample>
+
+        <TypographyExample label="Button Medium" mobileSize="14px" desktopSize="14px">
+          <span className="text-[14px] leading-none font-semibold">
+            Button Text
+          </span>
+        </TypographyExample>
+
+        <TypographyExample label="Button Small" mobileSize="12px" desktopSize="12px">
+          <span className="text-[12px] leading-none font-semibold">
+            Button Text
+          </span>
+        </TypographyExample>
       </section>
     </div>
   ),

@@ -559,16 +559,64 @@ export default function TokensPage() {
               <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Mobile Scale</h3>
               <p className="text-sm text-neutral-300 mb-6">Reduced sizes for mobile viewports (&lt; 768px)</p>
               
-              <div className="bg-neutral-100 p-6 rounded-lg">
-                <h4 className="font-semibold text-neutral-400 mb-4">Mobile Headings</h4>
-                <div className="space-y-3">
-                  {Object.entries(tokens.typography.mobile.headings).map(([name, styles]: [string, any]) => (
-                    <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
-                      <code className="text-xs text-neutral-400">{name.toUpperCase()}</code>
-                      <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} (from {tokens.typography.desktop.headings[name as keyof typeof tokens.typography.desktop.headings]?.fontSize})</span>
-                    </div>
-                  ))}
+              <div className="space-y-6">
+                {/* Mobile Headings */}
+                <div className="bg-neutral-100 p-6 rounded-lg">
+                  <h4 className="font-semibold text-neutral-400 mb-4">Mobile Headings</h4>
+                  <div className="space-y-3">
+                    {Object.entries(tokens.typography.mobile.headings).map(([name, styles]: [string, any]) => (
+                      <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
+                        <code className="text-xs text-neutral-400">{name.toUpperCase()}</code>
+                        <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} (from {tokens.typography.desktop.headings[name as keyof typeof tokens.typography.desktop.headings]?.fontSize})</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+
+                {/* Mobile Paragraphs */}
+                {tokens.typography.mobile.paragraphs && (
+                  <div className="bg-neutral-100 p-6 rounded-lg">
+                    <h4 className="font-semibold text-neutral-400 mb-4">Mobile Paragraphs</h4>
+                    <div className="space-y-3">
+                      {Object.entries(tokens.typography.mobile.paragraphs).map(([name, styles]: [string, any]) => (
+                        <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
+                          <code className="text-xs text-neutral-400">{name.toUpperCase()}</code>
+                          <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} (from {tokens.typography.desktop.paragraphs[name as keyof typeof tokens.typography.desktop.paragraphs]?.fontSize})</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Mobile Labels */}
+                {tokens.typography.mobile.labels && (
+                  <div className="bg-neutral-100 p-6 rounded-lg">
+                    <h4 className="font-semibold text-neutral-400 mb-4">Mobile Labels</h4>
+                    <div className="space-y-3">
+                      {Object.entries(tokens.typography.mobile.labels).map(([name, styles]: [string, any]) => (
+                        <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
+                          <code className="text-xs text-neutral-400">{name}</code>
+                          <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} (from {tokens.typography.desktop.labels[name as keyof typeof tokens.typography.desktop.labels]?.fontSize})</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Mobile Buttons */}
+                {tokens.typography.mobile.buttons && (
+                  <div className="bg-neutral-100 p-6 rounded-lg">
+                    <h4 className="font-semibold text-neutral-400 mb-4">Mobile Buttons</h4>
+                    <div className="space-y-3">
+                      {Object.entries(tokens.typography.mobile.buttons).map(([name, styles]: [string, any]) => (
+                        <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
+                          <code className="text-xs text-neutral-400">{name}</code>
+                          <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} {styles.fontSize === tokens.typography.desktop.buttons[name as keyof typeof tokens.typography.desktop.buttons]?.fontSize ? '(same as desktop)' : `(from ${tokens.typography.desktop.buttons[name as keyof typeof tokens.typography.desktop.buttons]?.fontSize})`}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
