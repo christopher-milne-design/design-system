@@ -561,13 +561,32 @@ export default function TokensPage() {
               
               <div className="space-y-6">
                 {/* Mobile Headings */}
-                <div className="bg-neutral-100 p-6 rounded-lg">
-                  <h4 className="font-semibold text-neutral-400 mb-4">Mobile Headings</h4>
-                  <div className="space-y-3">
+                <div>
+                  <h4 className="text-xl font-semibold text-neutral-400 mb-4">Mobile Headings</h4>
+                  <div className="space-y-6">
                     {Object.entries(tokens.typography.mobile.headings).map(([name, styles]: [string, any]) => (
-                      <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
-                        <code className="text-xs text-neutral-400">{name.toUpperCase()}</code>
-                        <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} (from {tokens.typography.desktop.headings[name as keyof typeof tokens.typography.desktop.headings]?.fontSize})</span>
+                      <div key={name} className="bg-neutral-100 p-6 rounded-lg">
+                        <div className="flex items-center justify-between mb-4">
+                          <div>
+                            <code className="text-sm bg-neutral-200 px-3 py-1 rounded text-neutral-400">{name.toUpperCase()}</code>
+                            <span className="text-xs text-neutral-300 ml-3">{styles.description}</span>
+                          </div>
+                          <div className="text-right text-xs text-neutral-300 font-mono">
+                            <div>{styles.fontSize}</div>
+                            <div className="text-neutral-400">LH: {styles.lineHeight}</div>
+                          </div>
+                        </div>
+                        <div
+                          style={{
+                            fontSize: styles.fontSize,
+                            lineHeight: styles.lineHeight,
+                            letterSpacing: styles.letterSpacing,
+                            fontWeight: styles.fontWeight
+                          }}
+                          className="text-neutral-400"
+                        >
+                          The quick brown fox jumps over the lazy dog
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -575,13 +594,32 @@ export default function TokensPage() {
 
                 {/* Mobile Paragraphs */}
                 {tokens.typography.mobile.paragraphs && (
-                  <div className="bg-neutral-100 p-6 rounded-lg">
-                    <h4 className="font-semibold text-neutral-400 mb-4">Mobile Paragraphs</h4>
-                    <div className="space-y-3">
+                  <div>
+                    <h4 className="text-xl font-semibold text-neutral-400 mb-4">Mobile Paragraphs</h4>
+                    <div className="space-y-6">
                       {Object.entries(tokens.typography.mobile.paragraphs).map(([name, styles]: [string, any]) => (
-                        <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
-                          <code className="text-xs text-neutral-400">{name.toUpperCase()}</code>
-                          <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} (from {tokens.typography.desktop.paragraphs[name as keyof typeof tokens.typography.desktop.paragraphs]?.fontSize})</span>
+                        <div key={name} className="bg-neutral-100 p-6 rounded-lg">
+                          <div className="flex items-center justify-between mb-4">
+                            <div>
+                              <code className="text-sm bg-neutral-200 px-3 py-1 rounded text-neutral-400">{name.toUpperCase()}</code>
+                              <span className="text-xs text-neutral-300 ml-3">{styles.description}</span>
+                            </div>
+                            <div className="text-right text-xs text-neutral-300 font-mono">
+                              <div>{styles.fontSize}</div>
+                              <div className="text-neutral-400">LH: {styles.lineHeight}</div>
+                            </div>
+                          </div>
+                          <p
+                            style={{
+                              fontSize: styles.fontSize,
+                              lineHeight: styles.lineHeight,
+                              letterSpacing: styles.letterSpacing,
+                              fontWeight: styles.fontWeight
+                            }}
+                            className="text-neutral-400"
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -590,13 +628,28 @@ export default function TokensPage() {
 
                 {/* Mobile Labels */}
                 {tokens.typography.mobile.labels && (
-                  <div className="bg-neutral-100 p-6 rounded-lg">
-                    <h4 className="font-semibold text-neutral-400 mb-4">Mobile Labels</h4>
-                    <div className="space-y-3">
+                  <div>
+                    <h4 className="text-xl font-semibold text-neutral-400 mb-4">Mobile Labels</h4>
+                    <div className="grid md:grid-cols-2 gap-6">
                       {Object.entries(tokens.typography.mobile.labels).map(([name, styles]: [string, any]) => (
-                        <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
-                          <code className="text-xs text-neutral-400">{name}</code>
-                          <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} (from {tokens.typography.desktop.labels[name as keyof typeof tokens.typography.desktop.labels]?.fontSize})</span>
+                        <div key={name} className="bg-neutral-100 p-6 rounded-lg">
+                          <div className="flex items-center justify-between mb-4">
+                            <code className="text-sm bg-neutral-200 px-3 py-1 rounded text-neutral-400">{name}</code>
+                            <span className="text-xs text-neutral-300 font-mono">{styles.fontSize}</span>
+                          </div>
+                          <div
+                            style={{
+                              fontSize: styles.fontSize,
+                              lineHeight: styles.lineHeight,
+                              letterSpacing: styles.letterSpacing,
+                              fontWeight: styles.fontWeight,
+                              textTransform: styles.textTransform || 'none'
+                            }}
+                            className="text-neutral-400"
+                          >
+                            {name.includes('caps') ? 'All Caps Label' : 'Label Text'}
+                          </div>
+                          <p className="text-xs text-neutral-300 mt-3">{styles.description}</p>
                         </div>
                       ))}
                     </div>
@@ -605,13 +658,24 @@ export default function TokensPage() {
 
                 {/* Mobile Buttons */}
                 {tokens.typography.mobile.buttons && (
-                  <div className="bg-neutral-100 p-6 rounded-lg">
-                    <h4 className="font-semibold text-neutral-400 mb-4">Mobile Buttons</h4>
-                    <div className="space-y-3">
+                  <div>
+                    <h4 className="text-xl font-semibold text-neutral-400 mb-4">Mobile Buttons</h4>
+                    <div className="grid md:grid-cols-3 gap-6">
                       {Object.entries(tokens.typography.mobile.buttons).map(([name, styles]: [string, any]) => (
-                        <div key={name} className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-0">
-                          <code className="text-xs text-neutral-400">{name}</code>
-                          <span className="text-xs text-neutral-300 font-mono">{styles.fontSize} {styles.fontSize === tokens.typography.desktop.buttons[name as keyof typeof tokens.typography.desktop.buttons]?.fontSize ? '(same as desktop)' : `(from ${tokens.typography.desktop.buttons[name as keyof typeof tokens.typography.desktop.buttons]?.fontSize})`}</span>
+                        <div key={name} className="bg-neutral-100 p-6 rounded-lg">
+                          <code className="text-xs bg-neutral-200 px-2 py-1 rounded text-neutral-400 block mb-4">{name}</code>
+                          <button
+                            style={{
+                              fontSize: styles.fontSize,
+                              lineHeight: styles.lineHeight,
+                              letterSpacing: styles.letterSpacing,
+                              fontWeight: styles.fontWeight
+                            }}
+                            className="w-full bg-brand-primary text-neutral-50 px-6 py-3 rounded-lg"
+                          >
+                            Button Text
+                          </button>
+                          <p className="text-xs text-neutral-300 mt-3 text-center">{styles.fontSize}</p>
                         </div>
                       ))}
                     </div>
