@@ -10,6 +10,7 @@
     "sync:manual": "node scripts/manual-sync.js",
     "sync:auto": "cd /tmp && (git clone https://github.com/christopher-milne-design/cca-design-tokens.git 2>/dev/null || (cd cca-design-tokens && git pull)) && cd - && npm run sync:manual && npm run tokens",
     "push:tokens": "node scripts/push-tokens.js",
+    "push:to-token-studio": "node scripts/push-to-token-studio.js",
     "test:sync": "node scripts/test-sync.js",
     "setup:env": "node scripts/setup-env.js",
     "dev": "npm run tokens && next dev",
