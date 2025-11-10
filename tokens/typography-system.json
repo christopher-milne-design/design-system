@@ -1,250 +1,338 @@
 {
   "typography": {
-    "desktop": {
-      "headings": {
-        "h1": {
-          "fontSize": { "value": "60px", "type": "fontSizes" },
-          "lineHeight": { "value": "72px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.bold}", "type": "fontWeight" },
-          "description": "60px × 1.2 = 72px line height"
-        },
-        "h2": {
-          "fontSize": { "value": "44px", "type": "fontSizes" },
-          "lineHeight": { "value": "52px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.bold}", "type": "fontWeight" },
-          "description": "44px × 1.2 = 52.8px → 52px (rounded down)"
-        },
-        "h3": {
-          "fontSize": { "value": "32px", "type": "fontSizes" },
-          "lineHeight": { "value": "40px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.bold}", "type": "fontWeight" },
-          "description": "32px × 1.2 = 38.4px → 40px (rounded to nearest 4px)"
-        },
-        "h4": {
-          "fontSize": { "value": "24px", "type": "fontSizes" },
-          "lineHeight": { "value": "28px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.bold}", "type": "fontWeight" },
-          "description": "24px × 1.2 = 28.8px → 28px (rounded down)"
-        },
-        "h5": {
-          "fontSize": { "value": "20px", "type": "fontSizes" },
-          "lineHeight": { "value": "24px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "20px × 1.2 = 24px | Maps to P1"
-        },
-        "h6": {
-          "fontSize": { "value": "16px", "type": "fontSizes" },
-          "lineHeight": { "value": "20px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "16px base unit × 1.2 = 19.2px → 20px | Maps to P2"
+    "heading": {
+      "family": {
+        "sans": {
+          "value": "{fontFamily.sans}",
+          "type": "fontFamilies",
+          "description": "Heading font family"
         }
       },
-      "paragraphs": {
-        "p1": {
-          "fontSize": { "value": "20px", "type": "fontSizes" },
-          "lineHeight": { "value": "32px", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.normal}", "type": "fontWeight" },
-          "description": "20px × 1.5 = 30px → 32px | Maps to H5"
-        },
-        "p2": {
-          "fontSize": { "value": "16px", "type": "fontSizes" },
-          "lineHeight": { "value": "24px", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.normal}", "type": "fontWeight" },
-          "description": "16px base unit × 1.5 = 24px | Maps to H6"
-        },
-        "p3": {
-          "fontSize": { "value": "14px", "type": "fontSizes" },
-          "lineHeight": { "value": "20px", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.normal}", "type": "fontWeight" },
-          "description": "14px × 1.5 = 21px → 20px"
+      "weight": {
+        "strong": {
+          "value": "{fontWeight.bold}",
+          "type": "fontWeights",
+          "description": "Strong heading weight"
         }
       },
-      "labels": {
-        "caps-large": {
-          "fontSize": { "value": "14px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "5%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "textTransform": { "value": "uppercase", "type": "textCase" },
-          "description": "All-caps with +5% letter spacing for readability"
+      "size": {
+        "xl": {
+          "desktop": {
+            "value": "{fontSize.desktop.900}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.900}",
+            "type": "fontSizes"
+          }
         },
-        "caps-small": {
-          "fontSize": { "value": "12px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "5%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "textTransform": { "value": "uppercase", "type": "textCase" },
-          "description": "Small caps labels"
+        "l": {
+          "desktop": {
+            "value": "{fontSize.desktop.600}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.600}",
+            "type": "fontSizes"
+          }
         },
-        "label-large": {
-          "fontSize": { "value": "14px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.medium}", "type": "fontWeight" },
-          "description": "Standard label - no letter spacing adjustment"
+        "m": {
+          "desktop": {
+            "value": "{fontSize.desktop.400}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.400}",
+            "type": "fontSizes"
+          }
         },
-        "label-small": {
-          "fontSize": { "value": "12px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.medium}", "type": "fontWeight" },
-          "description": "Small label"
-        }
-      },
-      "buttons": {
-        "button-large": {
-          "fontSize": { "value": "16px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "100% line height prevents multi-line wrapping issues"
-        },
-        "button-medium": {
-          "fontSize": { "value": "14px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "Standard button size"
-        },
-        "button-small": {
-          "fontSize": { "value": "12px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "Compact button"
+        "s": {
+          "desktop": {
+            "value": "{fontSize.desktop.200}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.200}",
+            "type": "fontSizes"
+          }
         }
       }
     },
-    "mobile": {
-      "headings": {
-        "h1": {
-          "fontSize": { "value": "40px", "type": "fontSizes" },
-          "lineHeight": { "value": "48px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.bold}", "type": "fontWeight" },
-          "description": "40px × 1.2 = 48px | Reduced from 60px desktop"
+    "body": {
+      "family": {
+        "sans": {
+          "value": "{fontFamily.sans}",
+          "type": "fontFamilies",
+          "description": "Body text sans font"
         },
-        "h2": {
-          "fontSize": { "value": "32px", "type": "fontSizes" },
-          "lineHeight": { "value": "40px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.bold}", "type": "fontWeight" },
-          "description": "32px × 1.2 = 38.4px → 40px | Reduced from 44px desktop"
-        },
-        "h3": {
-          "fontSize": { "value": "24px", "type": "fontSizes" },
-          "lineHeight": { "value": "28px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.bold}", "type": "fontWeight" },
-          "description": "24px × 1.2 = 28.8px → 28px | Reduced from 32px desktop"
-        },
-        "h4": {
-          "fontSize": { "value": "20px", "type": "fontSizes" },
-          "lineHeight": { "value": "24px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.bold}", "type": "fontWeight" },
-          "description": "20px × 1.2 = 24px | Reduced from 24px desktop"
-        },
-        "h5": {
-          "fontSize": { "value": "16px", "type": "fontSizes" },
-          "lineHeight": { "value": "20px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "16px × 1.2 = 19.2px → 20px | Reduced from 20px desktop"
-        },
-        "h6": {
-          "fontSize": { "value": "14px", "type": "fontSizes" },
-          "lineHeight": { "value": "16px", "type": "lineHeights" },
-          "letterSpacing": { "value": "-2%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "14px × 1.2 = 16.8px → 16px | Reduced from 16px desktop"
+        "mono": {
+          "value": "{fontFamily.mono}",
+          "type": "fontFamilies",
+          "description": "Body text mono font"
         }
       },
-      "paragraphs": {
-        "p1": {
-          "fontSize": { "value": "18px", "type": "fontSizes" },
-          "lineHeight": { "value": "28px", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.normal}", "type": "fontWeight" },
-          "description": "18px × 1.5 = 27px → 28px | Slightly reduced from 20px desktop"
+      "weight": {
+        "regular": {
+          "value": "{fontWeight.regular}",
+          "type": "fontWeights"
         },
-        "p2": {
-          "fontSize": { "value": "16px", "type": "fontSizes" },
-          "lineHeight": { "value": "24px", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.normal}", "type": "fontWeight" },
-          "description": "16px base unit × 1.5 = 24px | Same as desktop"
+        "strong": {
+          "value": "{fontWeight.semibold}",
+          "type": "fontWeights"
         },
-        "p3": {
-          "fontSize": { "value": "14px", "type": "fontSizes" },
-          "lineHeight": { "value": "20px", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.normal}", "type": "fontWeight" },
-          "description": "14px × 1.5 = 21px → 20px | Same as desktop"
+        "italic": {
+          "value": "{fontWeight.italic}",
+          "type": "fontWeights"
         }
       },
-      "labels": {
-        "caps-large": {
-          "fontSize": { "value": "12px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "5%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "textTransform": { "value": "uppercase", "type": "textCase" },
-          "description": "Reduced from 14px desktop"
+      "size": {
+        "l": {
+          "desktop": {
+            "value": "{fontSize.desktop.300}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.300}",
+            "type": "fontSizes"
+          }
         },
-        "caps-small": {
-          "fontSize": { "value": "10px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "5%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "textTransform": { "value": "uppercase", "type": "textCase" },
-          "description": "Reduced from 12px desktop"
+        "m": {
+          "desktop": {
+            "value": "{fontSize.desktop.200}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.200}",
+            "type": "fontSizes"
+          }
         },
-        "label-large": {
-          "fontSize": { "value": "14px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.medium}", "type": "fontWeight" },
-          "description": "Same as desktop"
+        "s": {
+          "desktop": {
+            "value": "{fontSize.desktop.100}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.100}",
+            "type": "fontSizes"
+          }
         },
-        "label-small": {
-          "fontSize": { "value": "12px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.medium}", "type": "fontWeight" },
-          "description": "Same as desktop"
+        "xs": {
+          "desktop": {
+            "value": "{fontSize.desktop.75}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.75}",
+            "type": "fontSizes"
+          }
+        }
+      }
+    },
+    "label": {
+      "family": {
+        "sans": {
+          "value": "{fontFamily.sans}",
+          "type": "fontFamilies",
+          "description": "Label font family"
         }
       },
-      "buttons": {
-        "button-large": {
-          "fontSize": { "value": "16px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "Same as desktop"
+      "weight": {
+        "strong": {
+          "value": "{fontWeight.semibold}",
+          "type": "fontWeights"
+        }
+      },
+      "size": {
+        "l": {
+          "desktop": {
+            "value": "{fontSize.desktop.300}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.300}",
+            "type": "fontSizes"
+          }
         },
-        "button-medium": {
-          "fontSize": { "value": "14px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "Same as desktop"
+        "m": {
+          "desktop": {
+            "value": "{fontSize.desktop.200}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.200}",
+            "type": "fontSizes"
+          }
         },
-        "button-small": {
-          "fontSize": { "value": "12px", "type": "fontSizes" },
-          "lineHeight": { "value": "100%", "type": "lineHeights" },
-          "letterSpacing": { "value": "0%", "type": "letterSpacing" },
-          "fontWeight": { "value": "{fontWeight.semibold}", "type": "fontWeight" },
-          "description": "Same as desktop"
+        "s": {
+          "desktop": {
+            "value": "{fontSize.desktop.100}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.100}",
+            "type": "fontSizes"
+          }
+        },
+        "xs": {
+          "desktop": {
+            "value": "{fontSize.desktop.75}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.75}",
+            "type": "fontSizes"
+          }
+        }
+      }
+    },
+    "code": {
+      "family": {
+        "mono": {
+          "value": "{fontFamily.mono}",
+          "type": "fontFamilies",
+          "description": "Code font family"
+        }
+      },
+      "weight": {
+        "regular": {
+          "value": "{fontWeight.regular}",
+          "type": "fontWeights"
+        }
+      },
+      "size": {
+        "l": {
+          "desktop": {
+            "value": "{fontSize.desktop.300}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.300}",
+            "type": "fontSizes"
+          }
+        },
+        "m": {
+          "desktop": {
+            "value": "{fontSize.desktop.200}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.200}",
+            "type": "fontSizes"
+          }
+        },
+        "s": {
+          "desktop": {
+            "value": "{fontSize.desktop.100}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.100}",
+            "type": "fontSizes"
+          }
+        }
+      }
+    },
+    "link": {
+      "family": {
+        "sans": {
+          "value": "{fontFamily.sans}",
+          "type": "fontFamilies",
+          "description": "Link font family"
+        }
+      },
+      "weight": {
+        "strong": {
+          "value": "{fontWeight.semibold}",
+          "type": "fontWeights"
+        }
+      },
+      "size": {
+        "l": {
+          "desktop": {
+            "value": "{fontSize.desktop.300}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.300}",
+            "type": "fontSizes"
+          }
+        },
+        "m": {
+          "desktop": {
+            "value": "{fontSize.desktop.200}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.200}",
+            "type": "fontSizes"
+          }
+        },
+        "s": {
+          "desktop": {
+            "value": "{fontSize.desktop.100}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.100}",
+            "type": "fontSizes"
+          }
+        },
+        "xs": {
+          "desktop": {
+            "value": "{fontSize.desktop.75}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.75}",
+            "type": "fontSizes"
+          }
+        }
+      }
+    },
+    "input": {
+      "family": {
+        "sans": {
+          "value": "{fontFamily.sans}",
+          "type": "fontFamilies",
+          "description": "Input font family"
+        }
+      },
+      "weight": {
+        "regular": {
+          "value": "{fontWeight.regular}",
+          "type": "fontWeights"
+        }
+      },
+      "size": {
+        "l": {
+          "desktop": {
+            "value": "{fontSize.desktop.300}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.300}",
+            "type": "fontSizes"
+          }
+        },
+        "m": {
+          "desktop": {
+            "value": "{fontSize.desktop.200}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.200}",
+            "type": "fontSizes"
+          }
+        },
+        "s": {
+          "desktop": {
+            "value": "{fontSize.desktop.100}",
+            "type": "fontSizes"
+          },
+          "mobile": {
+            "value": "{fontSize.mobile.100}",
+            "type": "fontSizes"
+          }
         }
       }
     }
