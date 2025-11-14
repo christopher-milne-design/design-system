@@ -150,7 +150,7 @@ export const Typography: Story = {
           Helvetica Neue for headings, Echo for body text
         </p>
         <p className="text-sm text-text-secondary">
-          Resize your browser to see mobile (< 768px) vs desktop scales
+          Resize your browser to see mobile (&lt; 768px) vs desktop scales
         </p>
       </div>
 
