@@ -138,17 +138,26 @@ try {
 console.log('\n📤 Pushing to GitHub...');
 try {
   execSync('git add tokens.json', { cwd: TOKEN_REPO_PATH });
-  execSync('git commit -m "Update tokens from local design system"', { cwd: TOKEN_REPO_PATH });
-  execSync('git push', { cwd: TOKEN_REPO_PATH, stdio: 'inherit' });
-  console.log('\n✅ Successfully pushed tokens to GitHub!');
-} catch (error) {
-  if (error.message.includes('nothing to commit')) {
-    console.log('\n✅ No changes to push - tokens are already in sync');
-  } else {
-    console.error('\n❌ Failed to push to GitHub');
-    console.error(error.message);
+  
+  // Check if there are changes to commit
+  try {
+    const status = execSync('git status --porcelain', { cwd: TOKEN_REPO_PATH, encoding: 'utf8' });
+    if (!status.trim()) {
+      console.log('\n✅ No changes to push - tokens are already in sync');
+    } else {
+      execSync('git commit -m "Update tokens from local design system"', { cwd: TOKEN_REPO_PATH });
+      execSync('git push', { cwd: TOKEN_REPO_PATH, stdio: 'inherit' });
+      console.log('\n✅ Successfully pushed tokens to GitHub!');
+    }
+  } catch (commitError) {
+    console.error('\n❌ Failed to commit or push to GitHub');
+    console.error(commitError.message);
     process.exit(1);
   }
+} catch (error) {
+  console.error('\n❌ Failed to stage changes');
+  console.error(error.message);
+  process.exit(1);
 }
 
 console.log('\n🎉 Done! Your tokens are now synced with Token Studio.\n');
