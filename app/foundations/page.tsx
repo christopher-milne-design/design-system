@@ -421,7 +421,91 @@ export default function TokensPage() {
             </ul>
           </div>
 
-          {/* Typography display sections temporarily disabled until tokens are properly structured */}
+          {/* Typography Categories */}
+          <div className="space-y-12 mb-12">
+            {/* Headings */}
+            <div>
+              <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Headings</h3>
+              <div className="space-y-6">
+                {Object.entries(tokens.typography.heading.size).map(([sizeName, sizes]) => (
+                  <div key={sizeName} className="bg-neutral-100 p-6 rounded-lg">
+                    <div className="flex items-baseline justify-between mb-4">
+                      <h4 
+                        className="font-bold" 
+                        style={{
+                          fontSize: (sizes as any).desktop,
+                          lineHeight: '1.2',
+                          letterSpacing: '-0.02em'
+                        }}
+                      >
+                        Heading {sizeName.toUpperCase()}
+                      </h4>
+                      <code className="text-xs bg-neutral-200 px-2 py-1 rounded">
+                        {(sizes as any).desktop} / {(sizes as any).mobile}
+                      </code>
+                    </div>
+                    <div className="text-sm text-neutral-300">
+                      Desktop: {(sizes as any).desktop} | Mobile: {(sizes as any).mobile} | Line height: 1.2 | Letter-spacing: -2%
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Body Text */}
+            <div>
+              <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Body Text</h3>
+              <div className="space-y-6">
+                {Object.entries(tokens.typography.body.size).map(([sizeName, sizes]) => (
+                  <div key={sizeName} className="bg-neutral-100 p-6 rounded-lg">
+                    <div className="flex items-baseline justify-between mb-4">
+                      <p 
+                        style={{
+                          fontSize: (sizes as any).desktop,
+                          lineHeight: '1.5',
+                          letterSpacing: '0'
+                        }}
+                      >
+                        Body text {sizeName.toUpperCase()} — The quick brown fox jumps over the lazy dog. This pangram demonstrates the font at this size.
+                      </p>
+                    </div>
+                    <div className="text-sm text-neutral-300">
+                      Desktop: {(sizes as any).desktop} | Mobile: {(sizes as any).mobile} | Line height: 1.5 | Letter-spacing: 0%
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Labels */}
+            <div>
+              <h3 className="text-2xl font-semibold text-neutral-400 mb-6">Labels</h3>
+              <div className="space-y-6">
+                {Object.entries(tokens.typography.label.size).map(([sizeName, sizes]) => (
+                  <div key={sizeName} className="bg-neutral-100 p-6 rounded-lg">
+                    <div className="flex items-baseline justify-between mb-4">
+                      <span 
+                        className="font-semibold uppercase"
+                        style={{
+                          fontSize: (sizes as any).desktop,
+                          lineHeight: '1',
+                          letterSpacing: '0.05em'
+                        }}
+                      >
+                        Label {sizeName.toUpperCase()}
+                      </span>
+                      <code className="text-xs bg-neutral-200 px-2 py-1 rounded">
+                        {(sizes as any).desktop} / {(sizes as any).mobile}
+                      </code>
+                    </div>
+                    <div className="text-sm text-neutral-300">
+                      Desktop: {(sizes as any).desktop} | Mobile: {(sizes as any).mobile} | Line height: 1 | Letter-spacing: +5%
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* Usage Examples */}
           <div className="bg-neutral-100 p-6 rounded-lg">
