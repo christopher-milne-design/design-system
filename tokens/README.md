@@ -1,4 +1,65 @@
-# Design Tokens
+# Design Tokens Directory
+
+## NEW: Typography Token Structure - Token Studio Integration
+
+The typography tokens have been restructured to match the UI Prep design system with Desktop and Mobile modes.
+
+### New Typography Files
+
+- **`tokens/typography-primitives.json`** - Base typography values (font families, weights, sizes for desktop/mobile)
+- **`tokens/typography-system.json`** - Semantic tokens referencing primitives (heading, body, label, code, link, input)
+
+### Typography Structure
+
+**Primitives Collection:**
+- Font Family: Sans (Helvetica Neue), Mono (system monospace)
+- Font Weight: Regular (400), Semibold (600), Bold (700), Italic
+- Font Size: Desktop scale (11-60px) and Mobile scale (13-70px) with tokens 50-1300
+
+**Typography System Collection:**
+- **Heading**: Family Sans, Weight Strong, Sizes XL/L/M/S (desktop & mobile)
+- **Body**: Family Sans/Mono, Weight Regular/Strong/Italic, Sizes L/M/S/XS (desktop & mobile)
+- **Label**: Family Sans, Weight Strong, Sizes L/M/S/XS (desktop & mobile)
+- **Code**: Family Mono, Weight Regular, Sizes L/M/S (desktop & mobile)
+- **Link**: Family Sans, Weight Strong, Sizes L/M/S/XS (desktop & mobile)
+- **Input**: Family Sans, Weight Regular, Sizes L/M/S (desktop & mobile)
+
+### Pushing to Token Studio
+
+To sync these new typography tokens with Figma Token Studio:
+
+1. **Commit and push to your repository:**
+   ```bash
+   git add tokens/typography-primitives.json tokens/typography-system.json
+   git commit -m "Add UI Prep typography structure with Desktop/Mobile modes"
+   git push origin main
+   ```
+
+2. **In Figma Token Studio:**
+   - Open the Token Studio plugin
+   - Go to Settings → Storage
+   - Click "Pull from GitHub"
+   - Token Studio will sync the new collections
+
+3. **Set up modes in Token Studio:**
+   - Create "Desktop" mode (uses `fontSize.desktop.*` tokens)
+   - Create "Mobile" mode (uses `fontSize.mobile.*` tokens)
+   - Apply modes to Figma components for responsive typography
+
+### Using New Typography Tokens
+
+After running `npm run tokens`, use semantic tokens in your components:
+
+```tsx
+// Heading XL
+<h1 className="text-heading-size-xl-desktop md:text-heading-size-xl-mobile font-bold">
+
+// Body M with strong weight
+<p className="text-body-size-m-desktop md:text-body-size-m-mobile font-semibold">
+
+// Label S
+<span className="text-label-size-s-desktop md:text-label-size-s-mobile">
+```
 
 This project syncs design tokens from the centralized **[cca-design-tokens](https://github.com/christopher-milne-design/cca-design-tokens)** repository, which is connected to **Token Studio for Figma**.
 

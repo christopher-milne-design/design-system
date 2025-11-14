@@ -150,6 +150,42 @@
   --spacing-3xl: 4rem;
   --spacing-4xl: 6rem;
   --spacing-5xl: 8rem;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-italic: italic;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-size-desktop: 11px;
+  --font-size-desktop: 12px;
+  --font-size-desktop: 14px;
+  --font-size-desktop: 16px;
+  --font-size-desktop: 18px;
+  --font-size-desktop: 20px;
+  --font-size-desktop: 22px;
+  --font-size-desktop: 25px;
+  --font-size-desktop: 28px;
+  --font-size-desktop: 32px;
+  --font-size-desktop: 36px;
+  --font-size-desktop: 40px;
+  --font-size-desktop: 45px;
+  --font-size-desktop: 50px;
+  --font-size-desktop: 60px;
+  --font-size-mobile: 13px;
+  --font-size-mobile: 15px;
+  --font-size-mobile: 17px;
+  --font-size-mobile: 19px;
+  --font-size-mobile: 22px;
+  --font-size-mobile: 24px;
+  --font-size-mobile: 27px;
+  --font-size-mobile: 31px;
+  --font-size-mobile: 34px;
+  --font-size-mobile: 39px;
+  --font-size-mobile: 44px;
+  --font-size-mobile: 49px;
+  --font-size-mobile: 55px;
+  --font-size-mobile: 62px;
+  --font-size-mobile: 70px;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -161,10 +197,6 @@
   --font-size-5xl: 3rem;
   --font-size-6xl: 3.75rem;
   --font-size-7xl: 4.5rem;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
@@ -319,6 +351,42 @@
 .p-3xl { padding: var(--spacing-3xl); }
 .p-4xl { padding: var(--spacing-4xl); }
 .p-5xl { padding: var(--spacing-5xl); }
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-italic { font-weight: var(--font-weight-italic); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-desktop { font-size: var(--font-size-desktop); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
+.text-mobile { font-size: var(--font-size-mobile); }
 .text-xs { font-size: var(--font-size-xs); }
 .text-sm { font-size: var(--font-size-sm); }
 .text-base { font-size: var(--font-size-base); }
@@ -330,10 +398,6 @@
 .text-5xl { font-size: var(--font-size-5xl); }
 .text-6xl { font-size: var(--font-size-6xl); }
 .text-7xl { font-size: var(--font-size-7xl); }
-.font-normal { font-weight: var(--font-weight-normal); }
-.font-medium { font-weight: var(--font-weight-medium); }
-.font-semibold { font-weight: var(--font-weight-semibold); }
-.font-bold { font-weight: var(--font-weight-bold); }
 .leading-tight { line-height: var(--line-height-tight); }
 .leading-normal { line-height: var(--line-height-normal); }
 .leading-relaxed { line-height: var(--line-height-relaxed); }
