@@ -1,0 +1,17 @@
+/* Basel Classic Bold */
+@font-face {
+  font-family: 'Basel Classic';
+  src: url('/fonts/basel/Basel-Classic-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Basel Classic Bold Italic */
+@font-face {
+  font-family: 'Basel Classic';
+  src: url('/fonts/basel/Basel-Classic-Bold-Italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}

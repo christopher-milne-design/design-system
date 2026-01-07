@@ -50,6 +50,23 @@ const echo = localFont({
   variable: "--font-echo",
 });
 
+// Basel font for headings
+const basel = localFont({
+  src: [
+    {
+      path: "../public/fonts/basel/Basel-Classic-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/basel/Basel-Classic-Bold-Italic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-basel",
+});
+
 export const metadata: Metadata = {
   title: "Design System | Token Studio + Tailwind",
   description: "A comprehensive design system with semantic tokens, calculated typography, and Figma integration via Token Studio.",
@@ -63,9 +80,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${echo.variable} antialiased`}
+        className={`${echo.variable} ${basel.variable} antialiased`}
       >
-        <Navigation />
         {children}
       </body>
     </html>
